@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Mac:</b>
+  <%= @equipment.mac %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @equipment.state %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @equipment.comment %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%= @equipment.model_id %>
+</p>
+
+<p>
+  <b>Supplier:</b>
+  <%= @equipment.supplier_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_equipment_path(@equipment) %> |
+<%= link_to 'Back', equipment_index_path %>

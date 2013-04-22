@@ -1,0 +1,34 @@
+
+<div class="span12">
+<% if flash[:error] %>
+  <li class="alert alert-error"><%= flash[:error]  %></li>
+  <% end %>
+<% if notice %>
+  <li class="alert alert-success"><%= notice  %></li>
+  <% end %>
+<h1>Listing models</h1>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Comment</th>
+    <th>Make</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @models.each do |model| %>
+  <tr>
+    <td><%= model.name %></td>
+    <td><%= model.comment %></td>
+    <td><%= model.make.name %></td>
+    <td><%= model.category.name %></td>
+    <td><%= link_to "Edit", edit_make_model_path(model.make.id, model) %></td>
+    <td><%= link_to "Destroy", make_model_path(model.make.id, model), method: :delete, data: {confirm: 'Are you sure?'}%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

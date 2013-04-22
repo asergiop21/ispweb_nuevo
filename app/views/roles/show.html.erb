@@ -1,0 +1,14 @@
+<% if flash[:error] %>
+  <li class="alert alert-error"><%= flash[:error]  %></li>
+  <% end %>
+<% if notice %>
+  <li class="alert alert-success"><%= notice  %></li>
+  <% end %>
+<p>
+  <b>Role:</b>
+  <%= @role.role %>
+</p>
+
+
+<%= link_to 'Edit', edit_role_path(@role) %> |
+<%= link_to 'Back', roles_path %>

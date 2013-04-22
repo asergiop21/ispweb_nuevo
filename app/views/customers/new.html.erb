@@ -1,0 +1,11 @@
+<% if flash[:error] %>
+  <li class="alert alert-error"><%= flash[:error]  %></li>
+  <% end %>
+<% if notice %>
+  <li class="alert alert-success"><%= notice  %></li>
+  <% end %>
+  <div class="span12"><h3>New customer</h3></div>
+
+<%= render 'form' %>
+
+

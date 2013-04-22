@@ -1,0 +1,17 @@
+<%= simple_form_for(@supplier) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :address %>
+   <%= f.input :location_id do %>
+     <%= f.select :location_id,  Location.all.map {|l|[l.name, l.id]}, prompt: "Seleccione una Localidad" %>
+   <% end  %>
+    <%= f.input :user_id %>
+    <%= f.input :zipcode %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

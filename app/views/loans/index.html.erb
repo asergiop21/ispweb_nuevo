@@ -1,0 +1,34 @@
+<h1>Listing loans</h1>
+
+<table class= "table">
+  <tr>
+    <th>Customer</th>
+    <th>Equipment</th>
+    <th>Status loan</th>
+    <th>Confirmation loan</th>
+    <th>Comment</th>
+    <th>User</th>
+    <th>Technical</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @loans.each do |loan| %>
+  <tr>
+    <td><%= loan.customer.lastname + ", " + loan.customer.name %></td>
+    <td><%= loan.equipment.mac + " - " + loan.equipment.model.name %></td>
+    <td><%= loan.status_loan %></td>
+    <td><%= loan.confirmation_loan %></td>
+    <td><%= loan.comment %></td>
+    <td><%= loan.user_id %></td>
+    <td><%= loan.technical_id %></td>
+    <td><%= link_to 'Show', customer_loan_path(loan.customer.id,loan) %></td>
+    <td><%= link_to 'Edit', edit_customer_loan_path(loan.customer.id, loan) %></td>
+    <td><%= link_to 'Destroy', customer_loan_path(loan.customer.id, loan), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+  <%= link_to 'New Loan', new_customer_loan_path()%>

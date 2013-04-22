@@ -1,0 +1,63 @@
+<%= form_tag '', :method =>'get' do %>
+    <%= text_field_tag :lastname %>
+      <%= submit_tag "search" %>
+    <% end %>
+
+<div class="span12">
+<% if flash[:error] %>
+  <li class="alert alert-error"><%= flash[:error]  %></li>
+  <% end %>
+<% if notice %>
+  <li class="alert alert-success"><%= notice  %></li>
+  <% end %>
+  
+<h1>Listing customers - Consulta de Clientes</h1>
+<% if @customers %>
+<table class="table">
+  <tr>
+    <th><%= t('customer.name')   %></th>
+    <th><%= t('customer.lastname') %></th>
+    <th><%= t('customer.address') %></th>
+    <th>Neighborhood</th>
+    <th>Reference direction</th>
+    <th>Email</th>
+    <th>Dni</th>
+    <th>Description</th>
+    <th>Cuit</th>
+    <th>Birthday</th>
+    <th>Removed?</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.name %></td>
+    <td><%= customer.lastname %></td>
+    <td><%= customer.address %></td>
+    <td><%= customer.neighborhood %></td>
+    <td><%= customer.reference_direction %></td>
+    <td><%= customer.email %></td>
+    <td><%= customer.dni %></td>
+    <td><%= customer.description %></td>
+    <td><%= customer.cuit %></td>
+    <td><%= customer.date_of_birth %></td>
+    <td><%= customer.removed? %></td>
+    <td><%= customer.category %></td>
+    <td><%= link_to 'Show', customer %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Loans', customer_loans_path(customer.id) %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br />
+
+<% ##if can? :new, @customers %>
+  <%= link_to 'New Customer', new_customer_path %>
+  <% #end %>
+</div>

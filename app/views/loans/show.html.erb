@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Customer:</b>
+  <%= @loan.customer_id %>
+</p>
+
+<p>
+  <b>Equipment:</b>
+  <%= @loan.equipment_id %>
+</p>
+
+<p>
+  <b>Status loan:</b>
+  <%= @loan.status_loan %>
+</p>
+
+<p>
+  <b>Confirmation loan:</b>
+  <%= @loan.confirmation_loan %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @loan.comment %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @loan.user_id %>
+</p>
+
+<p>
+  <b>Technical:</b>
+  <%= @loan.technical_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_loan_path(@loan.customer_id, @loan) %> |
+<%= link_to 'Back', customer_loans_path(@loan.customer.id) %>

@@ -1,0 +1,21 @@
+<%= simple_form_for [@roles, @roles_and_permission], :html => {:class =>'form-inline'}  do |f| %>
+  <% if @roles_and_permission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@roles_and_permission.errors.count, "error") %> prohibited this roles_and_permission from being saved:</h2>
+      <ul>
+      <% @roles_and_permission.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h2>Rol: <%= @roles.role %></h2>
+    
+  <% Permission.all do |p| %>
+    <%= f.r :permission_id, p.id %>
+    <%= f.label p.name %>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

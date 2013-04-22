@@ -1,0 +1,21 @@
+es:
+     customer:
+        attributes:
+        name: 'Nombre'
+        lastname: 'Apellido'
+        address: 'Direccion'
+
+#      activerecord: 
+#        errors:
+#          models:
+#            customer:
+#              attributes:
+#                name:"asd" 
+
+
+#      errors:
+#        template:
+#          body: "Hay problemas con los siguientes campos:"
+#          header:
+#            one: "1 error ha impedido que este %{model} se guarde"
+#            other: "%{count} errores han impedido que este %{model} se guarde"

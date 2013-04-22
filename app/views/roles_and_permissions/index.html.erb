@@ -1,0 +1,27 @@
+<h1>Listing roles and permissions</h1>
+
+<table class="table">
+  <tr>
+    <th>Rol</th>
+    <th>Permission</th>
+    <th>Scope</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @roles_and_permissions.each do |roles_and_permission| %>
+  <tr>
+    <td><%= roles_and_permission.role.name %></td>
+    <td><%= roles_and_permission.permmision_id %></td>
+    <td><%= roles_and_permission.scope %></td>
+    <td><%= link_to 'Show', roles_and_permission %></td>
+    <td><%= link_to 'Edit', edit_role_roles_and_permission_path(@roles.id, roles_and_permission) %></td>
+    <td><%= link_to 'Destroy', roles_and_permission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Roles and permission', new_roles_and_permission_path %>

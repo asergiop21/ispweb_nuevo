@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @plan.name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @plan.price %>
+</p>
+
+<p>
+  <b>Upload speed:</b>
+  <%= @plan.upload_speed %>
+</p>
+
+<p>
+  <b>Download speed:</b>
+  <%= @plan.download_speed %>
+</p>
+
+<p>
+  <b>Remove:</b>
+  <%= @plan.remove %>
+</p>
+
+<p>
+  <b>Price surcharges1:</b>
+  <%= @plan.price_surcharges1 %>
+</p>
+
+<p>
+  <b>Price surcharges2:</b>
+  <%= @plan.price_surcharges2 %>
+</p>
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>

@@ -1,0 +1,22 @@
+<h1>Users#index</h1>
+
+<div>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Lastname</th>
+    <th>Email</th>
+    <th>Username</th>
+  </tr>
+<% @users.each do |u| %>
+  <tr>
+    <td><%= u.name %></td>
+    <td><%= u.lastname %></td>
+    <td><%= u.email %></td>
+    <td><%= u.username %></td>
+    <td><%= link_to "Edit", edit_user_registration_path %></td>
+  </tr>
+ <% end %>
+ </table>
+ </div>
+

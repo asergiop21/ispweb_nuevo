@@ -1,0 +1,12 @@
+<% if flash[:error] %>
+  <li class="alert alert-error"><%= flash[:error]  %></li>
+  <% end %>
+<% if notice %>
+  <li class="alert alert-success"><%= notice  %></li>
+  <% end %>
+<h1>Editing role</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @role %> |
+<%= link_to 'Back', roles_path %>

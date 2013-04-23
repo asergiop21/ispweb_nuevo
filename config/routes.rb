@@ -1,13 +1,13 @@
 Ispweb::Application.routes.draw do
+
+  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
   resources :categories
   resources :equipment
   get "new_equipment" => "equipment#new", :as => "new_equipment"
   resources :makes do
     resources :models
   end
-
-  resources :plans
-  scope '(:locale)', :defaults =>{:locale =>"es"}  do
+    resources :plans
     resources :suppliers
     resources :locations
     resources :permissions
@@ -19,9 +19,11 @@ Ispweb::Application.routes.draw do
     end
     devise_for :users 
     get "users/index"
-  end
+    match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
+    match '', to: redirect("/#{I18n.default_locale}")
+end
 
-  
+
     match "models" => "models#index"
     match "loans" => "loans#loan_pending"
   # The priority is based upon order of creation:

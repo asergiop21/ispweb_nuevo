@@ -24,3 +24,10 @@ en:
     #     username: 'User name to sign in.'
     #     password: 'No special characters, please.'
 
+  activerecord:
+    errors:
+      models:
+        customer:
+          attributes:
+            name:
+              blank: "prese"

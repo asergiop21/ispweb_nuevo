@@ -18,10 +18,13 @@
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
-
-
-
-
+  <div>
+    <%= f.label :lenguaje %>
+        <ul>
+          <li><%= link_to_unless_current "English", locale: "en" %></li>
+          <li><%= link_to_unless_current "spanish", locale: "es" %></li>
+      </ul>
+  </div>
 
 <% for role in Role.find (:all) %>
   <div>

@@ -1,7 +1,7 @@
 <fieldset>
-  <%=  f.label :phone_number, "Number Phones" %>
+  <%= f.label :phone_number, t('view.customers.phone_number')%>
   <%= f.text_field :phone_number %>
   <%= f.hidden_field :_destroy %>
-  <%= link_to "remove", "#", class: "remove_f" %>
+  <%= link_to t('view.customers.remove'), "#", class: "remove_f" %>
 
       </fieldset>

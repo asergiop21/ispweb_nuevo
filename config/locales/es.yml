@@ -1,35 +1,20 @@
-es:
-   # activerecord:
-    #  errors:
-       # messages:
-        #  blank: "no puede quedar en blanco"
-       # template:
-       #   body: "Hay problemas con los siguientes campos:"
-        #  header:
-         #   one: "1 error ha impedido que este %{model} se guarde"
-          #  other: "%{count} errores han impedido que este %{model} se guarde"
+'es':
+  date:
+    month_names:
+      - ~
+      - enero
+      - febrero
+      - marzo
+      - abril
+      - mayo
+      - junio
+      - julio
+      - agosto
+      - septiembre
+      - octubre
+      - noviembre
+      - diciembre
 
-     # models:
-     #   customer:
-     #     attributes:
-     #        name:  
-     #           blank: "asdfa"
-  #  attributes:
-  #    customer:
-  #      name: 'Nombre'
-
-  customers:
-    title: "Consulta de clientes"
-
-  devise:
-        sign_in: "Registrarse"
-
-  activerecord:
-    attributes:
-      customer:
-        lastname: "Apellido"
-      user:
-        username: "Nombre de usuario"
-        password: "Password"
-      
-      
+  errors:
+    messages:
+      taken: "ya está en uso"

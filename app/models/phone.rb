@@ -3,4 +3,5 @@ class Phone < ActiveRecord::Base
   
    belongs_to :customer
 
+   validates :phone_number, presence: true
 end

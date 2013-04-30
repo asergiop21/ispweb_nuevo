@@ -1,13 +1,13 @@
 class Equipment < ActiveRecord::Base
-  attr_accessible :comment, :mac, :model_id, :state, :supplier_id
+  attr_accessible :comment, :mac, :model_id, :status, :supplier_id
 
+    STATUS = %w[STOCK BAJA]
   #valitations
   validates :mac, :uniqueness => true
+  
 
   #Relaciones
-    has_many :loans
+    :loans
     belongs_to :model
-    STATE = %w[STOCK BAJA]
-
-
+    
 end

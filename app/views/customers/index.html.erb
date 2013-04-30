@@ -19,11 +19,11 @@
   <tr>
     <th><%= Customer.human_attribute_name(:name)   %></th>
     <th><%= Customer.human_attribute_name(:lastname) %></th>
-    <th>address</th>
-    <th>Neighborhood</th>
-    <th>Reference direction</th>
-    <th>Description</th>
-    <th>Category</th>
+    <th><%= Customer.human_attribute_name(:address) %></th>
+    <th><%= Customer.human_attribute_name(:neighborhood) %></th>
+    <th><%= Customer.human_attribute_name(:reference_direction) %></th>
+    <th><%= Customer.human_attribute_name(:description) %></th>
+    <th><%= Customer.human_attribute_name(:category) %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -39,10 +39,10 @@
     <td><%= customer.reference_direction %></td>
     <td><%= customer.description %></td>
     <td><%= customer.category %></td>
-    <td><%= link_to 'Show', customer %></td>
-    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-    <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <td><%= link_to 'Loans', customer_loans_path(customer.id) %></td>
+    <td><%= link_to t('view.customers.show'), customer %></td>
+    <td><%= link_to t('view.customers.edit'), edit_customer_path(customer) %></td>
+    <td><%= link_to t('view.customers.destroy'), customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('view.customers.loans'), customer_loans_path(customer.id) %></td>
   </tr>
   <% end %>
 </table>
@@ -51,7 +51,7 @@
 <br />
 <div class="span12 ">
 <% ##if can? :new, @customers %>
-  <%= link_to 'New Customer', new_customer_path %>
+  <%= link_to t('view.customers.new_customer'), new_customer_path %>
   <% #end %>
   </div>
   </div>

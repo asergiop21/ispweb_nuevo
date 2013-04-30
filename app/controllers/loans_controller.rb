@@ -1,9 +1,9 @@
 class LoansController < ApplicationController
   # GET /loans
   # GET /loans.json
-before_filter :customer_find, :except =>[:index, :loan_pending]
+before_filter :customer_find, :except =>[:loan_pending]
   def index
-    @loans = Loan.all
+    @loans = @customer.loans.all
 
     respond_to do |format|
       format.html # index.html.erb

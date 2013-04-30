@@ -24,7 +24,6 @@
         cuit: 'cuit '
         date_of_birth: 'Fecha de nacimiento'
         category: 'Categoria'
-
       user:
         username: "Nombre de usuario"
         password: "Password"
@@ -38,3 +37,8 @@
       phone_number: 'Telefonos'
       prompt_location: 'Seleccione una localidad'
       prompt_plans: 'Seleccione un plan'
+      new_customer: 'Nuevo Cliente'
+      show: 'Ver'
+      edit: 'Editar'
+      destroy: 'Eliminar'
+      loans: 'Comodatos'

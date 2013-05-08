@@ -12,8 +12,10 @@ $(document).ready(function(){
     $(this).before($(this).data('fields').replace(regexp, time))
     event.preventDefault();
     
-    
-  })
+  });
 
+  $('#lastname').autocomplete
+    source: $('#lastname').data('autocomplete-source')
+    //source: ['a', 'aab', 'ccs']
 
-});
+})

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130430150624) do
+ActiveRecord::Schema.define(:version => 20130508125722) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(:version => 20130430150624) do
     t.integer  "company_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
-    t.integer  "phones_id"
     t.integer  "plans_id"
   end
 
@@ -156,6 +155,23 @@ ActiveRecord::Schema.define(:version => 20130430150624) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "tickets", :force => true do |t|
+    t.string   "issue"
+    t.text     "message"
+    t.boolean  "status"
+    t.integer  "departament"
+    t.integer  "priority"
+    t.text     "reply"
+    t.integer  "user_id"
+    t.integer  "path_id"
+    t.integer  "customer_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "ancestry"
+  end
+
+  add_index "tickets", ["ancestry"], :name => "index_tickets_on_ancestry"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

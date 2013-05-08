@@ -1,5 +1,4 @@
 Ispweb::Application.routes.draw do
-
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
   resources :categories
   resources :equipment
@@ -16,6 +15,7 @@ Ispweb::Application.routes.draw do
     end
     resources :customers do
       resources :loans
+      resources :tickets
     end
     devise_for :users 
     get "users/index"
@@ -26,6 +26,7 @@ end
 
     match "models" => "models#index"
     match "loans" => "loans#loan_pending"
+    match "tickets"=>"tickets#all"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

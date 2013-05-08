@@ -5,7 +5,7 @@
 
   <div class="form-inputs">
     <%= f.input :equipment_id  do%>
-       <%=f.select :equipment_id, Equipment.all.map {|e|[e.mac, e.id]}, prompt: "Seleccione una mac"  %>
+       <%=f.select :equipment_id, Equipment.where(status:'STOCK').map {|e|[e.mac, e.id]}, prompt: "Seleccione una mac"  %>
     <% end %>
 
     <%= f.input :confirmation_loan %>

@@ -1,0 +1,19 @@
+<%= simple_form_for [@customer, @ticket] do |f| %>
+  <%= f.error_notification %>
+<%= f.hidden_field :parent_id %>
+  <div class="form-inputs">
+    <%= f.input :issue %>
+    <%= f.input :message, :input_html=> {:rows =>5} %>
+    <%= f.input :status %>
+    <%= f.input :departament %>
+    <%= f.input :priority %>
+    <%= f.input :reply %>
+    <%= f.input :user_id %>
+    <%= f.input :path_id %>
+    <%= f.input :customer_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

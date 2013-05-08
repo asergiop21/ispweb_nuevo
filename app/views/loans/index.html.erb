@@ -1,8 +1,7 @@
 <h1>Listing loans</h1>
-
+<h3><%= @customer.lastname + ", "+ @customer.name %></h3>
 <table class="table">
   <tr>
-    <th>Customer</th>
     <th>Equipment</th>
     <th>Status loan</th>
     <th>Confirmation loan</th>
@@ -16,7 +15,6 @@
 
 <% @loans.each do |loan| %>
   <tr>
-    <td><%= loan.customer.lastname + ", " + loan.customer.name %></td>
     <td><%= loan.equipment.mac + " - " + loan.equipment.model.name %></td>
     <td><%= loan.status_loan %></td>
     <td><%= loan.confirmation_loan %></td>

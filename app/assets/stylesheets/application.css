@@ -11,5 +11,6 @@
  *= require_self
  *= require twitter/bootstrap
  *= require customers
+*= require jquery/ui-custom
  *= require_tree .
  */

@@ -1,9 +1,8 @@
-<div class="span12">
-  
-<%= form_tag '', :method =>'get' do %>
-    <%= text_field_tag :lastname %>
-      <%= submit_tag "search" %>
-    <% end %>
+<%= simple_form_for '', :method =>'get' do |f| %>
+  <%= f.input :lastname, :label=> "Apellido", input_html: {data: {'autocomplete-field' => true, 'autocomplete-for' => '#customer_id'}}  %>
+            <%= submit_tag "search" %>
+                <% end %>
+
 <% if flash[:error] %>
   <li class="alert alert-error"><%= flash[:error]  %></li>
   <% end %>
@@ -12,40 +11,41 @@
   <% end %>
   
     <h1><%= t "customers.title" %></h1>
-<% if @customers %>
-  
-  <thead>
- <table class="table">
-  <tr>
-    <th><%= Customer.human_attribute_name(:name)   %></th>
-    <th><%= Customer.human_attribute_name(:lastname) %></th>
-    <th><%= Customer.human_attribute_name(:address) %></th>
-    <th><%= Customer.human_attribute_name(:neighborhood) %></th>
-    <th><%= Customer.human_attribute_name(:reference_direction) %></th>
-    <th><%= Customer.human_attribute_name(:description) %></th>
-    <th><%= Customer.human_attribute_name(:category) %></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @customers.each do |customer| %>
-  <tr>
-    <td><%= customer.name %></td>
-    <td><%= customer.lastname %></td>
-    <td><%= customer.address %></td>
-    <td><%= customer.neighborhood %></td>
-    <td><%= customer.reference_direction %></td>
-    <td><%= customer.description %></td>
-    <td><%= customer.category %></td>
-    <td><%= link_to t('view.customers.show'), customer %></td>
-    <td><%= link_to t('view.customers.edit'), edit_customer_path(customer) %></td>
-    <td><%= link_to t('view.customers.destroy'), customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <td><%= link_to t('view.customers.loans'), customer_loans_path(customer.id) %></td>
-  </tr>
-  <% end %>
-</table>
+<% if @customers %>
+  <thead>
+   <table class="table">
+    <tr>
+      <th><%= Customer.human_attribute_name(:name)   %></th>
+      <th><%= Customer.human_attribute_name(:lastname) %></th>
+      <th><%= Customer.human_attribute_name(:address) %></th>
+      <th><%= Customer.human_attribute_name(:neighborhood) %></th>
+      <th><%= Customer.human_attribute_name(:reference_direction) %></th>
+      <th><%= Customer.human_attribute_name(:description) %></th>
+      <th><%= Customer.human_attribute_name(:category) %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.name %></td>
+      <td><%= customer.lastname %></td>
+      <td><%= customer.address %></td>
+      <td><%= customer.neighborhood %></td>
+      <td><%= customer.reference_direction %></td>
+      <td><%= customer.description %></td>
+      <td><%= customer.category %></td>
+      <td><%= link_to t('view.customers.show'), customer %></td>
+      <td><%= link_to t('view.customers.edit'), edit_customer_path(customer) %></td>
+      <td><%= link_to t('view.customers.destroy'), customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to t('view.customers.loans'), customer_loans_path(customer.id) %></td>
+      <td><%= link_to "Tickets", customer_tickets_path(customer.id) %></td>
+    </tr>
+    <% end %>
+  </table>
   </thead>
 <% end %>
 <br />
@@ -53,5 +53,4 @@
 <% ##if can? :new, @customers %>
   <%= link_to t('view.customers.new_customer'), new_customer_path %>
   <% #end %>
-  </div>
-  </div>
+</div>

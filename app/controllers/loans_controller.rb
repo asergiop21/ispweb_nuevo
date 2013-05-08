@@ -1,7 +1,7 @@
 class LoansController < ApplicationController
   # GET /loans
   # GET /loans.json
-before_filter :customer_find, :except =>[:loan_pending]
+before_filter :load_customers, :except =>[:loan_pending]
   def index
     @loans = @customer.loans.all
 
@@ -81,10 +81,10 @@ before_filter :customer_find, :except =>[:loan_pending]
       format.json { head :no_content }
     end
   end
-  def customer_find
+  def load_customers
     @customer = Customer.find(params[:customer_id])
   end
-
+ 
   def loan_pending
     @loans = Loan.where(confirmation_loan: false)
     respond_to do |format|

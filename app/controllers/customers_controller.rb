@@ -5,15 +5,15 @@ before_filter :authenticate_user!, :except => [:some_action_without_auth]
 load_and_authorize_resource :only =>[:show]
 
 def index
-  
-  @lastname = params[:lastname]
-  
+    @lastname = params[:lastname]
   if @lastname != '' && @lastname != nil
       @customers = Customer.where("lastname =?", @lastname)
-  else
-      @customers = Customer.all
+ else
+    @customers = Customer.all
   end
-    respond_to do |format|
+  
+
+  respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @customers }
     end
@@ -49,7 +49,7 @@ def show
   # POST /customers
   # POST /customers.json
   def create
-    @customer = Customer.new(params[:customer])
+    @customer = Customer.new(params[:customer].merge(:user_id => current_user.id))
 
     respond_to do |format|
       if @customer.save

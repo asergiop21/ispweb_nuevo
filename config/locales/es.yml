@@ -18,3 +18,12 @@
   errors:
     messages:
       taken: "ya está en uso"
+      wrong_length: "Cantidad de caracteres máximo %{count}"
+      not_a_number: "No es un numero"
+  helpers:
+    submit:
+      create: 'Crear %{model}'
+      update: 'Actualizar %{model}'
+      submit: 'Guardar %{model}'
+
+  

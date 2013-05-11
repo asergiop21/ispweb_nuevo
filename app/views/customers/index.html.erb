@@ -10,7 +10,7 @@
   <li class="alert alert-success"><%= notice  %></li>
   <% end %>
   
-    <h1><%= t "customers.title" %></h1>
+    <h1><%= t "customers.listing.title" %></h1>
 
 <% if @customers %>
   <thead>
@@ -38,9 +38,9 @@
       <td><%= customer.reference_direction %></td>
       <td><%= customer.description %></td>
       <td><%= customer.category %></td>
-      <td><%= link_to t('view.customers.show'), customer %></td>
-      <td><%= link_to t('view.customers.edit'), edit_customer_path(customer) %></td>
-      <td><%= link_to t('view.customers.destroy'), customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to t('labels.show'), customer %></td>
+      <td><%= link_to t('labels.edit'), edit_customer_path(customer) %></td>
+      <td><%= link_to t('labels.destroy'), customer, method: :delete, data: { confirm: t('labels.are_you_sure') } %></td>
       <td><%= link_to t('view.customers.loans'), customer_loans_path(customer.id) %></td>
       <td><%= link_to "Tickets", customer_tickets_path(customer.id) %></td>
     </tr>

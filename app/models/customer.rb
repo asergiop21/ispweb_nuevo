@@ -5,22 +5,31 @@ class Customer < ActiveRecord::Base
   #Relaciones
   has_many :phones, :dependent => :destroy
   has_many :loans
-  has_many :tickets
+  has_many :tickets, :dependent => :destroy
   belongs_to :user
   #Validaciones
   validates :name, :lastname, :address, :date_of_birth, :dni, :category,  :location_id, :plans_id, presence: true
   validates :name, uniqueness: {scope: :lastname}, allow_nil: true, allow_blank: true
-
+  validate :phone_count
+  validates :name, :lastname, :address, :neighborhood, :reference_direction, :email, length: {maximum: 255}, allow_nil: true, allow_blank: true 
+  validates :dni, length: {is: 8}, numericality: true
+  validates :cuit, length: {is: 13}, numericality: true
+  validates :email,   
+            :uniqueness => true,   
+            :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
   
+  accepts_nested_attributes_for :phones, :reject_if => lambda {|a| a[:phone_number].blank? }, allow_destroy: true
+
   CATEGORY= %w[HOGAR EMPRESA]
 
-  accepts_nested_attributes_for :phones, :reject_if => lambda {|a| a[:phone_number].blank?}, allow_destroy: true
-
-
- def self.search (q=nil)
-     self.connection.execute(sanitize_sql(["SELECT * FROM customers "]))
-  
+ def phone_count
+   if self.phones.size < 1
+      errors.add(:base, "problemas")
+   end
  end
 
+ def self.search (q=nil)
+     self.connection.execute(sanitize_sql(["SELECT * FROM customers"]))
+ end
 
 end

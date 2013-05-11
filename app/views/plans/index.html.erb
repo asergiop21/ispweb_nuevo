@@ -2,13 +2,13 @@
 
 <table class="table">
   <tr>
-    <th>Name</th>
-    <th>Price</th>
-    <th>Upload speed</th>
-    <th>Download speed</th>
-    <th>Remove</th>
-    <th>Price surcharges1</th>
-    <th>Proce sircharges2</th>
+    <th><%= Plan.human_attribute_name(:name) %></th>
+    <th><%= Plan.human_attribute_name(:price) %></th>
+    <th><%= Plan.human_attribute_name(:upload_speed) %></th>
+    <th><%= Plan.human_attribute_name(:download_speed) %></th>
+    <th><%= Plan.human_attribute_name(:remove_plan) %></th>
+    <th><%= Plan.human_attribute_name(:price_surcharges1) %></th>
+    <th><%= Plan.human_attribute_name(:price_surcharges2) %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,13 +23,12 @@
     <td><%= plan.remove %></td>
     <td><%= plan.price_surcharges1 %></td>
     <td><%= plan.price_surcharges2 %></td>
-    <td><%= link_to 'Show', plan %></td>
-    <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
-    <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('labels.show'), plan %></td>
+    <td><%= link_to t('labels.edit'), edit_plan_path(plan) %></td>
+    <td><%= link_to t('labels.destroy'), plan, method: :delete, data: { confirm: t('labels.are_you_sure') } %></td>
   </tr>
 <% end %>
 </table>
-
 <br />
 
-<%= link_to 'New Plan', new_plan_path %>
+<%= link_to t('view.plans.new_plan'), new_plan_path %>

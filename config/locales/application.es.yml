@@ -1,14 +1,35 @@
 'es':
   customers:
-    title: "Consulta de clientes"
+    new:
+      title: 'Nuevo Cliente'
+    listing:
+      title: 'Consulta de Clientes'
+  locations:
+    new:
+      title:  'Nueva Localidad'
+    listing:
+      title: 'Consulta de Localidades'
+  plan:
+    new:
+      title: 'Nuevo Plan'
+
+
+
+
   devise:
-        sign_in: "Registrarse"
+        sign_in: 'Registrarse'
   activerecord:
     errors:
       messages:
-        blank: "no puede quedar en blanco"
+        blank: 'No puede quedar en blanco'
+      models:
+        customer:
+          attributes:
+            email:
+              invalid: 'No es un mail valido'
     models:
       customer: 'Clientes'
+      location: 'Localidades'
     attributes:
       customer:
         name: 'Nombre'
@@ -25,20 +46,42 @@
         date_of_birth: 'Fecha de nacimiento'
         category: 'Categoria'
       user:
-        username: "Nombre de usuario"
-        password: "Password"
-        remember_me: "Recuerdame" 
-        sign_in: "Registrarse" 
-        languaje: "Idioma"
+        username: 'Nombre de usuario'
+        password: 'Password'
+        remember_me: 'Recuerdame"'
+        sign_in: 'Registrarse'
+        languaje: 'Idioma'
+      location:
+        name: 'Nombre'
+        departament: 'Departamento'
+        zipcode: 'Código Postal'
+        province: 'Provincia'
+        country: 'País'
+      plan:
+        name: 'Nombre'
+        price: 'Precio' 
+        upload_speed: 'Velocidad de subida'
+        download_speed: 'Velocidad de Bajada'
+        remove_plan: 'Plan Inhabilitado'
+        price_surcharges1: 'Recargos 1' 
+        price_surcharges2: 'Recargos 2' 
+
   view:
     customers:
-      remove: "Eliminar"
+      remove_phone: 'Eliminar'
       add_phones: 'Agregar Telefonos'
       phone_number: 'Telefonos'
       prompt_location: 'Seleccione una localidad'
       prompt_plans: 'Seleccione un plan'
       new_customer: 'Nuevo Cliente'
-      show: 'Ver'
-      edit: 'Editar'
-      destroy: 'Eliminar'
       loans: 'Comodatos'
+    locations:
+      new_location: 'Nueva Localidad'
+    plans: 
+      new_plan: 'Nuevo Plan' 
+    
+  labels:
+    show: 'Ver'
+    edit: 'Editar'
+    destroy: 'Eliminar'
+    are_you_sure: '¿Está Seguro?' 

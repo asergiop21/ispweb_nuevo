@@ -1,5 +1,19 @@
 <h1>Listing tickets</h1>
 <h3>Apellido y Nombre: <%= @customer.lastname + ", "+ @customer.name %></h3>
+<table class="table">
+  <tr>
+    <th>Issue</th>
+    <th>Date</th>
+    <th>Status</th>
+    <th>Departament</th>
+    <th>Priority</th>
+    <th>User</th>
+    <th>Subticket</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <%= nested_tickets @tickets.arrange(:order => :created_at) %>
 
-<%= nested_tickets @tickets.arrange(:order => :created_at) %>
+</table>
 <%= link_to 'New Ticket', new_customer_ticket_path %>

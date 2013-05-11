@@ -1,37 +1,19 @@
-<%= form_for(@location) do |f| %>
-  <% if @location.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
-
-      <ul>
-      <% @location.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= simple_form_for @location, :defaults => {:input_html => {:class =>'span10'}} do |f| %>
+  <div class="container">
+    <div class="form-inputs">
+      <div class="row-fluid">
+        <%= f.error_notification %>
+         <div class="span6">
+              <%=f.input :name  %>
+              <%=f.input :departament  %>
+              <%=f.input :zipcode  %>
+              <%=f.input :province  %>
+              <%=f.country_select :country  %>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :departament %><br />
-    <%= f.text_field :departament %>
-  </div>
-  <div class="field">
-    <%= f.label :zipcode %><br />
-    <%= f.text_field :zipcode %>
-  </div>
-  <div class="field">
-    <%= f.label :province %><br />
-    <%= f.text_field :province %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn btn-primary'  %>
   </div>
 <% end %>

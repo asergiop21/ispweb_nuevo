@@ -1,4 +1,4 @@
-<%= simple_form_for(@plan) do |f| %>
+<%= simple_form_for @plan, :defaults => {:input_html => {:class => 'span10'}} do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -12,6 +12,6 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => 'btn btn-prymary' %>
   </div>
 <% end %>

@@ -1,7 +1,9 @@
 $(document).ready(function(){
-  $('.remove_f').click(function(event){
-  $(this).prev('input[type=hidden]').val('1')
-  $(this).closest('fieldset').hide()
+  
+  $('.remove_fields').click(function(event){
+    $(this).prev('input[type=hidden]').val('1')
+
+    $(this).closest('fieldset').hide()
   event.preventDefault();
   });
 
@@ -13,9 +15,4 @@ $(document).ready(function(){
     event.preventDefault();
     
   });
-
-  $('#lastname').autocomplete
-    source: $('#lastname').data('autocomplete-source')
-    //source: ['a', 'aab', 'ccs']
-
 })

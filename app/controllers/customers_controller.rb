@@ -6,10 +6,8 @@ load_and_authorize_resource :only =>[:show]
 
 def index
     @lastname = params[:lastname]
-  if @lastname != '' && @lastname != nil
-      @customers = Customer.where("lastname =?", @lastname)
- else
-    @customers = Customer.all
+  if @lastname.present?
+      @customers = Customer.where("lastname like ?", @lastname+'%')
   end
   
 

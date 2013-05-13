@@ -2,24 +2,29 @@
   date:
     month_names:
       - ~
-      - enero
-      - febrero
-      - marzo
-      - abril
-      - mayo
-      - junio
-      - julio
-      - agosto
-      - septiembre
-      - octubre
-      - noviembre
-      - diciembre
+      - Enero
+      - Febrero
+      - Marzo
+      - Abril
+      - Mayo
+      - Junio
+      - Julio
+      - Agosto
+      - Septiembre
+      - Octubre
+      - Noviembre
+      - Diciembre
 
   errors:
     messages:
-      taken: "ya está en uso"
-      wrong_length: "Cantidad de caracteres máximo %{count}"
-      not_a_number: "No es un numero"
+      taken: 'Ya está en uso'
+      wrong_length: 'Cantidad de caracteres máximo %{count}'
+      not_a_number: 'No es un numero'
+      not_an_integer: 'Debe ser un entero'
+      too_long: 'Es demasiado largo (%{count} caracteres máximo)'
+
+
+
   helpers:
     submit:
       create: 'Crear %{model}'

@@ -40,7 +40,7 @@ class SuppliersController < ApplicationController
   # POST /suppliers
   # POST /suppliers.json
   def create
-    @supplier = Supplier.new(params[:supplier])
+    @supplier = Supplier.new(params[:supplier].merge(:user_id => current_user.id))
 
     respond_to do |format|
       if @supplier.save

@@ -1,4 +1,4 @@
-<h1>Listing plans</h1>
+<h1><%= t'plans.listing.title' %></h1>
 
 <table class="table">
   <tr>
@@ -6,7 +6,7 @@
     <th><%= Plan.human_attribute_name(:price) %></th>
     <th><%= Plan.human_attribute_name(:upload_speed) %></th>
     <th><%= Plan.human_attribute_name(:download_speed) %></th>
-    <th><%= Plan.human_attribute_name(:remove_plan) %></th>
+    <th><%= Plan.human_attribute_name(:remove) %></th>
     <th><%= Plan.human_attribute_name(:price_surcharges1) %></th>
     <th><%= Plan.human_attribute_name(:price_surcharges2) %></th>
     <th></th>

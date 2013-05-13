@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   validates_presence_of :username
   has_and_belongs_to_many :role
   has_many :customer
+  has_many :plan
+  has_many :supplier
 
   def role?(role)
     return !!self.role.find_by_role(role.to_s.camelize)

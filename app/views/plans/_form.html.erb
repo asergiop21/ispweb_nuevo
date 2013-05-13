@@ -1,17 +1,25 @@
 <%= simple_form_for @plan, :defaults => {:input_html => {:class => 'span10'}} do |f| %>
-  <%= f.error_notification %>
-
+<div class ="container">
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :price %>
-    <%= f.input :upload_speed %>
-    <%= f.input :download_speed %>
-    <%= f.input :remove %>
-    <%= f.input :price_surcharges1 %>
-    <%= f.input :price_surcharges2 %>
-  </div>
+     <div class ="row-fluid">
+        <%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn btn-prymary' %>
+        <div class="span5">
+          <%= f.input :name %>
+          <%= f.input :price %>
+          <%= f.input :price_surcharges1 %>
+          <%= f.input :price_surcharges2 %>
+        </div>
+        <div class="span5">  
+          <%= f.input :upload_speed %>
+          <%= f.input :download_speed %>
+          <%= f.input :remove %>
+        </div>
+     </div>
+        <div class="form-actions">
+          <%= f.button :submit, :class => 'btn btn-primary' %>
+        </div>
+
   </div>
+</div>
 <% end %>

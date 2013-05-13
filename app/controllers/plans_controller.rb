@@ -40,7 +40,7 @@ class PlansController < ApplicationController
   # POST /plans
   # POST /plans.json
   def create
-    @plan = Plan.new(params[:plan])
+    @plan = Plan.new(params[:plan].merge(:user_id => current_user.id))
 
     respond_to do |format|
       if @plan.save

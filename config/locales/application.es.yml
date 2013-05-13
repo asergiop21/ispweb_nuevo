@@ -9,9 +9,17 @@
       title:  'Nueva Localidad'
     listing:
       title: 'Consulta de Localidades'
-  plan:
+  plans:
     new:
       title: 'Nuevo Plan'
+    listing: 
+      title: 'Consulta de Planes'
+
+  suppliers:
+    new:
+      title: 'Nuevo Proveedor'
+    listing: 
+      title: 'Consulta de Proveedores'
 
 
 
@@ -34,9 +42,9 @@
       customer:
         name: 'Nombre'
         lastname: 'Apellido'
-        address: 'Direccion'
+        address: 'Dirección'
         neighborhood: 'Barrio'
-        reference_direction: 'Direccion de referencia'
+        reference_direction: 'Dirección de referencia'
         email: 'email'
         dni: 'dni'
         location_id: 'Localidad'
@@ -62,9 +70,15 @@
         price: 'Precio' 
         upload_speed: 'Velocidad de subida'
         download_speed: 'Velocidad de Bajada'
-        remove_plan: 'Plan Inhabilitado'
+        remove: 'Plan Habilitado' #Plan Habilitado o Deshabilitado
         price_surcharges1: 'Recargos 1' 
-        price_surcharges2: 'Recargos 2' 
+        price_surcharges2: 'Recargos 2'
+      supplier:
+        name: 'Nombre'
+        address: 'Dirección'
+        locality: 'Localidad'
+        user: 'Usuario'
+        zipcode: 'Código Postal' 
 
   view:
     customers:
@@ -78,7 +92,9 @@
     locations:
       new_location: 'Nueva Localidad'
     plans: 
-      new_plan: 'Nuevo Plan' 
+      new_plan: 'Nuevo Plan'
+    suppliers:
+      new_supplier: 'Nuevo Proveedor' 
     
   labels:
     show: 'Ver'

@@ -9,12 +9,14 @@
       </ul>
     </div>
   <% end %>
-  <h2>Rol: <%= @roles.role %></h2>
+  <h2>Rollll: <%= @roles.role %></h2>
+
+  <div class="span5">
+
+
+  </div>
     
-  <% Permission.all do |p| %>
-    <%= f.r :permission_id, p.id %>
-    <%= f.label p.name %>
-  <% end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

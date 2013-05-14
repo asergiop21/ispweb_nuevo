@@ -18,7 +18,7 @@ Ispweb::Application.routes.draw do
       resources :tickets
     end
     devise_for :users 
-    get "users/index"
+ #   get "users#index"
     match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
     match '', to: redirect("/#{I18n.default_locale}")
 end
@@ -27,6 +27,7 @@ end
     match "models" => "models#index"
     match "loans" => "loans#loan_pending"
     match "tickets"=>"tickets#all"
+    match "users" => "users#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -46,10 +46,6 @@ before_filter :cargar_role
 
     @roles_and_permission = @roles.roles_and_permission.new(params[:roles_and_permission])
     
-    
-
-
-
     respond_to do |format|
       if @roles_and_permission.save
         format.html { redirect_to [@roles, @roles_and_permission ], notice: 'Roles and permission was successfully created.' }

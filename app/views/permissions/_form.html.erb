@@ -11,11 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
+<%= Permission.map do |p| %>
+    <%= p.input :name %><br />
+    
+  <% end %>
+    
+    <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>

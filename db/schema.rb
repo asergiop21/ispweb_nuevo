@@ -42,9 +42,10 @@ ActiveRecord::Schema.define(:version => 20130508125722) do
     t.integer  "plans_id"
   end
 
-  create_table "equipment", :force => true do |t|
+  create_table "equipments", :force => true do |t|
     t.string   "mac"
     t.text     "comment"
+    t.integer  "category_id"
     t.integer  "model_id"
     t.integer  "supplier_id"
     t.datetime "created_at",  :null => false
@@ -76,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20130508125722) do
 
   create_table "makes", :force => true do |t|
     t.string   "name"
-    t.text     "comment"
+    t.string   "comment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -133,12 +134,12 @@ ActiveRecord::Schema.define(:version => 20130508125722) do
   create_table "roles_and_permissions", :force => true do |t|
     t.string   "scope"
     t.integer  "role_id"
-    t.integer  "permission_id"
+    t.integer  "permmision_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
-  add_index "roles_and_permissions", ["permission_id"], :name => "index_roles_and_permissions_on_permmision_id"
+  add_index "roles_and_permissions", ["permmision_id"], :name => "index_roles_and_permissions_on_permmision_id"
   add_index "roles_and_permissions", ["role_id"], :name => "index_roles_and_permissions_on_role_id"
 
   create_table "roles_users", :id => false, :force => true do |t|

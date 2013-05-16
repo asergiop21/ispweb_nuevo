@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Usuario por defecto
+user = User.create!(
+  name: 'Administrator',
+  lastname: 'Administrator',
+  username: 'admin',
+  email: 'admin@ispweb.com',
+#  language: 'es',
+  password: 'admin123',
+  password_confirmation: 'admin123',
+ # admin: true,
+ # enable: true
+)
+
+role = Role.create!(
+	role: 'Admin'
+
+)

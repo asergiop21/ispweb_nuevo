@@ -14,12 +14,10 @@
     <td><%= u.lastname %></td>
     <td><%= u.email %></td>
     <td><%= u.username %></td>
-    <td><%= link_to "Edit", edit_user_registration_path %></td>
+    <td><%= link_to "Edit", edit_user_registration_path() %></td>
   </tr>
  <% end %>
  </table>
 
-<%= link_to "new user", new_registration_path(resource_name) %>
-
+<%= link_to "new user", new_registration_path(:user)%>
 </div>
-

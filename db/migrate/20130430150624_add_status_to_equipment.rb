@@ -1,6 +1,6 @@
 class AddStatusToEquipment < ActiveRecord::Migration
   def change
-    add_column :equipment, :status, :string
-    remove_column :equipment, :state 
+    add_column :equipments, :status, :string
+    remove_column :equipments, :state 
   end
 end

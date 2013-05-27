@@ -13,13 +13,13 @@ user = User.create!(
   username: 'admin',
   email: 'admin@ispweb.com',
 #  language: 'es',
-  password: 'admin123',
-  password_confirmation: 'admin123',
+  password: 'admin1',
+  password_confirmation: 'admin1',
  # admin: true,
  # enable: true
 )
 
 role = Role.create!(
-	role: 'Admin'
+	role: 'admin'
 
 )

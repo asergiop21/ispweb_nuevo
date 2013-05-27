@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130508125722) do
+ActiveRecord::Schema.define(:version => 20130527133545) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -161,8 +161,8 @@ ActiveRecord::Schema.define(:version => 20130508125722) do
     t.string   "issue"
     t.text     "message"
     t.boolean  "status"
-    t.integer  "departament"
-    t.integer  "priority"
+    t.integer  "role_id"
+    t.string   "priority"
     t.text     "reply"
     t.integer  "user_id"
     t.integer  "path_id"

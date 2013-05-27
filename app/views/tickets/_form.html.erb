@@ -1,19 +1,22 @@
 <%= simple_form_for [@customer, @ticket] do |f| %>
-  <%= f.error_notification %>
-<%= f.hidden_field :parent_id %>
-  <div class="form-inputs">
-    <%= f.input :issue %>
-    <%= f.input :message, :input_html=> {:rows =>5} %>
-    <%= f.input :status %>
-    <%= f.input :departament %>
-    <%= f.input :priority %>
-    <%= f.input :reply %>
-    <%= f.input :user_id %>
-    <%= f.input :path_id %>
-    <%= f.input :customer_id %>
-  </div>
-
+<div class="container">
+	  <div class="form-inputs">
+      <div class="row-fluid">
+        <div class="span5"> 
+            <%= f.error_notification %>
+          	<%= f.hidden_field :parent_id %>
+	          <%= f.input :issue %>
+            <%= f.input :message, :input_html=>{:rows =>5, :cols=>60}, :class=>'span5' %>
+            <%= f.input :role_id do %>
+            <%= f.select :role_id,  Role.all.map {|l|[l.role, l.id]}, prompt: 'Seleccione el Departamento' %>
+            <% end %>
+            <%= f.select :priority, Ticket::PRIORITY %>
+            <%= f.input :reply, :input_html=>{:rows =>5, :cols=>60} %>
+            <%= f.input :status %>
   <div class="form-actions">
     <%= f.button :submit %>
+  </div>
+  </div>
+  </div>
   </div>
 <% end %>

@@ -50,12 +50,12 @@ class TicketsController < ApplicationController
   # POST /tickets.json
   def create
     
-    @ticket = @customer.tickets.new(params[:ticket])
+    @ticket = @customer.tickets.new(params[:ticket].merge(:user_id => current_user.id))
 
     respond_to do |format|
       if @ticket.save
-        format.html { redirect_to [@customer, @ticket], notice: 'Ticket was successfully created.' }
-        format.json { render json: [@customer, @ticket], status: :created, location: @ticket }
+        format.html { redirect_to customer_tickets_path(@customer), notice: 'Ticket was successfully created.' }
+        format.json { render json: [@customer], status: :created, location: @ticket }
       else
         format.html { render action: "new" }
         format.json { render json: @ticket.errors, status: :unprocessable_entity }

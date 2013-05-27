@@ -8,7 +8,9 @@ def index
     @lastname = params[:lastname]
   if @lastname.present?
       @customers = Customer.where("lastname like ?", @lastname+'%')
-  end
+  else
+    @customers = Customer.all 
+ end
   
 
   respond_to do |format|

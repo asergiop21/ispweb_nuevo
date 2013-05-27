@@ -13,7 +13,7 @@ class Customer < ActiveRecord::Base
   validate :phone_count
   validates :name, :lastname, :address, :neighborhood, :reference_direction, :email, length: {maximum: 255}, allow_nil: true, allow_blank: true 
   validates :dni, length: {is: 8}, numericality: true
-  validates :cuit, length: {is: 13}
+  validates :cuit, length: {is: 13}, allow_nil: true, allow_blank: true
   validates :email,   
             :uniqueness => true,   
             :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }

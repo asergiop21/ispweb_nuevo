@@ -1,14 +1,15 @@
-<h1>Listing tickets</h1>
+<h1><%= t('ticket.listing.title')%></h1>
 <h3>Apellido y Nombre: <%= @customer.lastname + ", "+ @customer.name %></h3>
 <table class="table">
   <tr>
-    <th>Issue</th>
-    <th>Date</th>
-    <th>Status</th>
-    <th>Departament</th>
-    <th>Priority</th>
-    <th>User</th>
-    <th>Subticket</th>
+    <th><%= Ticket.human_attribute_name('id') %></th>
+    <th><%= Ticket.human_attribute_name('issue') %></th>
+    <th><%= Ticket.human_attribute_name('date')%></th>
+    <th><%= Ticket.human_attribute_name('status') %></th>
+    <th><%= Ticket.human_attribute_name('departament')%></th>
+    <th><%= Ticket.human_attribute_name('priority')%></th>
+    <th><%= Ticket.human_attribute_name('usuario') %></th>
+    <th><%= Ticket.human_attribute_name('subticket')%></th>
     <th></th>
     <th></th>
     <th></th>

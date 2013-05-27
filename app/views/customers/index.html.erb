@@ -2,7 +2,6 @@
   <%= f.input :lastname, :label=> "Apellido", input_html: {data: {'autocomplete-field' => true, 'autocomplete-for' => '#customer_id'}}  %>
             <%= submit_tag "search" %>
                 <% end %>
-
 <% if flash[:error] %>
   <li class="alert alert-error"><%= flash[:error]  %></li>
   <% end %>

@@ -20,12 +20,14 @@
       title: 'Nuevo Proveedor'
     listing: 
       title: 'Consulta de Proveedores'
-
-
-
+  ticket:
+    new:
+      title: 'Nuevo Ticket'
+    listing:
+      title: 'Consulta de Ticket'
 
   devise:
-        sign_in: 'Registrarse'
+        sign_in: 'Inicial Session'
   activerecord:
     errors:
       messages:
@@ -79,6 +81,17 @@
         locality: 'Localidad'
         user: 'Usuario'
         zipcode: 'Código Postal' 
+      ticket:
+        id: '#'
+        issue: 'Asunto'
+        date: 'Fecha'
+        message: 'Mensaje'
+        departament: 'Área'
+        priority: 'Prioridad'
+        Reply: 'Respuesta'
+        status: 'Estado'
+        user: 'Usuario'
+        subticket: 'Subticket'
 
   view:
     customers:

@@ -1,13 +1,16 @@
 
-<h1>Listing tickets</h1>
-<h3>Apellido y Nombre: <%= @customer.lastname + ", "+ @customer.name %></h3>
-
-<div>   <%= nested_sub_tickets @ticket.path.arrange() %></div>
+<div> <% nested_sub_tickets @ticket.path.arrange() %></div>
+  <div class="label label-info span8">
+        <h2>#<%= @ticket.id %>
+        [ <%= @ticket.issue %> ] </h2>
+        <h4>Cliente: <%= @customer.lastname + ", "+ @customer.name %></h4>
+        <pre><%= @ticket.message%></pre>
+        <h4 class="btn"><%= link_to "Responder", "#" %></h4>
+</div>
 <table class="table">
   <tr>
     <th>Issue</th>
     <th>Date</th>
-    <th>Message</th>
     <th>Status</th>
     <th>Departament</th>
     <th>Priority</th>
@@ -20,4 +23,3 @@
   <%= nested_sub_tickets @ticket.children.arrange() %>
 
 </table>
-

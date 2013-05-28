@@ -27,6 +27,7 @@ end
     match "models" => "models#index"
     match "loans" => "loans#loan_pending"
     match "tickets"=>"tickets#all"
+    match "tickets_reply"=>"tickets#reply"
     match "users" => "users#index"
 
 

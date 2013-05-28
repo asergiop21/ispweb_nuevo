@@ -12,7 +12,7 @@
             <% end %>
             <%= f.select :priority, Ticket::PRIORITY %>
             <%= f.input :reply, :input_html=>{:rows =>5, :cols=>60} %>
-            <%= f.input :status %>
+            <%= f.input :status, :label =>'Cerrar Ticket' %>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

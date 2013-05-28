@@ -5,7 +5,7 @@
         [ <%= @ticket.issue %> ] </h2>
         <h4>Cliente: <%= @customer.lastname + ", "+ @customer.name %></h4>
         <pre><%= @ticket.message%></pre>
-        <h4 class="btn"><%= link_to "Responder", "#" %></h4>
+        <h4 class="btn"><%= link_to "Responder", edit_customer_ticket_path(@customer.id, @ticket) %></h4>
 </div>
 <table class="table">
   <tr>

@@ -1,0 +1,18 @@
+<%= simple_form_for [@customer, @ticket] do |f| %>
+<div class="container">
+	  <div class="form-inputs">
+      <div class="row-fluid">
+        <div class="span12"> 
+            <%= f.error_notification %>
+          	<%= f.hidden_field :parent_id %>
+            <%= f.input :reply, :input_html=>{:rows =>5, :cols=>60} %>
+            <%= f.input :status %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+
+  </div>
+  </div>
+  </div>
+<% end %>

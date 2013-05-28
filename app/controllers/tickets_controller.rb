@@ -92,7 +92,7 @@ class TicketsController < ApplicationController
   end
 
   def all
-    @tickets = Ticket.where(status: false )
+    @tickets = Ticket.where(role_id: current_user.role , status: false   )
 
     respond_to do |format|
       format.html # index.html.erb

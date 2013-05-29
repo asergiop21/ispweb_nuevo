@@ -9,7 +9,6 @@
     <th>Priority</th>
     <th>Reply</th>
     <th>User</th>
-    <th>Path</th>
     <th>Customer</th>
     <th></th>
     <th></th>
@@ -21,13 +20,12 @@
     <td><%= ticket.id %></td>
     <td><%= ticket.issue %></td>
     <td><%= ticket.message %></td>
-    <td><%= ticket.status %></td>
+    <td><%= ticket.status? ? 'Cerrado': 'Pendiente' %></td>
     <td><%= ticket.role.role %></td>
     <td><%= ticket.priority %></td>
     <td><%= ticket.reply %></td>
     <td><%= ticket.user_id %></td>
-    <td><%= ticket.path_id %></td>
-    <td><%= ticket.customer_id %></td>
+    <td><%= ticket.customer.lastname + ", "+ ticket.customer.name %></td>
   </tr>
 <% end %>
 </table>

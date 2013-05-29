@@ -1,0 +1,21 @@
+<%= simple_form_for(@user) do |f| %>
+<div class="span12">
+    <div class="span6">
+      <%= f.input :email, :autofocus => true %>
+      <%= f.input :username, :autofocus => true %>
+      <%= f.input :name, :autofocus => true %>
+      <%= f.input :lastname, :autofocus => true %>
+      <%= f.label :lenguaje %>
+        <ul>
+          <li><%= link_to_unless_current "English", locale: "en" %></li>
+          <li><%= link_to_unless_current "spanish", locale: "es" %></li>
+      </ul>
+    </div>
+      <div class="span3">
+    <%= f.association :role    %>
+  </div>
+    </div>
+    </div>
+</div>
+  <div><%= f.submit "Update" %></div>
+<% end %>

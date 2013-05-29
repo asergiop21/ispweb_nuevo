@@ -13,7 +13,7 @@
     <td><%= u.lastname %></td>
     <td><%= u.email %></td>
     <td><%= u.username %></td>
-    <td><%= link_to "Edit", edit_user_registration_path() %></td>
+    <td><%= link_to "Edit", edit_user_path(u.id) %></td>
   </tr>
  <% end %>
  </table>

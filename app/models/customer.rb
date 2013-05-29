@@ -1,14 +1,16 @@
 class Customer < ActiveRecord::Base
   #Atributos
-  attr_accessible :address, :bar_code, :date_of_birth, :category, :cuit, :description, :dni, :email, :lastname, :name, :neighborhood, :reference_direction, :removed, :phones_attributes, :location_id, :plans_id, :user_id
+  attr_accessible :address, :bar_code, :date_of_birth, :category, :cuit, :description, :dni, :email, :lastname, :name, :neighborhood, :reference_direction, :removed, :phones_attributes, :location_id, :plan_id, :user_id
 
   #Relaciones
   has_many :phones, :dependent => :destroy
   has_many :loans
   has_many :tickets, :dependent => :destroy
   belongs_to :user
+  belongs_to :plan
+  belongs_to :location
   #Validaciones
-  validates :name, :lastname, :address, :date_of_birth, :dni, :category,  :location_id, :plans_id, presence: true
+  validates :name, :lastname, :address, :date_of_birth, :dni, :category,  :location_id, :plan_id, presence: true
   validates :name, uniqueness: {scope: :lastname}, allow_nil: true, allow_blank: true
   validate :phone_count
   validates :name, :lastname, :address, :neighborhood, :reference_direction, :email, length: {maximum: 255}, allow_nil: true, allow_blank: true 

@@ -1,6 +1,6 @@
 <div class="span12">
 <% if flash[:error] %>
-  <li class="alert alert-error"><%= flash[:error]  %></li>
+  <li class="alert alert-error"><%= flash[:error] %></li>
   <% end %>
 <h2><%= t"devise.sign_in" %></h2>
 
@@ -19,9 +19,9 @@
           <li><%= link_to_unless_current "English", locale: "en" %></li>
           <li><%= link_to_unless_current "spanish", locale: "es" %></li>
       </ul>
-	<% end %>
+<% end %>
 </div>
 <div class="span4">
-		<h2>Registrarse</h2>
+<h2>Registrarse</h2>
 </div>
-	</div>
+</div>

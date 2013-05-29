@@ -7,7 +7,7 @@ class Plan < ActiveRecord::Base
   validates :price, :price_surcharges1, :price_surcharges2, numericality: true, allow_blank: true, allow_nil: true
   validates :price, :price_surcharges1, :price_surcharges2, length:{maximum: 8}
 
-
+  has_many :customer
   belongs_to :user
 
 end

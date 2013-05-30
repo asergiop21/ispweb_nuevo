@@ -20,7 +20,7 @@
     <td><%= plan.price %></td>
     <td><%= plan.upload_speed %></td>
     <td><%= plan.download_speed %></td>
-    <td><%= plan.remove %></td>
+    <td><%= plan.remove? ? 'Habilitado': 'Deshabilitado' %></td>
     <td><%= plan.price_surcharges1 %></td>
     <td><%= plan.price_surcharges2 %></td>
     <td><%= link_to t('labels.show'), plan %></td>

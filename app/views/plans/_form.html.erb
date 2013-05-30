@@ -4,17 +4,30 @@
      <div class ="row-fluid">
         <%= f.error_notification %>
 
-        <div class="span5">
+        <div class="span4">
           <%= f.input :name %>
           <%= f.input :price %>
           <%= f.input :price_surcharges1 %>
           <%= f.input :price_surcharges2 %>
-        </div>
-        <div class="span5">  
-          <%= f.input :upload_speed %>
-          <%= f.input :download_speed %>
           <%= f.input :remove %>
         </div>
+        <div class="span4">  
+          <%= f.input :upload_speed %>
+          <%= f.input :download_speed %>
+          <%= f.input :percentage_junk %>
+
+          <%= f.input :support_priority, hint:'La prioridad de soporte es de 1 al 5 siendo el menor la mayor prioridad.' %>
+
+        </div>
+
+</div>
+  <h3>Sistema Vampiro</h3>  
+
+          <%= f.input :upload_speed_vampire %>
+          <%= f.input :download_speed_vampire %>
+          <%= f.input :percentage_junk_vampire %>
+        
+
      </div>
         <div class="form-actions">
           <%= f.button :submit, :class => 'btn btn-primary' %>

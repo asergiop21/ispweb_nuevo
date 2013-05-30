@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
+gem 'validates_timeliness'
 #Base de Datos
 gem 'pg'
 #Authentication y Permisos

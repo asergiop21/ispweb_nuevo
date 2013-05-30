@@ -7,8 +7,8 @@
               <%=f.input :name  %>
               <%=f.input :departament  %>
               <%=f.input :zipcode  %>
-              <%=f.input :province  %>
-              <%=f.country_select :country  %>
+              <%=f.select :province, Location::PROVINCE  %>
+              <%=f.country_select :country, ["Argentina"]  %>
         </div>
       </div>
     </div>

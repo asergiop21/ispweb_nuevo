@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130529175247) do
+ActiveRecord::Schema.define(:version => 20130530132919) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -114,15 +114,20 @@ ActiveRecord::Schema.define(:version => 20130529175247) do
 
   create_table "plans", :force => true do |t|
     t.string   "name"
-    t.decimal  "price",             :precision => 8, :scale => 2
+    t.decimal  "price",                   :precision => 8, :scale => 2
     t.string   "upload_speed"
     t.string   "download_speed"
     t.boolean  "remove"
-    t.decimal  "price_surcharges1", :precision => 8, :scale => 2
-    t.decimal  "price_surcharges2", :precision => 8, :scale => 2
+    t.decimal  "price_surcharges1",       :precision => 8, :scale => 2
+    t.decimal  "price_surcharges2",       :precision => 8, :scale => 2
     t.integer  "user_id"
-    t.datetime "created_at",                                      :null => false
-    t.datetime "updated_at",                                      :null => false
+    t.datetime "created_at",                                            :null => false
+    t.datetime "updated_at",                                            :null => false
+    t.integer  "support_priority"
+    t.integer  "percentage_junk"
+    t.string   "upload_speed_vampire"
+    t.string   "download_speed_vampire"
+    t.string   "percentage_junk_vampire"
   end
 
   create_table "roles", :force => true do |t|

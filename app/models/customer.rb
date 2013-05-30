@@ -9,6 +9,7 @@ class Customer < ActiveRecord::Base
   belongs_to :user
   belongs_to :plan
   belongs_to :location
+
   #Validaciones
   validates :name, :lastname, :address, :date_of_birth, :dni, :category,  :location_id, :plan_id, presence: true
   validates :name, uniqueness: {scope: :lastname}, allow_nil: true, allow_blank: true
@@ -19,7 +20,9 @@ class Customer < ActiveRecord::Base
   validates :email,   
             :uniqueness => true,   
             :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
-  
+validates_date :date_of_birth, :before => lambda { 18.years.ago },
+                               :before_message => "must be at least 18 years old" 
+
   accepts_nested_attributes_for :phones, :reject_if => lambda {|a| a[:phone_number].blank? }, allow_destroy: true
 
   CATEGORY= %w[HOGAR EMPRESA]

@@ -2,10 +2,11 @@
 <div>
 <table class="table">
   <tr>
-    <th>Name</th>
-    <th>Lastname</th>
-    <th>Email</th>
-    <th>Username</th>
+    <th><%= User.human_attribute_name('name') %></th>
+    <th><%= User.human_attribute_name('lastname') %></th>
+    <th><%= User.human_attribute_name('email') %></th>
+    <th><%= User.human_attribute_name('username') %></th>
+    <th><%= User.human_attribute_name('role') %></th>
   </tr>
 <% @users.each do |u| %>
   <tr>
@@ -13,10 +14,11 @@
     <td><%= u.lastname %></td>
     <td><%= u.email %></td>
     <td><%= u.username %></td>
+    <td><%= u.role.map do |y| y.role end%></td>
     <td><%= link_to "Edit", edit_user_path(u.id) %></td>
   </tr>
  <% end %>
  </table>
 
-<%= link_to "new user", new_registration_path(:user)%>
+<%= link_to "new user", new_user_path()%>
 </div>

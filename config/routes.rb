@@ -31,7 +31,7 @@ end
     match "loans" => "loans#loan_pending"
     match "tickets"=>"tickets#all"
     match "tickets_reply"=>"tickets#reply"
-    match "users" => "users#index"
+   # match "users" => "users#index"
 
 
   # The priority is based upon order of creation:

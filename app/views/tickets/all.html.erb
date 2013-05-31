@@ -2,6 +2,7 @@
 <table class="table">
   <tr>
     <th>#</th>
+    <th>Customer</th>
     <th>Issue</th>
     <th>Message</th>
     <th>Status</th>
@@ -9,7 +10,7 @@
     <th>Priority</th>
     <th>Reply</th>
     <th>User</th>
-    <th>Customer</th>
+
     <th></th>
     <th></th>
     <th></th>
@@ -18,6 +19,7 @@
 <% @tickets.each do |ticket| %>
   <tr>
     <td><%= ticket.id %></td>
+    <td> <%= link_to ticket.customer.lastname + ", "+ ticket.customer.name, customer_ticket_path(ticket.customer.id, ticket) %>   <%  %></td>
     <td><%= ticket.issue %></td>
     <td><%= ticket.message %></td>
     <td><%= ticket.status? ? 'Cerrado': 'Pendiente' %></td>
@@ -25,7 +27,7 @@
     <td><%= ticket.priority %></td>
     <td><%= ticket.reply %></td>
     <td><%= ticket.user_id %></td>
-    <td><%= ticket.customer.lastname + ", "+ ticket.customer.name %></td>
+
   </tr>
 <% end %>
 </table>

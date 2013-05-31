@@ -4,6 +4,7 @@
 <% if notice %>
   <li class="alert alert-success"><%= notice  %></li>
   <% end %>
+<div class="Container span12">
 <p>
   <b>Name:</b>
   <%= @customer.name %>
@@ -63,7 +64,7 @@
   <%= @customer.plan.name %>
 </p>
 <p>
-  <b>Removed?:</b>
+  <b>Removed:</b>
   <%= @customer.removed? %>
 </p>
 
@@ -86,3 +87,5 @@
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>
+
+</div>

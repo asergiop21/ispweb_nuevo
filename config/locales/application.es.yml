@@ -4,6 +4,8 @@
       title: 'Nuevo Cliente'
     listing:
       title: 'Consulta de Clientes'
+    editing:
+      title: 'Editar  Clientes'
   locations:
     new:
       title:  'Nueva Localidad'
@@ -25,7 +27,13 @@
       title: 'Nuevo Ticket'
     listing:
       title: 'Consulta de Ticket'
-
+  roles:
+    new:
+      title: 'Nuevo Rol'
+    listing:
+      title: 'Consulta de Roles'
+    editing:
+      title: 'Editar  Rol'
   devise:
         sign_in: 'Inicial Session'
   activerecord:
@@ -92,6 +100,9 @@
         status: 'Estado'
         user: 'Usuario'
         subticket: 'Subticket'
+      role:
+        name: 'Nombre'
+        permission: 'Permisos'
 
   view:
     customers:
@@ -108,9 +119,14 @@
       new_plan: 'Nuevo Plan'
     suppliers:
       new_supplier: 'Nuevo Proveedor' 
+    role:
+      new_role: 'Nuevo Rol'
+      permission: 'Permisos'
     
   labels:
     show: 'Ver'
     edit: 'Editar'
+    new: 'Nuevo'
+    back: 'Volver'
     destroy: 'Eliminar'
     are_you_sure: '¿Está Seguro?' 

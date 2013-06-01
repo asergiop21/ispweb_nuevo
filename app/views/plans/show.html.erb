@@ -1,39 +1,61 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b><%= Plan.human_attribute_name('name') %>:</b>
   <%= @plan.name %>
 </p>
 
 <p>
-  <b>Price:</b>
+  <b><%= Plan.human_attribute_name('price') %>:</b>
   <%= @plan.price %>
 </p>
 
 <p>
-  <b>Upload speed:</b>
+  <b><%= Plan.human_attribute_name('upload_speed') %>:</b>
   <%= @plan.upload_speed %>
 </p>
 
 <p>
-  <b>Download speed:</b>
+  <b><%= Plan.human_attribute_name('download_speed') %>:</b>
   <%= @plan.download_speed %>
 </p>
 
 <p>
-  <b>Remove:</b>
+  <b><%= Plan.human_attribute_name('remove') %>:</b>
   <%= @plan.remove? ? 'Habilitado' : 'Deshabilitado'  %>
 </p>
 
 <p>
-  <b>Price surcharges1:</b>
+  <b><%= Plan.human_attribute_name('price_surcharges1') %>:</b>
   <%= @plan.price_surcharges1 %>
 </p>
 
 <p>
-  <b>Price surcharges2:</b>
+  <b><%= Plan.human_attribute_name('price_surcharges2') %>:</b>
   <%= @plan.price_surcharges2 %>
 </p>
 
-<%= link_to 'Edit', edit_plan_path(@plan) %> |
-<%= link_to 'Back', plans_path %>
+<p>
+  <b><%= Plan.human_attribute_name('percentage_junk') %>:</b>
+  <%= @plan.percentage_junk %>
+</p>
+<p>
+  <b><%= Plan.human_attribute_name('support_priority') %>:</b>
+  <%= @plan.support_priority %>
+</p>
+
+<h3><%= t('plans.system_vampire') %></h3>
+<p>
+  <b><%= Plan.human_attribute_name('upload_speed_vampire') %>:</b>
+  <%= @plan.upload_speed_vampire %>
+</p>
+<p>
+  <b><%= Plan.human_attribute_name('download_speed_vampire') %>:</b>
+  <%= @plan.download_speed_vampire %>
+</p>
+<p>
+  <b><%= Plan.human_attribute_name('percentage_junk_vampire') %>:</b>
+  <%= @plan.percentage_junk_vampire %>
+</p>
+<%= link_to t('labels.edit'), edit_plan_path(@plan) %> |
+<%= link_to t('labels.back'), plans_path %>

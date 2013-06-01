@@ -1,30 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Mac:</b>
+  <b><%= Equipment.human_attribute_name('mac')%>:</b>
   <%= @equipment.mac %>
 </p>
 
 <p>
-  <b>State:</b>
+  <b><%= Equipment.human_attribute_name('status')%>:</b>
   <%= @equipment.status %>
 </p>
 
 <p>
-  <b>Comment:</b>
+  <b><%= Equipment.human_attribute_name('comment')%>:</b>
   <%= @equipment.comment %>
 </p>
 
 <p>
-  <b>Model:</b>
+  <b><%= Equipment.human_attribute_name('model')%>:</b>
   <%= @equipment.model_id %>
 </p>
 
 <p>
-  <b>Supplier:</b>
+  <b><%= Equipment.human_attribute_name('supplier')%>:</b>
   <%= @equipment.supplier_id %>
 </p>
 
 
-<%= link_to 'Edit', edit_equipment_path(@equipment) %> |
-<%= link_to 'Back', equipment_index_path %>
+<%= link_to t('labels.edit'), edit_equipment_path(@equipment) %> |
+<%= link_to t('labels.back'), equipment_index_path %>

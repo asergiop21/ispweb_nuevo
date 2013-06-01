@@ -7,7 +7,6 @@
    <%= f.input :location_id do %>
      <%= f.select :location_id,  Location.all.map {|l|[l.name, l.id]}, prompt: "Seleccione una Localidad" %>
    <% end  %>
-    <%= f.input :user_id %>
     <%= f.input :zipcode %>
   </div>
 

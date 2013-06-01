@@ -1,6 +1,6 @@
-<h1>Editing location</h1>
+<h1><%= t('locations.editing.title') %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @location %> |
-<%= link_to 'Back', locations_path %>
+<%= link_to t('labels.show'), @location %> |
+<%= link_to t('labels.back'), locations_path %>

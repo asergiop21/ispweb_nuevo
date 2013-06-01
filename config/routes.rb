@@ -1,10 +1,8 @@
 Ispweb::Application.routes.draw do
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
-
-
   resources :categories
   resources :equipment
-  get "new_equipment" => "equipment#new", :as => "new_equipment"
+ # get "new_equipment" => "equipment#new", :as => "new_equipment"
   resources :makes do
     resources :models
   end

@@ -5,7 +5,7 @@
     <%= f.input :name %>
   </div>
 
-   <%= f.input :category_id do %>
+   <%= f.input :category do %>
      <%= f.select :category_id,  Category.all.map {|c|[c.name, c.id]}, prompt: "Seleccione una Categoria" %>
    <% end  %>
 

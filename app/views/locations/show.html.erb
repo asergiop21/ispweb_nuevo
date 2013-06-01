@@ -1,30 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b><%= Location.human_attribute_name('name') %></b>
   <%= @location.name %>
 </p>
 
 <p>
-  <b>Departament:</b>
+  <b><%= Location.human_attribute_name('departament') %></b>
   <%= @location.departament %>
 </p>
 
 <p>
-  <b>Zipcode:</b>
+  <b><%= Location.human_attribute_name('zipcode') %></b>
   <%= @location.zipcode %>
 </p>
 
 <p>
-  <b>Province:</b>
+  <b><%= Location.human_attribute_name('province') %></b>
   <%= @location.province %>
 </p>
 
 <p>
-  <b>Country:</b>
+  <b><%= Location.human_attribute_name('country') %></b>
   <%= @location.country %>
 </p>
 
 
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<%= link_to t('labels.edit'), edit_location_path(@location) %> |
+<%= link_to t('labels.back'), locations_path %>

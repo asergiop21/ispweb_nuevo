@@ -1,4 +1,4 @@
-class EquipmentController < ApplicationController
+class EquipmentsController < ApplicationController
   # GET /equipment
   # GET /equipment.json
   def index

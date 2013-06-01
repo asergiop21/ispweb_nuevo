@@ -11,17 +11,23 @@
       title:  'Nueva Localidad'
     listing:
       title: 'Consulta de Localidades'
+    editing:
+      title: 'Editar  Localidad'
   plans:
     new:
       title: 'Nuevo Plan'
     listing: 
       title: 'Consulta de Planes'
-
+    editing:
+      title: 'Editar  Plan'
+    system_vampire: 'Sistema Vampiro'
   suppliers:
     new:
       title: 'Nuevo Proveedor'
     listing: 
       title: 'Consulta de Proveedores'
+    editing:
+      title: 'Editar  Proveedor'
   ticket:
     new:
       title: 'Nuevo Ticket'
@@ -34,6 +40,31 @@
       title: 'Consulta de Roles'
     editing:
       title: 'Editar  Rol'
+  makes:
+    new:
+      title: 'Nueva Marca'
+    listing:
+      title: 'Consulta de Marcas'
+    editing:
+      title: 'Editar  Marca'
+  models:
+    new:
+      title: 'Nuevo Modelo'
+    listing:
+      title: 'Consulta de Modelos'
+    editing:
+      title: 'Editar  modelo'
+  equipment:
+    new:
+      title: 'Nuevo Equipo'
+    listing:
+      title: 'Consulta de Equipos'
+    editing:
+      title: 'Editar  Equipo'
+
+
+
+
   devise:
         sign_in: 'Inicial Session'
   activerecord:
@@ -78,11 +109,16 @@
       plan:
         name: 'Nombre'
         price: 'Precio' 
-        upload_speed: 'Velocidad de subida'
+        upload_speed: 'Velocidad de Subida'
         download_speed: 'Velocidad de Bajada'
         remove: 'Plan Habilitado' #Plan Habilitado o Deshabilitado
         price_surcharges1: 'Recargos 1' 
         price_surcharges2: 'Recargos 2'
+        percentage_junk: 'Porcentaje Basura'
+        support_priority: 'Soporte Prioritario'
+        upload_speed_vampire: 'Velocidad de Subida'
+        download_speed_vampire: 'Velocidad de Bajada'
+        percentage_junk_vampire: 'Porcentaje Basura'
       supplier:
         name: 'Nombre'
         address: 'Dirección'
@@ -103,6 +139,20 @@
       role:
         name: 'Nombre'
         permission: 'Permisos'
+      make:
+        name: 'Nombre'
+        comment: 'Comentario'
+      model:
+        name: 'Nombre'
+        comment: 'Comentario'
+        make: 'Marca'
+        category: 'Categoria'
+      equipment:
+        mac: 'Mac'
+        state: 'Estado'
+        comment: 'Comentario'
+        model: 'Modelo'
+        supplier: 'Proveedor'
 
   view:
     customers:
@@ -115,13 +165,22 @@
       loans: 'Comodatos'
     locations:
       new_location: 'Nueva Localidad'
+      support_priority_hinit: 'La prioridad de soporte es de 1 a 5. Siendo el menor la Mayor Prioridad.'
     plans: 
       new_plan: 'Nuevo Plan'
     suppliers:
       new_supplier: 'Nuevo Proveedor' 
+      select_supplier: 'Seleccionar un proveedor'
     role:
       new_role: 'Nuevo Rol'
       permission: 'Permisos'
+    make:
+      new_make: 'Nueva Marca'
+    model:
+      new_model: 'Nuevo Modelo'
+      select_model: 'Seleccionar un Modelo'
+    equipment:
+      new_equipment: 'Nuevo Equipo'
     
   labels:
     show: 'Ver'

@@ -16,12 +16,12 @@
           <%= f.input :download_speed %>
           <%= f.input :percentage_junk %>
 
-          <%= f.input :support_priority, hint:'La prioridad de soporte es de 1 al 5 siendo el menor la mayor prioridad.' %>
+          <%= f.input :support_priority, hint:t('view.locations.support_priority_hinit') %>
 
         </div>
 
 </div>
-  <h3>Sistema Vampiro</h3>  
+  <h3><%= t('plans.system_vampire') %></h3>  
 
           <%= f.input :upload_speed_vampire %>
           <%= f.input :download_speed_vampire %>

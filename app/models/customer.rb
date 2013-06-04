@@ -1,6 +1,6 @@
 class Customer < ActiveRecord::Base
   #Atributos
-  attr_accessible :address, :bar_code, :date_of_birth, :category, :cuit, :description, :dni, :email, :lastname, :name, :neighborhood, :reference_direction, :removed, :phones_attributes, :location_id, :plan_id, :user_id
+  attr_accessible :address, :bar_code, :date_of_birth, :category, :cuit, :description, :dni, :email, :lastname, :name, :neighborhood, :reference_direction, :removed, :phones_attributes, :location_id, :plan_id, :user_id, :invoice
 
   #Relaciones
   has_many :phones, :dependent => :destroy

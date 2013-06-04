@@ -20,7 +20,7 @@
                   <li><%= link_to_unless_current "spanish", locale: "es" %></li>
               </ul>
               <%= f.association :role    %>
-             <% if @user.role? :admin %>
+             <% if @user.role? :Admin %>
               <%= f.input :password %>
               <%= f.input :password_confirmation%>
             <% end %>

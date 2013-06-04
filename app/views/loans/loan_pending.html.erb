@@ -2,13 +2,12 @@
 
 <table class= "table">
   <tr>
-    <th>Customer</th>
-    <th>Equipment</th>
-    <th>Status loan</th>
-    <th>Confirmation loan</th>
-    <th>Comment</th>
-    <th>User</th>
-    <th>Technical</th>
+    <th><%= Loan.human_attribute_name('customer')%></th>
+    <th><%= Loan.human_attribute_name('equipment')%></th>
+    <th><%= Loan.human_attribute_name('status_loan')%></th>
+    <th><%= Loan.human_attribute_name('confirmation_loan')%></th>
+    <th><%= Loan.human_attribute_name('commnet')%></th>
+    <th><%= Loan.human_attribute_name('technician')%></th>
     <th></th>
     <th></th>
     <th></th>
@@ -22,11 +21,10 @@
     <td><%= loan.status_loan %></td>
     <td><%= loan.confirmation_loan %></td>
     <td><%= loan.comment %></td>
-    <td><%= loan.user_id %></td>
     <td><%= loan.technical_id %></td>
-    <td><%= link_to 'Show', customer_loan_path(loan.customer.id,loan) %></td>
-    <td><%= link_to 'Edit', edit_customer_loan_path(loan.customer.id, loan) %></td>
-    <td><%= link_to 'Destroy', customer_loan_path(loan.customer.id, loan), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('labels.show'), customer_loan_path(loan.customer.id,loan) %></td>
+    <td><%= link_to t('labels.edit'), edit_customer_loan_path(loan.customer.id, loan) %></td>
+    <td><%= link_to t('labels.destroy'), customer_loan_path(loan.customer.id, loan), method: :delete, data: { confirm: t('labels.are_you_sure') } %></td>
   </tr>
 <% end %>
 </table>

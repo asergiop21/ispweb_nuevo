@@ -17,12 +17,12 @@
 
 <p>
   <b><%= Equipment.human_attribute_name('model')%>:</b>
-  <%= @equipment.model_id %>
+  <%= @equipment.model.name %>
 </p>
 
 <p>
   <b><%= Equipment.human_attribute_name('supplier')%>:</b>
-  <%= @equipment.supplier_id %>
+  <%= @equipment.supplier.name %>
 </p>
 
 

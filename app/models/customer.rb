@@ -26,7 +26,7 @@ validates_date :date_of_birth, :before => lambda { 18.years.ago },
   accepts_nested_attributes_for :phones, :reject_if => lambda {|a| a[:phone_number].blank? }, allow_destroy: true
 
   CATEGORY= %w[HOGAR EMPRESA]
-
+  INVOICE = %w[A B C]
  def phone_count
    if self.phones.size < 1
       errors.add(:base, "problemas")

@@ -7,7 +7,8 @@ class Equipment < ActiveRecord::Base
   
 
   #Relaciones
-    :loans
-    belongs_to :model
-    
+      has_many :loan
+      belongs_to :model
+      belongs_to :supplier  
+
 end

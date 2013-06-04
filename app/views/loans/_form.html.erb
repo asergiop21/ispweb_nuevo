@@ -1,16 +1,17 @@
 <%= simple_form_for [@customer, @loan] do |f| %>
-<h2>Customer: <%= @customer.lastname + ", " +@customer.name  %></h2>
+<h2><%= Loan.human_attribute_name('customer') %>: <%= @customer.lastname + ", " +@customer.name  %></h2>
 
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :equipment_id  do%>
+    <%= f.input :equipment  do%>
        <%=f.select :equipment_id, Equipment.where(status:'STOCK').map {|e|[e.mac, e.id]}, prompt: "Seleccione una mac"  %>
     <% end %>
 
     <%= f.input :confirmation_loan %>
     <%= f.input :comment, :input_html => {:rows => 5} %>
-    <%= f.input :technical_id %>
+    <%= f.input :technician do %>
+    <% end %>
   </div>
 
   <div class="form-actions">

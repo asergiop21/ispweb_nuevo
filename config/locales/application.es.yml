@@ -61,10 +61,29 @@
       title: 'Consulta de Equipos'
     editing:
       title: 'Editar  Equipo'
+  categories:
+    new:
+      title: 'Nueva Categoria'
+    listing:
+      title: 'Consulta de Categorias'
+    editing:
+      title: 'Editar Categoria'
+  loans:
+    new:
+      title: 'Nuevo Comodato'
+    listing:
+      title_pending: 'Consulta de Comodatos Pendientes'
+      title: 'Consulta de Comodatos'
+    editing:
+      title: 'Editar Comodato'
 
-
-
-
+  users:
+    new:
+      title: 'Nuevo Usuario'
+    listing:
+      title: 'Consulta de Usuarios'
+    editing:
+      title: 'Editar Usuario'
   devise:
         sign_in: 'Inicial Session'
   activerecord:
@@ -95,11 +114,14 @@
         date_of_birth: 'Fecha de nacimiento'
         category: 'Categoria'
       user:
-        username: 'Nombre de usuario'
+        name: 'Nombre'
+        lastname: 'Apellido'
+        username: 'Nombre de Usuario'
         password: 'Password'
         remember_me: 'Recuerdame"'
         sign_in: 'Registrarse'
-        languaje: 'Idioma'
+        language: 'Idioma'
+        address: 'Dirección'
       location:
         name: 'Nombre'
         departament: 'Departamento'
@@ -119,6 +141,8 @@
         upload_speed_vampire: 'Velocidad de Subida'
         download_speed_vampire: 'Velocidad de Bajada'
         percentage_junk_vampire: 'Porcentaje Basura'
+        start_time: 'Tiempo Inicial'
+        end_time: 'Tiempo Final'
       supplier:
         name: 'Nombre'
         address: 'Dirección'
@@ -149,11 +173,20 @@
         category: 'Categoria'
       equipment:
         mac: 'Mac'
-        state: 'Estado'
+        status: 'Estado'
         comment: 'Comentario'
         model: 'Modelo'
         supplier: 'Proveedor'
-
+      category: 
+        name: 'Nombre'
+        comment: 'Comentario'
+      loan:
+        equipment: 'Equipo'
+        status_loan: 'Estado de Comodato'
+        confirmation_loan: 'Confirmación de Comodato'
+        comment: 'Comentario'
+        technician: 'Técnico'
+        customer: 'Cliente'
   view:
     customers:
       remove_phone: 'Eliminar'
@@ -181,7 +214,13 @@
       select_model: 'Seleccionar un Modelo'
     equipment:
       new_equipment: 'Nuevo Equipo'
-    
+    category:
+      new_category: 'Nueva Categoria'
+    loan:
+      new_loan: 'Nuevo Comodato'
+    user:
+      new_user: 'Nuevo Usuario'
+
   labels:
     show: 'Ver'
     edit: 'Editar'

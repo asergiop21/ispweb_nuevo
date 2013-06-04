@@ -22,7 +22,7 @@
       not_a_number: 'No es un numero'
       not_an_integer: 'Debe ser un entero'
       too_long: 'Es demasiado largo (%{count} caracteres máximo)'
-
+      too_short: 'Es demasiado corto(%{count} caracteres mínimo)'
 
 
   helpers:

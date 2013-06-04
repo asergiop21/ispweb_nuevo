@@ -57,5 +57,14 @@
   <b><%= Plan.human_attribute_name('percentage_junk_vampire') %>:</b>
   <%= @plan.percentage_junk_vampire %>
 </p>
+
+<p>
+  <b><%= Plan.human_attribute_name('start_time') %>:</b>
+  <%= @plan.start_time %>
+</p>
 <%= link_to t('labels.edit'), edit_plan_path(@plan) %> |
+<p>
+  <b><%= Plan.human_attribute_name('end_time') %>:</b>
+  <%= @plan.end_time %>
+</p>
 <%= link_to t('labels.back'), plans_path %>

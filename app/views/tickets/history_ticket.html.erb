@@ -1,0 +1,16 @@
+
+<table class ="table">
+        <tr>
+                <td>Areas</td>
+        </tr>
+
+<% @history_ticket.each do |d|%>
+        <tr>
+                <td><%= d.role %></td>
+                <td><%= d.created_at %></td>
+                <td><%= d.user.username %></td>
+        </tr>
+  <% end %>
+</table>
+
+

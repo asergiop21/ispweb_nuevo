@@ -1,25 +1,27 @@
 
 <div> <% nested_sub_tickets @ticket.path.arrange() %></div>
-  <div class="label label-info span8">
+  <div class="label label-info span12">
         <h2>#<%= @ticket.id %>
         [ <%= @ticket.issue %> ] </h2>
         <h4>Cliente: <%= @customer.lastname + ", "+ @customer.name %></h4>
-        <pre><%= @ticket.message%></pre>
-        <h4 class="btn"><%= link_to "Responder", edit_customer_ticket_path(@customer.id, @ticket) %></h4>
+            <p>Mensaje:</p>
+            <pre><%= @ticket.message%>
+                <p class="pull-right"><%= l @ticket.created_at, :format => :long %></p>
+            </pre>
+        <% if @ticket.reply? %>
+        <p>Respuesta:</p>
+        <pre class="span6 pull-right">
+                <%= @ticket.reply %>
+                <p class="pull-right"><%=l @ticket.updated_at, :format => :long %></p>
+        </pre>
+        <% end %>
+        <%if !@ticket.status  %>
+        <div class="span8"><h4 class="btn "><%= link_to "Responder", customer_reply_path(@customer.id, @ticket) %></h4></div>
+        <% end %>
 </div>
-<table class="table">
-  <tr>
-    <th>Issue</th>
-    <th>Date</th>
-    <th>Status</th>
-    <th>Departament</th>
-    <th>Priority</th>
-    <th>User</th>
-    <th>Subticket</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-  <%= nested_sub_tickets @ticket.children.arrange() %>
+ 
 
-</table>
+
+
+ <%= nested_sub_tickets @ticket.children.arrange() %>
+

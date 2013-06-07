@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   has_many :plan
   has_many :supplier
   has_many :ticket
-
+  has_many :ticket_and_role
   def role?(role)
     return !!self.role.find_by_role(role.to_s.camelize)
   end

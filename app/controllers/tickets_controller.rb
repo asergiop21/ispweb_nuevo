@@ -43,16 +43,18 @@ class TicketsController < ApplicationController
   def edit
     
     @ticket = @customer.tickets.find(params[:id])
-  
-  end
+end
 
   # POST /tickets
   # POST /tickets.json
   def create
     
     @ticket = @customer.tickets.new(params[:ticket].merge(:user_id => current_user.id))
+    
+    @ticket.ticket_and_role.build({ticket_id:@ticket.id, role_id:@ticket.role_id, user_id: current_user.id})
+   
 
-    respond_to do |format|
+ respond_to do |format|
       if @ticket.save
         format.html { redirect_to customer_tickets_path(@customer), notice: 'Ticket was successfully created.' }
         format.json { render json: [@customer], status: :created, location: @ticket }
@@ -66,8 +68,9 @@ class TicketsController < ApplicationController
   # PUT /tickets/1
   # PUT /tickets/1.json
   def update
+    @datos = params[:ticket][:role_id]
     @ticket = @customer.tickets.find(params[:id])
-
+    @ticket.ticket_and_role.build({ticket_id: @ticket.id, role_id: @datos, user_id: current_user.id})
     respond_to do |format|
       if @ticket.update_attributes(params[:ticket])
         format.html { redirect_to [@customer, @ticket], notice: 'Ticket was successfully updated.' }
@@ -86,7 +89,7 @@ class TicketsController < ApplicationController
     @ticket.destroy
 
     respond_to do |format|
-      format.html { redirect_to tickets_url }
+      format.html { redirect_to customer_tickets_path(@customer) }
       format.json { head :no_content }
     end
   end
@@ -99,6 +102,17 @@ class TicketsController < ApplicationController
       format.json { render json: @tickets }
     end
   end
+
+  def reply
+    @ticket = @customer.tickets.find(params[:id])
+    render action: "reply"
+  end
+
+  def history_ticket
+      @history = @customer.tickets.find(params[:id])
+      @history_ticket = @history.ticket_and_role.all 
+  end
+
 private
   def load_customer
     @customer = Customer.find(params[:customer_id])

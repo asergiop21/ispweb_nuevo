@@ -5,9 +5,12 @@ class Role < ActiveRecord::Base
   has_and_belongs_to_many :user
   has_many :roles_and_permission
   has_many :permission, :through => :roles_and_permission
-  has_many :ticket
+  
+  has_many :ticket_and_role
+  has_many :ticket, :through => :ticket_and_role
 
   def to_s
     "#{role}"
   end
+
 end

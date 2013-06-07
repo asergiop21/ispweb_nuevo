@@ -3,13 +3,13 @@
     <td><%=link_to_unless_current ticket.issue, customer_ticket_path(ticket.customer.id, ticket)%></td>
     <td><%= ticket.created_at.strftime("%B %d, %Y") %></td>
     <td><%= ticket.status? ? 'Cerrado': 'Pendiente' %></td>
-    <td><%= ticket.role %></td>
+    <td><%= ticket.ticket_and_role.last do |u| u.role end%></td>
     <td><%= ticket.priority %></td>
     <td><%= ticket.user %></td>
     <td><%= ticket.children.count %></td>
+
+    <td><%= link_to 'Show', customer_history_ticket_path(ticket.customer.id, ticket) %></td>
   <% if !ticket.status %>  
-    <td><%= link_to "Subticket", new_customer_ticket_path(:parent_id => ticket) %></td>
-    <td><%= link_to 'Show', customer_ticket_path(ticket.customer.id, ticket) %></td>
     <td><%= link_to 'edit', edit_customer_ticket_path(ticket.customer.id, ticket) %></td>
     <td><%= link_to 'Destroy', customer_ticket_path(ticket.customer.id, ticket), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>

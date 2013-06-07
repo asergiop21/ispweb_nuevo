@@ -7,8 +7,8 @@
     <td><%= ticket.user_id %></td>
     <td><%= ticket.children.count %></td>
     <td><%= link_to "Reply", new_customer_ticket_path(:parent_id => ticket) %></td>
-    <td><%= link_to 'Show', customer_ticket_path(ticket.customer.id, ticket) %></td>
-    <td><%= link_to 'edit', edit_customer_ticket_path(ticket.customer.id, ticket) %></td>
-    <td><%= link_to 'Destroy', customer_ticket_path(ticket.customer.id, ticket), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('labels.show'), customer_ticket_path(ticket.customer.id, ticket) %></td>
+    <td><%= link_to t('labels.edit'), edit_customer_ticket_path(ticket.customer.id, ticket) %></td>
+    <td><%= link_to t('labels.destroy'), customer_ticket_path(ticket.customer.id, ticket), method: :delete, data: { confirm: t('labels.are_you_sure') } %></td>
   </tr>
   

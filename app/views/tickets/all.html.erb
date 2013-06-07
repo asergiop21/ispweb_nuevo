@@ -23,7 +23,7 @@
     <td><%= ticket.issue %></td>
     <td><%= ticket.message %></td>
     <td><%= ticket.status? ? 'Cerrado': 'Pendiente' %></td>
-    <td><%= ticket.role.role %></td>
+    <td><%= ticket.role.last do |u| u.role end %></td>
     <td><%= ticket.priority %></td>
     <td><%= ticket.reply %></td>
     <td><%= ticket.user_id %></td>

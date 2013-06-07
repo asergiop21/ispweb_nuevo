@@ -28,11 +28,13 @@
       title: 'Consulta de Proveedores'
     editing:
       title: 'Editar  Proveedor'
-  ticket:
+  tickets:
     new:
       title: 'Nuevo Ticket'
     listing:
-      title: 'Consulta de Ticket'
+      title: 'Consulta de Tickets'
+    editing: 
+      title: 'Editar Ticket'
   roles:
     new:
       title: 'Nuevo Rol'

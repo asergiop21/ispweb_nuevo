@@ -1,7 +1,11 @@
 require 'bundler/capistrano'
 set :application, "proyect_ispweb"
 <<<<<<< HEAD
+<<<<<<< HEAD
 set :repository,  "git://github.com/asergiop21/ispweb.git" #https://github.com/asergiop21/ispweb.git"
+=======
+set :repository,  "https://github.com/asergiop21/ispweb.git"
+>>>>>>> 0fbfaaa8973398ee9a3ce1bd916334df3609691e
 =======
 set :repository,  "https://github.com/asergiop21/ispweb.git"
 >>>>>>> 0fbfaaa8973398ee9a3ce1bd916334df3609691e

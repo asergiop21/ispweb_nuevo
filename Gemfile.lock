@@ -58,8 +58,11 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
 <<<<<<< HEAD
+<<<<<<< HEAD
     hike (1.2.3)
 =======
+=======
+>>>>>>> 0fbfaaa8973398ee9a3ce1bd916334df3609691e
     highline (1.6.19)
     hike (1.2.2)
 >>>>>>> 0fbfaaa8973398ee9a3ce1bd916334df3609691e
@@ -86,6 +89,9 @@ GEM
     net-ssh (2.6.7)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+<<<<<<< HEAD
+>>>>>>> 0fbfaaa8973398ee9a3ce1bd916334df3609691e
+=======
 >>>>>>> 0fbfaaa8973398ee9a3ce1bd916334df3609691e
     orm_adapter (0.4.0)
     pg (0.15.1)

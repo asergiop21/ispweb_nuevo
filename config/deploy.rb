@@ -10,7 +10,7 @@ set :branch, 'master'
 
 role :web, 'proyect_ispweb.com'                          # Your HTTP server, Apache/etc
 role :app, 'proyect_ispweb.com'                          # This may be the same as your `Web` server
-role :db, 'protect_ispweb.com', :primary => true # This is where Rails migrations will run
+role :db, 'proyect_ispweb.com', :primary => true # This is where Rails migrations will run
 #role :db,  "your slave db-server here"
 
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`

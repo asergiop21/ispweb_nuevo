@@ -1,9 +1,9 @@
-require 'bundle/capistrano'
+require 'bundler/capistrano'
 set :application, "proyect_ispweb"
 set :repository,  "https://github.com/asergiop21/ispweb.git"
 set :deploy_to, '/home/sergio/proyect_ispweb'
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-set :user, 'asergiop21'
+set :user, 'sergio'
 set :deploy_via, :remote_cache
 set :use_sudo, false
 set :branch, 'master'

@@ -22,9 +22,16 @@ group :assets do
  gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
+# Deploy with Capistrano
+ gem 'capistrano'
+
+group :production do
+    gem 'passenger'
+   gem 'pg'
+end
+
 gem 'jquery-rails'
 gem 'i18n', "~>0.6.4"
-# Deploy with Capistrano
-# gem 'capistrano'
+
 # To use debugger
 # gem 'debugger'

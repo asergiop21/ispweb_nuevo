@@ -1,14 +1,8 @@
 require 'bundler/capistrano'
 set :application, "proyect_ispweb"
-<<<<<<< HEAD
-<<<<<<< HEAD
 set :repository,  "git://github.com/asergiop21/ispweb.git" #https://github.com/asergiop21/ispweb.git"
-=======
 set :repository,  "https://github.com/asergiop21/ispweb.git"
->>>>>>> 0fbfaaa8973398ee9a3ce1bd916334df3609691e
-=======
 set :repository,  "https://github.com/asergiop21/ispweb.git"
->>>>>>> 0fbfaaa8973398ee9a3ce1bd916334df3609691e
 set :deploy_to, '/home/sergio/proyect_ispweb'
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 set :user, 'sergio'

@@ -20,8 +20,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
  gem 'therubyracer', :platforms => :ruby
+ gem 'execjs'
  gem 'uglifier', '>= 1.0.3'
-  
 end
 # Deploy with Capistrano
  gem 'capistrano'
@@ -33,6 +33,6 @@ end
 
 gem 'jquery-rails'
 gem 'i18n', "~>0.6.4"
-gem 'execjs'
+
 # To use debugger
 # gem 'debugger'

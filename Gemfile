@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 gem 'validates_timeliness'
+gem 'jquery-rails'
 #Base de Datos
 gem 'pg'
 #Authentication y Permisos
@@ -19,8 +20,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
- gem 'therubyracer', :platforms => :ruby
- gem 'execjs'
+# gem 'therubyracer', :platforms => :ruby
+# gem 'execjs'
  gem 'uglifier', '>= 1.0.3'
 end
 # Deploy with Capistrano
@@ -31,7 +32,7 @@ group :production do
    gem 'pg'
 end
 
-gem 'jquery-rails'
+
 gem 'i18n', "~>0.6.4"
 
 # To use debugger

@@ -6,7 +6,6 @@ set :repository,  "https://github.com/asergiop21/ispweb.git"
 set :deploy_to, '/home/sergio/proyect_ispweb'
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 set :user, 'sergio'
-set :password, 'Ufbnla2013'
 set :deploy_via, :remote_cache
 set :use_sudo, false
 set :branch, 'master'

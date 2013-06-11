@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 gem 'validates_timeliness'
-gem 'jquery-rails'
+gem 'jquery-rails', '~>2.1.4'
 #Base de Datos
 gem 'pg'
 #Authentication y Permisos
@@ -27,14 +27,8 @@ group :assets do
 end
 # Deploy with Capistrano
  gem 'capistrano'
-
-group :production do
-    gem 'passenger'
-   gem 'pg'
-end
-
-
-gem 'i18n', "~>0.6.4"
+ gem 'passenger'
+ gem 'i18n', "~>0.6.4"
 
 # To use debugger
 # gem 'debugger'

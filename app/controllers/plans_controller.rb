@@ -17,7 +17,14 @@ class PlansController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @plan }
+      format.pdf do
+        pdf = Prawn::Document.new
+        pdf.text "hello world"
+        send_data pdf.render, filename: "plans_#{@plan}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+      #format.json { render json: @plan }
     end
   end
 

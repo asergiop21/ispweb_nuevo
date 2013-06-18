@@ -68,3 +68,4 @@
   <%= @plan.end_time %>
 </p>
 <%= link_to t('labels.back'), plans_path %>
+<p><%= link_to "Printable Receipt (PDF)", plan_path(@plan, format: "pdf") %></p>

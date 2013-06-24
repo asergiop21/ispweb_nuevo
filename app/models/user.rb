@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   has_many :supplier
   has_many :ticket
   has_many :ticket_and_role
+  has_many :accounts_receivable
+
   def role?(role)
     return !!self.role.find_by_role(role.to_s.camelize)
   end
@@ -39,5 +41,4 @@ class User < ActiveRecord::Base
   end
 
 end
- 
 end

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @accounts_receivable.description %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @accounts_receivable.amount %>
+</p>
+
+<p>
+  <b>Number invoice:</b>
+  <%= @accounts_receivable.number_invoice %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @accounts_receivable.customer_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @accounts_receivable.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_accounts_receivable_path(@accounts_receivable) %> |
+<%= link_to 'Back', accounts_receivables_path %>

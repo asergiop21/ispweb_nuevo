@@ -2,6 +2,7 @@ class Customer < ActiveRecord::Base
   #Atributos
   attr_accessible :address, :bar_code, :date_of_birth, :category, :cuit, :description, :dni, :email, :lastname, :name, :neighborhood, :reference_direction, :removed, :phones_attributes, :location_id, :plan_id, :user_id, :invoice
 
+after_create :add_plan_accounts_receivable
   #Relaciones
   has_many :phones, :dependent => :destroy
   has_many :loans
@@ -9,6 +10,7 @@ class Customer < ActiveRecord::Base
   belongs_to :user
   belongs_to :plan
   belongs_to :location
+  has_many :accounts_receivable
 
   #Validaciones
   validates :name, :lastname, :address, :date_of_birth, :dni, :category,  :location_id, :plan_id, presence: true
@@ -36,5 +38,11 @@ validates_date :date_of_birth, :before => lambda { 18.years.ago },
  def self.search (q=nil)
      self.connection.execute(sanitize_sql(["SELECT * FROM customers"]))
  end
+
+  def add_plan_accounts_receivable
+    plan =  Plan.find(self.plan_id)
+    AccountsReceivable.create(:description => "Abono Mensual - "+ plan.name, :amount => plan.price, :customer_id => self.id, :user_id => self.user_id)
+ 
+end
 
 end

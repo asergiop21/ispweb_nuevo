@@ -1,0 +1,24 @@
+<h1>Listing accounts_receivables</h1>
+
+<table class="table">
+  <tr>
+    <th>Description</th>
+    <th>Amount</th>
+    <th>Customer</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @accounts_receivables.each do |accounts_receivable| %>
+  <tr>
+    <td><%= accounts_receivable.description %></td>
+    <td><%= accounts_receivable.amount %></td>
+    <td><%= accounts_receivable.customer_id %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Accounts receivable', new_customer_accounts_receivable_path %>

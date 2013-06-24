@@ -8,8 +8,9 @@ class Plan < ActiveRecord::Base
   validates :price, :price_surcharges1, :price_surcharges2, length:{maximum: 8}
   validates :support_priority, length:{is: 1}
   validates :support_priority, numericality: {less_than_or_equal_to: 5}
-  validates :percentage_junk, :percentage_junk_vampire, numericality: {less_than_or_equal: 100}
+  validates :percentage_junk, numericality: {less_than_or_equal: 100}
   has_many :customer
   belongs_to :user
+
 
 end

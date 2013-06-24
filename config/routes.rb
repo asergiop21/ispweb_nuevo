@@ -1,4 +1,7 @@
 Ispweb::Application.routes.draw do
+ # resources :accounts_receivables
+
+
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
   resources :categories
   resources :equipment
@@ -18,6 +21,7 @@ Ispweb::Application.routes.draw do
       resources :tickets
       match "reply/:id/edit"=> "tickets#reply", as: :reply
       match "history_ticket/:id" =>"tickets#history_ticket", as: :history_ticket
+      resources :accounts_receivables
  end
      devise_for :users, :controllers => {:registrations => :registrations}
 #    devise_for :users

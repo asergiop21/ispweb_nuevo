@@ -6,6 +6,7 @@
     <th><%= Loan.human_attribute_name('status_loan')%></th>
     <th><%= Loan.human_attribute_name('confirmation_loan')%></th>
     <th><%= Loan.human_attribute_name('comment')%></th>
+    <th><%= Loan.human_attribute_name('Usuario')%></th>
     <th><%= Loan.human_attribute_name('technician')%></th>
     <th></th>
     <th></th>
@@ -15,14 +16,16 @@
 <% @loans.each do |loan| %>
   <tr>
     <td><%= loan.equipment.mac + " - " + loan.equipment.model.name %></td>
-    <td><%= loan.status_loan %></td>
+    <td><%= loan.status_loan? ? 'VIGENTE': 'NO VIGENTE' %></td>
     <td><%= loan.confirmation_loan %></td>
     <td><%= loan.comment %></td>
-    <td><%= loan.user_id %></td>
+    <td><%= loan.user.username %></td>
     <td><%= loan.technical_id %></td>
-    <td><%= link_to t('labels.show'), customer_loan_path(loan.customer.id,loan) %></td>
-    <td><%= link_to t('labels.edit'), edit_customer_loan_path(loan.customer.id, loan) %></td>
+    <td><% link_to t('labels.show'), customer_loan_path(loan.customer.id,loan) %></td>
+    <td><% link_to t('labels.edit'), edit_customer_loan_path(loan.customer.id, loan) %></td>
+    <% if loan.status_loan == true %>
     <td><%= link_to t('labels.destroy'), customer_loan_path(loan.customer.id, loan), method: :delete, data: { confirm: t('labels.are_you_sure') } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

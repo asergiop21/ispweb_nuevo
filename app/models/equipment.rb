@@ -1,8 +1,8 @@
 class Equipment < ActiveRecord::Base
   attr_accessible :comment, :mac, :model_id, :status, :supplier_id
 
-    STATUS = %w[STOCK BAJA]
-  #valitations
+    STATUS = %w[STOCK BAJA INSTALADO]
+  #validations
   validates :mac, :uniqueness => true
   
 
@@ -11,4 +11,6 @@ class Equipment < ActiveRecord::Base
       belongs_to :model
       belongs_to :supplier  
 
-end
+
+
+  end

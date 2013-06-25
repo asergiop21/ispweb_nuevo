@@ -189,6 +189,7 @@
         comment: 'Comentario'
         technician: 'Técnico'
         customer: 'Cliente'
+        user: 'Usuario'
   view:
     customers:
       remove_phone: 'Eliminar'

@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :role
   has_many :customer
   has_many :plan
+  has_many :loan
   has_many :supplier
   has_many :ticket
   has_many :ticket_and_role

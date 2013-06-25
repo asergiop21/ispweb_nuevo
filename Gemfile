@@ -27,8 +27,8 @@ group :assets do
  gem 'uglifier', '>= 1.0.3'
 end
 # Deploy with Capistrano
-# gem 'capistrano'
-# gem 'passenger'
+ gem 'capistrano'
+ gem 'passenger'
  gem 'i18n', "~>0.6.4"
 gem 'thin'
 # To use debugger

@@ -41,7 +41,7 @@ before_filter :load_customers, :except =>[:loan_pending]
   # POST /loans
   # POST /loans.json
   def create
-    @loan = @customer.loans.new(params[:loan])
+    @loan = @customer.loans.new(params[:loan].merge(:user_id => current_user.id))
 
     respond_to do |format|
       if @loan.save
@@ -74,13 +74,19 @@ before_filter :load_customers, :except =>[:loan_pending]
   # DELETE /loans/1.json
   def destroy
     @loan = @customer.loans.find(params[:id])
-    @loan.destroy
+    @equipment_id = @loan.equipment_id
 
+    @equipment = Equipment.find(@equipment_id)
     respond_to do |format|
+      
+    @loan.update_attributes(:status_loan => 'false')
+     @equipment.update_attributes(:status => 'STOCK')
+
       format.html { redirect_to customer_loans_url }
       format.json { head :no_content }
     end
   end
+
   def load_customers
     @customer = Customer.find(params[:customer_id])
   end

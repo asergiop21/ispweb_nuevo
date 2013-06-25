@@ -13,6 +13,7 @@ class EquipmentController < ApplicationController
   # GET /equipment/1
   # GET /equipment/1.json
   def show
+    
     @equipment = Equipment.find(params[:id])
 
     respond_to do |format|

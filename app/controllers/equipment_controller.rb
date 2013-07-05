@@ -13,12 +13,13 @@ class EquipmentController < ApplicationController
   # GET /equipment/1
   # GET /equipment/1.json
   def show
-    
-    @equipment = Equipment.find(params[:id])
 
+    @equipment = Equipment.find(params[:id])
+    @loan = @equipment.loan.where('equipment_id = ?', params[:id] )
+    
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @equipment }
+      format.json { render json: @loan }
     end
   end
 
@@ -57,7 +58,11 @@ class EquipmentController < ApplicationController
   # PUT /equipment/1.json
   def update
     @equipment = Equipment.find(params[:id])
-
+    @status = @equipment.status
+   # if @status_changed?
+     # @equipment =  Equipment.new(params[:equipment])
+     # @equipment.update_attributes(params[:equipment])
+   # end
     respond_to do |format|
       if @equipment.update_attributes(params[:equipment])
         format.html { redirect_to @equipment, notice: 'Equipment was successfully updated.' }

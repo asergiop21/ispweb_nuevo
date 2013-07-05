@@ -1,27 +1,42 @@
+<%= simple_form_for([@customer, @ticket]) do |f,| %>
 
-<div> <% nested_sub_tickets @ticket.path.arrange() %></div>
-  <div class="label label-info span12">
-        <h2>#<%= @ticket.id %>
-        [ <%= @ticket.issue %> ] </h2>
-        <h4>Cliente: <%= @customer.lastname + ", "+ @customer.name %></h4>
-            <p>Mensaje:</p>
-            <pre><%= @ticket.message%>
-                <p class="pull-right"><%= l @ticket.created_at, :format => :long %></p>
-            </pre>
-        <% if @ticket.reply? %>
-        <p>Respuesta:</p>
-        <pre class="span6 pull-right">
-                <%= @ticket.reply %>
-                <p class="pull-right"><%=l @ticket.updated_at, :format => :long %></p>
-        </pre>
-        <% end %>
-        <%if !@ticket.status  %>
-        <div class="span8"><h4 class="btn "><%= link_to "Responder", customer_reply_path(@customer.id, @ticket) %></h4></div>
-        <% end %>
+<div class="span14">
+  <div class="span4"> 
+   <div>
+           Datos Cliente
+   </div>
+    <div>
+      Cliente: <%= @customer.lastname + ",  "+ @customer.name %>
+    
+  </div>
+  </div>
+
+<div class="span9"> <% nested_sub_tickets @ticket.path.arrange() %>
+  <div>
+        <h4>#<%= @ticket.id %>[ <%= @ticket.issue %> ] </h4>
+        <p>Mensaje:</p>
+           <pre><%= @ticket.message%><p class="pull-right"><%= l @ticket.created_at, :format => :long %></p></pre>
+
+         <p>Respuesta:</p>
+            <%= f.simple_fields_for :ticket_answer do |builder| %>
+             <%=builder.text_area :message, :rows => 3, :cols  => 70  %>
+      <% end %>
+      <div class="btn-group dropup pull-right">
+          <%= f.button :submit, :class =>'btn btn-primary' %>
+          <% f.button :submit, :class =>'btn btn-primary' %>
+          <button class="btn dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+              <li><%= link_to "Solved", customer_tickets_path(status: true) %> </li>
+              <li><%= link_to "Visit Technical", "#" %></li>
+          </ul>    
+
+
+
+      </div>
+  </div>
 </div>
- 
-
-
-
- <%= nested_sub_tickets @ticket.children.arrange() %>
+          
+    <% end %>
 

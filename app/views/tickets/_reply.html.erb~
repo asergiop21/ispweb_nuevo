@@ -1,0 +1,24 @@
+<%= simple_form_for [@customer, @ticket] do |f| %>
+<div class="container">
+	  <div class="form-inputs ">
+      <div class="row-fluid ">
+        <div class="span12 label label-info"> 
+            <%= f.error_notification %>
+          	<%= f.hidden_field :parent_id %>
+            <%= f.input :reply, :input_html=>{:rows =>5, :cols=>60} %>
+            
+            <%= f.input :role_id do %>
+            <%= f.select :role_id,  Role.all.map {|l|[l.role, l.id]}, prompt: 'Seleccione el Departamento' %>
+            <% end %>
+            <%= f.select :priority, Ticket::PRIORITY %>
+          
+<%= f.input :status %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+
+  </div>
+  </div>
+  </div>
+<% end %>

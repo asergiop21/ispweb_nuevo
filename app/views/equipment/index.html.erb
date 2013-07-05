@@ -7,6 +7,7 @@
     <th><%= Equipment.human_attribute_name('comment') %></th>
     <th><%= Equipment.human_attribute_name('model') %></th>
     <th><%= Equipment.human_attribute_name('supplier') %></th>
+    <th><%= t('attributes.created_at') %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +20,7 @@
     <td><%= equipment.comment %></td>
     <td><%= equipment.model.name %></td>
     <td><%= equipment.supplier.name %></td>
+    <td><%= l equipment.created_at, format: :minimal %></td>
     <td><%= link_to t('labels.show'), equipment %></td>
     <td><%= link_to t('labels.edit'), edit_equipment_path(equipment) %></td>
     <td><%= link_to t('labels.destroy'), equipment, method: :delete, data: { confirm: t('labels.are_you_sure') } %></td>

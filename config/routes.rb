@@ -1,7 +1,6 @@
 Ispweb::Application.routes.draw do
  # resources :accounts_receivables
 
-
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
   resources :categories
   resources :equipment

@@ -1,10 +1,9 @@
 'es':
   date:
-    format:
-      default: '%d/%m/%y'
+    formats:
+      default: '%d/%m/%Y'
       short: '%d de %Y'
       long: '%d de %B de %Y'
-
 
     month_names:
       - ~

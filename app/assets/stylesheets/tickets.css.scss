@@ -1,4 +1,29 @@
 // Place all the styles related to the tickets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.bordersolid
+{
 
+  display: block;
+  background-color: #fff;
+  -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+          border-radius: 20px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+
+}
+
+#footer{
+margin: -150px auto 0;
+position: fixed;
+bottom: 0;
+background-color: #000;
+}
+
+#fondo
+{
+
+background-color: #000;
+}

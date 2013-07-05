@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130625144420) do
+ActiveRecord::Schema.define(:version => 20130704122128) do
 
   create_table "accounts_receivables", :force => true do |t|
     t.string   "description"
@@ -59,9 +59,10 @@ ActiveRecord::Schema.define(:version => 20130625144420) do
     t.integer  "category_id"
     t.integer  "model_id"
     t.integer  "supplier_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "status"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "status",      :default => "STOCK"
+    t.boolean  "enabled",     :default => true
   end
 
   create_table "invoices", :force => true do |t|
@@ -189,19 +190,28 @@ ActiveRecord::Schema.define(:version => 20130625144420) do
     t.integer  "user_id"
   end
 
+  create_table "ticket_answers", :force => true do |t|
+    t.string   "message"
+    t.integer  "user_id"
+    t.integer  "ticket_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "tickets", :force => true do |t|
     t.string   "issue"
     t.text     "message"
-    t.boolean  "status"
+    t.boolean  "status",      :default => false
     t.integer  "role_id"
     t.string   "priority"
     t.text     "reply"
     t.integer  "user_id"
     t.integer  "path_id"
     t.integer  "customer_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "ancestry"
+    t.string   "prioritycss"
   end
 
   add_index "tickets", ["ancestry"], :name => "index_tickets_on_ancestry"

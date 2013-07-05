@@ -1,18 +1,38 @@
-<%= simple_form_for [@customer, @ticket] do |f| %>
-<div class="container">
-	  <div class="form-inputs">
-      <div class="row-fluid">
-        <div class="span12"> 
-            <%= f.error_notification %>
-          	<%= f.hidden_field :parent_id %>
-            <%= f.input :reply, :input_html=>{:rows =>5, :cols=>60} %>
-            <%= f.input :status %>
+<%= simple_form_for([@customer, @ticket]) do |f,| %>
+        <div class="span14">
+          <div class="span4"> 
+            <div>
+                   Datos Cliente
+            </div>
+            <div>
+              Cliente: <%= @customer.lastname + ",  "+ @customer.name %>
+            </div>
+          </div>
+        <div class="span9"> 
+          <div>
+              <h4>#<%= @ticket.id %>[ <%= @ticket.issue %> ] </h4>
+                <p>Mensaje:</p>
+                   <pre><%= @ticket.message%><p class="pull-right"><%= l @ticket.created_at, :format => :long %></p></pre>
+                <p>Respuesta:</p>
+                   <%= f.simple_fields_for :ticket_answer do |builder| %>
+                   <%=builder.text_area :message, :rows => 3, :cols  => 70  %>
+                    <% end %>
+          </div>
         </div>
-        <div class="form-actions">
-          <%= f.button :submit %>
-        </div>
-
-  </div>
-  </div>
-  </div>
+<div id="fondo span12">
+<footer id="footer">
+              <div class="btn-group dropup pull-right" >
+                 <%= f.button :submit, :class =>'btn btn-primary' %>
+                 <% f.button :submit, :class =>'btn btn-primary' %>
+                   <button class="btn dropdown-toggle" data-toggle="dropdown">
+                     <span class="caret"></span>
+                   </button>
+                      <ul class="dropdown-menu">
+                        <li><%= link_to "Solved", "#", :class=>'solved' %> </li>
+                        <li><%= link_to "Visit Technical", "#" %></li>
+                      </ul>    
+              </div>
+</footer>
+</div>
 <% end %>
+

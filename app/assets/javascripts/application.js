@@ -15,3 +15,4 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require customers
+//= require tickets

@@ -38,7 +38,6 @@ def show
   end
 
   # GET /customers/1/edit
-
   def edit
     @customer = Customer.find(params[:id])
 #    unauthorized! if cannot? :edit, @customer

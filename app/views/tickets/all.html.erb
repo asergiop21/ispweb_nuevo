@@ -1,34 +1,36 @@
 <h1>Listing tickets all</h1>
-<table class="table">
-  <tr>
-    <th>#</th>
-    <th>Customer</th>
-    <th>Issue</th>
-    <th>Message</th>
-    <th>Status</th>
-    <th>Área</th>
-    <th>Priority</th>
-    <th>Reply</th>
-    <th>User</th>
+  <div class="span4">
+     <div>
+       <h4> View</h4>
+     </div>
+      <table class="table">
+      <tr>
+          <td><%= link_to "tickets pendientes", "#" %></td>
+          <td><span class="badge"><%= @tickets.count %></span></td>
+      </tr>  
+      <tr>  
+        <td><%= link_to "tickets Urgentes", "#" %></td>
+        <td><span class="badge"><%= @tickets_urgent.count %></span></td>
+      </tr>
+  </table>
+    </div>
+  <div class="span10">
+   <h4> Incidencias sin resolver (<%= @tickets.count  %>)</h4>
+  <table class="table">
+      <th>#</th>
+      <th>Issue</th>
+      <th>Customer</th>
+      <th>Created at</th>
+      <th>priority</th>
+    <% @tickets.each do |ticket| %>       
+      <tr>
+        <td><%= ticket.id %></td>
+        <td><li class="<%= ticket.prioritycss %>">  </li></td>
+        <td><%= link_to ticket.customer.lastname + ", "+ ticket.customer.name, edit_customer_ticket_path(ticket.customer.id, ticket) %></td>
+        <td><%= ticket.created_at %></td>
+        <td><%= ticket.priority %></td>
+    <tr>
+    <% end %>
+  </table>
+  </div>
 
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tickets.each do |ticket| %>
-  <tr>
-    <td><%= ticket.id %></td>
-    <td> <%= link_to ticket.customer.lastname + ", "+ ticket.customer.name, customer_ticket_path(ticket.customer.id, ticket) %>   <%  %></td>
-    <td><%= ticket.issue %></td>
-    <td><%= ticket.message %></td>
-    <td><%= ticket.status? ? 'Cerrado': 'Pendiente' %></td>
-    <td><%= ticket.role.last do |u| u.role end %></td>
-    <td><%= ticket.priority %></td>
-    <td><%= ticket.reply %></td>
-    <td><%= ticket.user_id %></td>
-
-  </tr>
-<% end %>
-</table>
-<br />

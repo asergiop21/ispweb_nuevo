@@ -1,5 +1,5 @@
 <h1><%= t('tickets.new.title') %></h1>
 
-<%= render @ticket.parent if @ticket.parent %>
+<%= render @ticket.parent, @ticket.issue if @ticket.parent %>
 <%= render 'form' %>
 <%= link_to t('labels.back'), tickets_path %>

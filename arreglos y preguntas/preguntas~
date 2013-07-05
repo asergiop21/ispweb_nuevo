@@ -3,9 +3,5 @@
 	* Al editar un customers y al no haber telefonos no lo valida.!
 	* cuando agrego un telefono y quiero borrarlo en el momento no lo borra.
 
--tickets:
-    Agregar en status como default : false
 
 
-
- 

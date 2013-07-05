@@ -1,29 +1,35 @@
 <p id="notice"><%= notice %></p>
+<table class="table">
+  <tr>
+          <th>Id</th>
+          <th>mac</th>
+          <th>name</th>
+          <th>customer</th>
+          <th>date created at</th>
+          <th>date update_at</th>
+  </tr>
 
-<p>
-  <b><%= Equipment.human_attribute_name('mac')%>:</b>
-  <%= @equipment.mac %>
-</p>
 
-<p>
-  <b><%= Equipment.human_attribute_name('status')%>:</b>
-  <%= @equipment.status %>
-</p>
+        
+<% @loan.each do  |l|  %>
 
-<p>
-  <b><%= Equipment.human_attribute_name('comment')%>:</b>
-  <%= @equipment.comment %>
-</p>
+  <tr>
+          <td><%= l.id %></td>
+          <td><%= l.equipment.mac %></td>
+          <td><%= l.equipment.model.name %></td>
+          <td><%= l.customer.lastname + ", " + l.customer.name %></td>
+          <td><%= l l.created_at, format: :minimal %></td>
+          <td><%= l l.updated_at, format: :minimal %></td>
+  </tr>  
 
-<p>
-  <b><%= Equipment.human_attribute_name('model')%>:</b>
-  <%= @equipment.model.name %>
-</p>
+  <% end %>
 
-<p>
-  <b><%= Equipment.human_attribute_name('supplier')%>:</b>
-  <%= @equipment.supplier.name %>
-</p>
+
+</table>
+  
+
+
+
 
 
 <%= link_to t('labels.edit'), edit_equipment_path(@equipment) %> |

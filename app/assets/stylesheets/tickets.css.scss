@@ -12,18 +12,31 @@
   -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
      -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
           box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-
 }
 
-#footer{
-margin: -150px auto 0;
-position: fixed;
-bottom: 0;
-background-color: #000;
+.footer{
+    margin: -150px auto 0;
+    position: fixed;
+    bottom: 0;
+    background-color: #CECEDD;
+    height: 7%;
 }
 
-#fondo
+.tickets
 {
+  position: fixed;
+  padding: 10px 15px;
+  border: 1px solid #0D0D0D;
+  height: 75%;
+  overflow: auto;
+  left: 15%; 
 
-background-color: #000;
+}
+
+.s_left{
+  padding: 10px 5px;
+  border: 1px solid #D0D0D0;
+  min-width: 10px; 
+  max-width: 190px; 
+  position: fixed;
 }

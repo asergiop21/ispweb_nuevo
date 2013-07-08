@@ -203,7 +203,7 @@
       phone_number: 'Telefonos'
       prompt_location: 'Seleccione una localidad'
       prompt_plans: 'Seleccione un plan'
-      new_customer: 'Nuevo Cliente'
+      new_customer: '+ Nuevo Cliente'
       loans: 'Comodatos'
     locations:
       new_location: 'Nueva Localidad'

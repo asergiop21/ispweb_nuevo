@@ -1,6 +1,7 @@
 <%= simple_form_for([@customer, @ticket]) do |f,| %>
-        <div class="span14">
-          <div class="span4"> 
+        <div class="span12">
+        <div class="row-fluid">
+          <div class="span3 s_left"> 
             <div>
                    Datos Cliente
             </div>
@@ -8,7 +9,7 @@
               Cliente: <%= @customer.lastname + ",  "+ @customer.name %>
             </div>
           </div>
-        <div class="span9"> 
+        <div class="span8 tickets"> 
           <div>
               <h4>#<%= @ticket.id %>[ <%= @ticket.issue %> ] </h4>
                 <p>Mensaje:</p>
@@ -19,8 +20,8 @@
                     <% end %>
           </div>
         </div>
-<div id="fondo span12">
-<footer id="footer">
+        </div>
+<div class="span12 footer">
               <div class="btn-group dropup pull-right" >
                  <%= f.button :submit, :class =>'btn btn-primary' %>
                  <% f.button :submit, :class =>'btn btn-primary' %>
@@ -32,7 +33,6 @@
                         <li><%= link_to "Visit Technical", "#" %></li>
                       </ul>    
               </div>
-</footer>
-</div>
+              </div>
 <% end %>
 

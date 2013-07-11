@@ -11,12 +11,12 @@
           </div>
         <div class="span8 tickets"> 
           <div>
-              <h4>#<%= @ticket.id %>[ <%= @ticket.issue %> ] </h4>
+              <h4>#<%= @ticket.id %> [ <%= @ticket.issue %> ] - <%= @ticket.status? ? 'Close': 'Open' %> </h4>
                 <p>Mensaje:</p>
                    <pre><%= @ticket.message%><p class="pull-right"><%= l @ticket.created_at, :format => :long %></p></pre>
                 <p>Respuesta:</p>
                    <%= f.simple_fields_for :ticket_answer do |builder| %>
-                   <%=builder.text_area :message, :rows => 3, :cols  => 70  %>
+                   <%=builder.text_area :message, :rows => 2, :cols  => 70  %>
                     <% end %>
           </div>
         </div>
@@ -29,8 +29,7 @@
                      <span class="caret"></span>
                    </button>
                       <ul class="dropdown-menu">
-                        <li><%= link_to "Solved", "#", :class=>'solved' %> </li>
-                        <li><%= link_to "Visit Technical", "#" %></li>
+                        <li><%=link_to "Solved", customer_ticket_path(@customer.id, @ticket, ticket:{status:true}), method: :put  %></li>
                       </ul>    
               </div>
               </div>

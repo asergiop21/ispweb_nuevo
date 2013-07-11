@@ -32,4 +32,4 @@ end
  gem 'i18n', "~>0.6.4"
 gem 'thin'
 # To use debugger
-# gem 'debugger'
+ gem 'debugger'

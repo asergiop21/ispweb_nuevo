@@ -4,7 +4,6 @@ class TicketsController < ApplicationController
  before_filter :load_customer, :except=>[:all]
  
   def index
-    
 #    @tickets = @customer.tickets.arrange
     @tickets = @customer.tickets
 
@@ -20,7 +19,6 @@ class TicketsController < ApplicationController
     
     @ticket = @customer.tickets.find(params[:id])
 
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: [@ticket] }
@@ -33,8 +31,6 @@ class TicketsController < ApplicationController
 
     @ticket = @customer.tickets.new(:parent_id => params[:parent_id])
 
-
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @ticket }
@@ -43,10 +39,11 @@ class TicketsController < ApplicationController
 
   # GET /tickets/1/edit
   def edit
-    
     @ticket = @customer.tickets.find(params[:id])
-    1.times {@ticket.ticket_answer.build}
-end
+    
+    1.times {@ticket.ticket_answer.build} if @ticket[:status] == false
+ 
+  end
 
   # POST /tickets
   # POST /tickets.json
@@ -73,12 +70,11 @@ end
   def update
 
     @ticket = @customer.tickets.find(params[:id])
-    @datos = params[:ticket][:role_id]
+    @datos = params[:role_id]
     @ticket.ticket_and_role.build({ticket_id: @ticket.id, role_id: @datos, user_id: current_user.id})
-     
-    params[:ticket][:status] = true if params[:solved] == "solved"
- 
-    respond_to do |format|
+
+
+respond_to do |format|
       if @ticket.update_attributes(params[:ticket])
         format.html { redirect_to edit_customer_ticket_path(@customer, @ticket), notice: 'Ticket was successfully updated.' }
         format.json { head :no_content }

@@ -16,6 +16,7 @@
        <%=render 'phones', f: ph  %>
      <% end %>
     <%= link_to_add_fields t('view.customers.add_phones'), f , :phones %>
+<%= @customer.phones.count %>
   </div>
   </div>
 
@@ -26,7 +27,6 @@
    <%= f.input :plan_id do %>
      <%= f.select :plan_id,  Plan.where(remove: true).map {|p|[p.name + " - " + p.download_speed , p.id]}, prompt: t('view.customers.prompt_plans') %>
    <% end  %>
-  
    <%= f.input :description, :input_html => {:rows => 5}%>
     <%= f.input :cuit%>
     <%= f.input :date_of_birth, start_year: Date.today.year - 90, order: [:day, :month, :year], :input_html =>{:width => '100px', :class => 'span2'} %>

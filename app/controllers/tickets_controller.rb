@@ -41,7 +41,7 @@ class TicketsController < ApplicationController
   def edit
     @ticket = @customer.tickets.find(params[:id])
     
-    1.times {@ticket.ticket_answer.build} if @ticket[:status] == false
+    1.times {@ticket.ticket_answer.build} if @ticket[:status] != 'cerrado'
  
   end
 
@@ -72,7 +72,6 @@ class TicketsController < ApplicationController
     @ticket = @customer.tickets.find(params[:id])
     @datos = params[:role_id]
     @ticket.ticket_and_role.build({ticket_id: @ticket.id, role_id: @datos, user_id: current_user.id})
-
 
 respond_to do |format|
       if @ticket.update_attributes(params[:ticket])
@@ -115,6 +114,15 @@ respond_to do |format|
   def history_ticket
       @history = @customer.tickets.find(params[:id])
       @history_ticket = @history.ticket_and_role.all 
+  end
+
+  def technical_visit
+    @ticket = @customer.tickets.find(params[:id])
+    @ticket_support = @ticket.ticket_answer.build({ticket_id: @ticket.id, message:"Pasado a Visitas",  user_id: current_user.id })
+    @ticket_support.save
+  respond_to do |format|
+        format.html { redirect_to edit_customer_ticket_path(@customer, @ticket), notice: 'Ticket was successfully updated.' }
+      end
   end
 
 private

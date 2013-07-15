@@ -20,7 +20,9 @@ Ispweb::Application.routes.draw do
       resources :tickets
       match "reply/:id/edit"=> "tickets#reply", as: :reply
       match "history_ticket/:id" =>"tickets#history_ticket", as: :history_ticket
-      resources :accounts_receivables
+      match "technical_visit/:id" =>"tickets#technical_visit", as: :technical_visit
+     
+       resources :accounts_receivables
  end
      devise_for :users, :controllers => {:registrations => :registrations}
 #    devise_for :users

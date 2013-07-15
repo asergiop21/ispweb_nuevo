@@ -103,6 +103,8 @@
           attributes:
             email:
               invalid: 'No es un mail valido'
+            date_of_birth:
+              before: 'Debe ser mayor de 18 años'
     models:
       customer: 'Clientes'
       location: 'Localidades'

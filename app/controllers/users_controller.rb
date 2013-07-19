@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
 before_filter :authenticate_user!, :except => [:some_action_without_auth]
-load_and_authorize_resource
+load_and_authorize_resource :only =>[:new]
+
   def index
     @users = User.all
     respond_to do |format|
@@ -19,6 +20,7 @@ load_and_authorize_resource
     end
   end
  def new
+
     @user = User.new
 
     respond_to do |format|

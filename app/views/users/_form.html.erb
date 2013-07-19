@@ -1,7 +1,7 @@
 <%= simple_form_for(@user) do |f| %>
 
   <%= f.error_notification %>
-<%= @user.role %>
+<%= current_user %>
 <div class="container">
         <div class="span12">
             <div class="span6">
@@ -20,10 +20,8 @@
                   <li><%= link_to_unless_current "spanish", locale: "es" %></li>
               </ul>
               <%= f.association :role    %>
-             <% if @user.role? :Admin %>
               <%= f.input :password %>
               <%= f.input :password_confirmation%>
-            <% end %>
               <%= f.input :enabled %>
             </div>
         <div class="span12"><%= f.button :submit %></div>

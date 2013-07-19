@@ -4,17 +4,17 @@ class Ability
   def initialize(user)
 #if user.username == 'admin	'
 
-   if user.role? :Admin	
+   #if user.role? :Admin	
      can :manage, :all
      #cannot :manage, Location
      #cannot :manage, Role
 
     # can :manage, Customer
     # cannot :manage, User
-   else
-     can :manage, :all
+  # else
+  #   can :manage, :all
     # cannot :manage, Location
-  end 
+ # end 
 
     
     

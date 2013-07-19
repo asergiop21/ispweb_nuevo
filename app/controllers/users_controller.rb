@@ -35,7 +35,7 @@ before_filter :authenticate_user!, :except => [:some_action_without_auth]
 
   def create
     @user = Customer.new(params[:user])
-
+puts @user.inspect
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'Customer was successfully created.' }

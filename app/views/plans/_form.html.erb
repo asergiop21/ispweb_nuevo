@@ -24,15 +24,17 @@
 <div class="accordion" id="accordion2">
 <div class="accordion-group">
 <div class="accordion-heading">
-      <%= link_to "Sistema Vampiro", "#" , :class="accordion-toggle" %>
+      <%= link_to "Sistema Vampiro", "#collapseTwo" , :class=> "accordion-toggle",  "data-toggle" => "collapse", "data-parent" => "#accordion2"%>
 
+<div id="collapseTwo" class="accordion-body collapse">
   <h3><%= t('plans.system_vampire') %></h3>  
-
+          <%= f.input :enable_vampire %>
           <%= f.input :upload_speed_vampire %>
           <%= f.input :download_speed_vampire %>
           <%= f.input :percentage_junk_vampire %>
           <%= f.input :start_time, :input_html => {:class=>'span1'} %>         
           <%= f.input :end_time, :input_html => {:class=>'span1'} %>         
+</div>
 </div>
 </div>
 </div>

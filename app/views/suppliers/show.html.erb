@@ -16,11 +16,6 @@
   <%= @supplier.user.username %>
 </p>
 
-<p>
-  <b><%= Supplier.human_attribute_name('zipcode') %></b>
-  <%= @supplier.zipcode %>
-</p>
-
 
 <%= link_to t('labels.edit'), edit_supplier_path(@supplier) %> |
 <%= link_to t('labels.back'), suppliers_path %>

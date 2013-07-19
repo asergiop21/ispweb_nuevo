@@ -1,5 +1,5 @@
 class Plan < ActiveRecord::Base
-  attr_accessible :download_speed, :name, :price, :price_surcharges1, :price_surcharges2, :remove, :upload_speed, :user_id, :percentage_junk, :support_priority, :upload_speed_vampire, :download_speed_vampire, :percentage_junk_vampire, :start_time, :end_time
+  attr_accessible :download_speed, :name, :price, :price_surcharges1, :price_surcharges2, :remove, :upload_speed, :user_id, :percentage_junk, :support_priority, :upload_speed_vampire, :download_speed_vampire, :percentage_junk_vampire, :start_time, :end_time, :enable_vampire
 
   validates :name, :download_speed, :upload_speed, :price,  :presence => true
   validates :name, length: {maximum: 255}

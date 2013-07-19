@@ -19,8 +19,13 @@
           <%= f.input :support_priority, hint:t('view.locations.support_priority_hinit') %>
 
         </div>
-
 </div>
+
+<div class="accordion" id="accordion2">
+<div class="accordion-group">
+<div class="accordion-heading">
+      <%= link_to "Sistema Vampiro", "#" , :class="accordion-toggle" %>
+
   <h3><%= t('plans.system_vampire') %></h3>  
 
           <%= f.input :upload_speed_vampire %>
@@ -28,7 +33,9 @@
           <%= f.input :percentage_junk_vampire %>
           <%= f.input :start_time, :input_html => {:class=>'span1'} %>         
           <%= f.input :end_time, :input_html => {:class=>'span1'} %>         
-
+</div>
+</div>
+</div>
      </div>
         <div class="form-actions">
           <%= f.button :submit, :class => 'btn btn-primary' %>

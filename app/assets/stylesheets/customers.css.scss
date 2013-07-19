@@ -2,12 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.siderbar-left{
-  padding: 10px 5px;
-  background: #D0D0D0 ;
-  min-width: 10px; 
-  max-width: 190px; 
-  position: fixed;
+.side{
+  heigth: 15%;
+  float: left;
   
 }
 

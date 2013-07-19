@@ -2898,8 +2898,9 @@ table th[class*="span"],
 }
 
 .dropdown .caret {
-  margin-top: 8px;
+  margin-top: 3px;
   margin-left: 2px;
+ 
 }
 
 .dropdown-menu {

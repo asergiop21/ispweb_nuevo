@@ -1,0 +1,39 @@
+<%= simple_form_for([@customer, @tickets, @ticket_answer]) do |f| %>
+        <div class="span12">
+        <div class="row-fluid">
+          <div class="span3 s_left"> 
+            <div>
+                   Datos Cliente
+            </div>
+            <div>
+              Cliente: <%= @customer.lastname + ",  "+ @customer.name %>
+            </div>
+          </div>
+        <div class="span8 tickets"> 
+          <div>
+              <h4>#<%= @ticket.id %> [ <%= @ticket.issue %> ] - <%= @ticket.status? ? 'Close': 'Open' %> </h4>
+                <p>Mensaje:</p>
+                   <pre><%= @ticket.message%><p class="pull-right"><%= l @ticket.created_at, :format => :long %></p></pre>
+                <p>Respuesta:</p>
+                   <%= f.simple_fields_for :ticket_answer do |builder| %>
+                   <%=builder.text_area :message, :rows => 2, :cols  => 70  %>
+                    <% end %>
+                <%= f.hidden_field :status %>
+  
+          </div>
+        </div>
+        </div>
+<div class="span12 footer">
+              <div class="btn-group dropup pull-right" >
+                 <%= f.button :submit, :class =>'btn btn-primary' %>
+                   <button class="btn dropdown-toggle" data-toggle="dropdown">
+                     <span class="caret"></span>
+                   </button>
+                      <ul class="dropdown-menu">
+                        <li><%=link_to "Solved", customer_ticket_path(@customer.id, @ticket, ticket:{status:true}), method: :put  %></li>
+                        <li><%=link_to "Visitas Tecnicas", customer_technical_visit_path(@customer.id, @ticket)  %></li>
+                      </ul>    
+              </div>
+              </div>
+<% end %>
+

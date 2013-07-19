@@ -17,17 +17,18 @@ Ispweb::Application.routes.draw do
     end
     resources :customers do
       resources :loans
-      resources :tickets
+      resources :tickets do
+     #   resources :tickets_answers
+      end
       match "reply/:id/edit"=> "tickets#reply", as: :reply
       match "history_ticket/:id" =>"tickets#history_ticket", as: :history_ticket
       match "technical_visit/:id" =>"tickets#technical_visit", as: :technical_visit
-     
-       resources :accounts_receivables
+      resources :accounts_receivables
  end
      devise_for :users, :controllers => {:registrations => :registrations}
 #    devise_for :users
     resources :users
-     match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
+    match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
     match '', to: redirect("/#{I18n.default_locale}")
 
 end
@@ -36,9 +37,6 @@ end
     match "loans" => "loans#loan_pending"
     match "tickets"=>"tickets#all"
 # match "users" => "users#index"
-
-
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

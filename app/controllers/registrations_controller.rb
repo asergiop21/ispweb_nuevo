@@ -3,9 +3,9 @@ class RegistrationsController < Devise::RegistrationsController
 
 # GET /resource/sign_up
 
-# def new
-#	super
-#end
+def new
+	super
+end
 
   # POST /resource
   def create
@@ -14,7 +14,6 @@ class RegistrationsController < Devise::RegistrationsController
       flash[:notice] = "You have signed up successfully. If enabled, a confirmation was sent to your e-mail."
       redirect_to root_url
     else
-
       render :action => :new
     end
 end

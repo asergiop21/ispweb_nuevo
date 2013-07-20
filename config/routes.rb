@@ -25,8 +25,8 @@ Ispweb::Application.routes.draw do
       match "technical_visit/:id" =>"tickets#technical_visit", as: :technical_visit
       resources :accounts_receivables
  end
-     devise_for :users, :controllers => {:registrations => :registrations}
-#    devise_for :users
+ #    devise_for :users, :controllers => {:registrations => :registrations}
+    devise_for :users
     resources :users
     match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
     match '', to: redirect("/#{I18n.default_locale}")

@@ -3300,3 +3300,272 @@ Served asset /tickets.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-20 10:26:01 -0300
 Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/es/users/new" for 127.0.0.1 at 2013-07-20 10:28:27 -0300
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"es"}
+Completed 401 Unauthorized in 7ms
+
+
+Started GET "/es/users/sign_in" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"locale"=>"es"}
+  Rendered devise/sessions/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 139ms (Views: 98.3ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /twitter/bootstrap.css - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap-responsive.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /twitter/bootstrap-responsive.css - 200 OK (0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /customers.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery/ui-custom.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /jquery/ui-custom.css - 200 OK (0ms)
+
+
+Started GET "/assets/accounts_receivables.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /accounts_receivables.css - 200 OK (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/equipment.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /equipment.css - 200 OK (0ms)
+
+
+Started GET "/assets/loans.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /loans.css - 200 OK (0ms)
+
+
+Started GET "/assets/locations.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /locations.css - 200 OK (0ms)
+
+
+Started GET "/assets/makes.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /makes.css - 200 OK (0ms)
+
+
+Started GET "/assets/models.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /models.css - 200 OK (0ms)
+
+
+Started GET "/assets/permissions.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /permissions.css - 200 OK (0ms)
+
+
+Started GET "/assets/plans.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /plans.css - 200 OK (0ms)
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /registrations.css - 200 OK (0ms)
+
+
+Started GET "/assets/roles.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /roles.css - 200 OK (0ms)
+
+
+Started GET "/assets/roles_and_permissions.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /roles_and_permissions.css - 200 OK (0ms)
+
+
+Started GET "/assets/suppliers.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /suppliers.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/tickets_answers.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /tickets_answers.css - 200 OK (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /tickets.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /jquery-ui.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /twitter/bootstrap.js - 200 OK (0ms)
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /customers.js - 200 OK (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /tickets.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:28 -0300
+Served asset /application.js - 200 OK (3ms)
+
+
+Started POST "/es/users/sign_in" for 127.0.0.1 at 2013-07-20 10:28:33 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YNbbmLwoEq8xa4ToJ5T0qQlQ4PtDculTxbkjcOt/4MM=", "user"=>{"username"=>"admin", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Registrarse", "locale"=>"es"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'admin' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-07-20 12:34:45.157780', "current_sign_in_at" = '2013-07-20 13:28:33.631723', "sign_in_count" = 6, "updated_at" = '2013-07-20 13:28:33.634481' WHERE "users"."id" = 1[0m
+  [1m[35m (74.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/es/users/new
+Completed 302 Found in 184ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/es/users/new" for 127.0.0.1 at 2013-07-20 10:28:33 -0300
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"es"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.6ms)[0m  SELECT "roles".* FROM "roles" 
+  Rendered users/_form.html.erb (53.3ms)
+  Rendered users/new.html.erb within layouts/application (54.4ms)
+  Rendered layouts/_menu.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 141ms (Views: 130.6ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/twitter/bootstrap-responsive.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /twitter/bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /twitter/bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /customers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery/ui-custom.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /jquery/ui-custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts_receivables.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /accounts_receivables.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/equipment.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /equipment.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loans.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /loans.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /locations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/makes.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /makes.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/models.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /models.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/permissions.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /permissions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /plans.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /registrations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /roles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles_and_permissions.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /roles_and_permissions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/suppliers.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /suppliers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets_answers.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /tickets_answers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /jquery-ui.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /twitter/bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /customers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-20 10:28:34 -0300
+Served asset /application.js - 304 Not Modified (2ms)
+Connecting to database specified by database.yml

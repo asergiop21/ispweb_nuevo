@@ -26,8 +26,10 @@ Ispweb::Application.routes.draw do
       resources :accounts_receivables
  end
  #    devise_for :users, :controllers => {:registrations => :registrations}
+
     devise_for :users
     resources :users
+
     match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
     match '', to: redirect("/#{I18n.default_locale}")
 

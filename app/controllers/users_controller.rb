@@ -22,7 +22,6 @@ before_filter :authenticate_user!, :except => [:some_action_without_auth]
  def new
 
     @user = User.new
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -34,8 +33,8 @@ before_filter :authenticate_user!, :except => [:some_action_without_auth]
   end
 
   def create
-    @user = Customer.new(params[:user])
-puts @user.inspect
+    @user = User.new(params[:user])
+    
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'Customer was successfully created.' }

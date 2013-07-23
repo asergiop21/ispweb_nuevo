@@ -14,7 +14,7 @@
     <td><%= u.lastname %></td>
     <td><%= u.email %></td>
     <td><%= u.username %></td>
-    <td><%= u.role.last do |y| y.role end%></td>
+    <td><%= u.role_id%></td>
     <td><%= link_to "Edit", edit_user_path(u.id) %></td>
   </tr>
  <% end %>

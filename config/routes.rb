@@ -22,9 +22,12 @@ Ispweb::Application.routes.draw do
       end
       match "reply/:id/edit"=> "tickets#reply", as: :reply
       match "history_ticket/:id" =>"tickets#history_ticket", as: :history_ticket
-      match "technical_visit/:id" =>"tickets#technical_visit", as: :technical_visit
+
       resources :accounts_receivables
  end
+
+    match "technical_visit" =>"tickets#technical_visit", as: :technical_visit
+
  #    devise_for :users, :controllers => {:registrations => :registrations}
 
     devise_for :users
@@ -33,7 +36,10 @@ Ispweb::Application.routes.draw do
     match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
     match '', to: redirect("/#{I18n.default_locale}")
 
+
 end
+
+
 
     match "models" => "models#index"
     match "loans" => "loans#loan_pending"

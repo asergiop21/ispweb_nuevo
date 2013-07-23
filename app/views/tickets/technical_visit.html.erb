@@ -1,8 +1,7 @@
-<h1>Listing tickets all</h1>
-  <div class="span3">
-      <%= render "view" %>
-  </div>
-  <%= current_user.role_name %>
+<div class="span3">
+        <%= render "view" %>
+</div>
+
 
 <div class="span10">
   <h4> Incidencias sin resolver (<%= @tickets_all.count  %>)</h4>
@@ -12,7 +11,7 @@
       <th>Customer</th>
       <th>Created at</th>
       <th>priority</th>
-    <% @tickets_all.each do |ticket| %>       
+    <% @tickets_technical_visit.each do |ticket| %>       
       <tr>
         <td><%= ticket.id %></td>
         <td><li class="<%= ticket.prioritycss %>">  </li></td>
@@ -23,4 +22,3 @@
     <% end %>
   </table>
   </div>
-

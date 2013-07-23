@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable,
+  devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable
   # Setup accessible (or protected) attributes for your model
 
@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   validates_presence_of :username
   validates :password,  length: {maximum:30}, :allow_nil => true, :allow_blank => true, on: :update
 
-  has_and_belongs_to_many :role
+ # has_and_belongs_to_many :role
   has_many :customer
   has_many :plan
   has_many :loan
@@ -23,14 +23,15 @@ class User < ActiveRecord::Base
   has_many :ticket
   has_many :ticket_and_role
   has_many :accounts_receivable
-
-  def role?(role)
+ belongs_to :roles
+ def role?(role)
     return !!self.role.find_by_role(role.to_s.camelize)
   end
 
   def to_s
     self.username
   end
+
   private
   def password_required?
   # If resetting the password

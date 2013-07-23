@@ -1,8 +1,9 @@
 class TicketsController < ApplicationController
   # GET /tickets
   # GET /tickets.json
- before_filter :load_customer, :except=>[:all]
- 
+ before_filter :load_customer, :except=>[:all, :technical_visit]
+ before_filter :all, :only =>[:technical_visit ] 
+
   def index
 #    @tickets = @customer.tickets.arrange
     @tickets = @customer.tickets
@@ -41,7 +42,6 @@ class TicketsController < ApplicationController
   def edit
     @ticket = @customer.tickets.find(params[:id])
     1.times {@ticket.ticket_answer.build} if @ticket[:status] != 'cerrado'
-
   end
 
   # POST /tickets
@@ -51,7 +51,6 @@ class TicketsController < ApplicationController
     @ticket = @customer.tickets.new(params[:ticket].merge(:user_id => current_user.id))
     @ticket.ticket_and_role.build({ticket_id:@ticket.id, role_id:@ticket.role_id, user_id: current_user.id})
    
-
  respond_to do |format|
       if @ticket.save
         format.html { redirect_to customer_tickets_path(@customer), notice: 'Ticket was successfully created.' }
@@ -94,12 +93,19 @@ respond_to do |format|
   end
 
   def all
-    @tickets = Ticket.where(role_id: current_user.role , status: false   )
-    @tickets_urgent= Ticket.where(role_id: current_user.role , priority: 'Urgente', status: false  )
+    
+    #Ticket Pendientes
+      @tickets_all = Ticket.where(role_id: current_user.role_id , status: false   )
+    #Ticket Urgentes
+    @tickets_urgent= Ticket.where(role_id: current_user.role_id , priority: 'Urgente', status: false  )
+    
+    #Ticket Visistas Tecnicas
+    @tickets_technical_visit = Ticket.where(role_id: '3')
+
     
 respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @tickets }
+      format.json { render json: @tickets_technical_visit }
     end
   end
 
@@ -114,12 +120,13 @@ respond_to do |format|
   end
 
   def technical_visit
-    @ticket = @customer.tickets.find(params[:id])
-    @ticket_support = @ticket.ticket_answer.build({ticket_id: @ticket.id, message:"Pasado a Visitas",  user_id: current_user.id })
-    @ticket_support.save
-  respond_to do |format|
-        format.html { redirect_to edit_customer_ticket_path(@customer, @ticket), notice: 'Ticket was successfully updated.' }
-      end
+   @tickets = Ticket.all
+   # @ticket_support = @ticket.ticket_answer.build({ticket_id: @ticket.id, message:"Pasado a Visitas",  user_id: current_user.id })
+   # @ticket_support.save
+ 
+#  respond_to do |format|
+       # format.html { redirect_to edit_customer_ticket_path(@customer, @ticket), notice: 'Ticket was successfully updated.' }
+#      end
   end
 
 private

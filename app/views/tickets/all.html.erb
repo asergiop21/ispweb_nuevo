@@ -2,8 +2,7 @@
   <div class="span3">
       <%= render "view" %>
   </div>
-  <%= current_user.role_name %>
-
+<%= current_user.role_id %>
 <div class="span10">
   <h4> Incidencias sin resolver (<%= @tickets_all.count  %>)</h4>
   <table class="table">

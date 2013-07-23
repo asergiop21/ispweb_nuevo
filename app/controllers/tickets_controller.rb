@@ -95,7 +95,7 @@ respond_to do |format|
   def all
     
     #Ticket Pendientes
-      @tickets_all = Ticket.where(role_id: current_user.role_id , status: false   )
+      @tickets_all = Ticket.where(role_id: current_user.role_id , status: "pendiente"   )
     #Ticket Urgentes
     @tickets_urgent= Ticket.where(role_id: current_user.role_id , priority: 'Urgente', status: false  )
     
@@ -105,7 +105,7 @@ respond_to do |format|
     
 respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @tickets_technical_visit }
+      format.json { render json: @tickets_all }
     end
   end
 

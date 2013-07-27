@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130719134851) do
+ActiveRecord::Schema.define(:version => 20130726165134) do
 
   create_table "accounts_receivables", :force => true do |t|
     t.string   "description"
@@ -69,6 +69,14 @@ ActiveRecord::Schema.define(:version => 20130719134851) do
     t.integer  "number_invoice", :default => 1000
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
+  end
+
+  create_table "ips", :force => true do |t|
+    t.string   "ip_ap"
+    t.string   "ip_device"
+    t.integer  "plan_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "loans", :force => true do |t|

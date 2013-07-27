@@ -1,4 +1,5 @@
 Ispweb::Application.routes.draw do
+
  # resources :accounts_receivables
 
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
@@ -22,10 +23,10 @@ Ispweb::Application.routes.draw do
       end
       match "reply/:id/edit"=> "tickets#reply", as: :reply
       match "history_ticket/:id" =>"tickets#history_ticket", as: :history_ticket
-
       resources :accounts_receivables
  end
 
+    resources :ips
     match "technical_visit" =>"tickets#technical_visit", as: :technical_visit
 
  #    devise_for :users, :controllers => {:registrations => :registrations}
@@ -35,7 +36,6 @@ Ispweb::Application.routes.draw do
 
     match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
     match '', to: redirect("/#{I18n.default_locale}")
-
 
 end
 

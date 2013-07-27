@@ -15,7 +15,7 @@
       <tr>
         <td><%= ticket.id %></td>
         <td><li class="<%= ticket.prioritycss %>">  </li></td>
-        <td><%= link_to ticket.customer.lastname + ", "+ ticket.customer.name, edit_customer_ticket_path(ticket.customer.id, ticket) %></td>
+        <td><%= link_to ticket.customer.lastname + ", "+ ticket.customer.name, customer_reply_path(ticket.customer.id, ticket.id) %></td>
         <td><%= ticket.created_at %></td>
         <td><%= ticket.priority %></td>
     <tr>

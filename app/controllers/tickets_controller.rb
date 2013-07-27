@@ -3,7 +3,6 @@ class TicketsController < ApplicationController
   # GET /tickets.json
  before_filter :load_customer, :except=>[:all, :technical_visit]
  before_filter :all, :only =>[:technical_visit ] 
-
   def index
 #    @tickets = @customer.tickets.arrange
     @tickets = @customer.tickets
@@ -17,13 +16,17 @@ class TicketsController < ApplicationController
   # GET /tickets/1
   # GET /tickets/1.json
   def show
-    
-    @ticket = @customer.tickets.find(params[:id])
-
+    @t = @customer.tickets.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: [@ticket] }
-    end
+      format.pdf do
+        pdf = TicketPdf.new(@t, @customer) 
+        send_data pdf.render, filename: "ticket_#{@ticket}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+end  
+  end
+
   end
 
   # GET /tickets/new

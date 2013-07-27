@@ -47,4 +47,7 @@ validates_date :date_of_birth, :before => lambda { 18.years.ago }
  
 end
 
+  def phone_cus
+     # self.phones = Phone.find(id) { |a| [a.phone_number]}
+  end
 end

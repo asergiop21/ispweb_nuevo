@@ -1,0 +1,13 @@
+<%= simple_form_for(@ip) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :ip_ap %>
+    <%= f.input :ip_device %>
+    <%= f.input :plan_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

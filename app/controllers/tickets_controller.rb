@@ -17,16 +17,16 @@ class TicketsController < ApplicationController
   # GET /tickets/1.json
   def show
     @t = @customer.tickets.find(params[:id])
+    @ip = @customer.ips
     respond_to do |format|
       format.html # show.html.erb
       format.pdf do
-        pdf = TicketPdf.new(@t, @customer) 
+        pdf = TicketPdf.new(@t, @customer, @ip) 
         send_data pdf.render, filename: "ticket_#{@ticket}.pdf",
                               type: "application/pdf",
                               disposition: "inline"
 end  
   end
-
   end
 
   # GET /tickets/new
@@ -103,7 +103,7 @@ respond_to do |format|
     @tickets_urgent= Ticket.where(role_id: current_user.role_id , priority: 'Urgente', status: false  )
     
     #Ticket Visistas Tecnicas
-    @tickets_technical_visit = Ticket.where(role_id: '3')
+    @tickets_technical_visit = Ticket.where(role_id: '3', status:"pendiente")
 
     
 respond_to do |format|

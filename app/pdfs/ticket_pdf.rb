@@ -1,11 +1,11 @@
 class TicketPdf < Prawn::Document
-  def initialize(ticket, customer)
+  def initialize(ticket, customer, customer_ip)
     super(left_margin: 30)
     @ticket = ticket
     @customer = customer
+    @ip = customer_ip
     titles
 
-  #  text "\##{@customer.name}"
   end
   
   def titles
@@ -40,20 +40,27 @@ class TicketPdf < Prawn::Document
         footer 
   end
   def personal
-     data = [["Clientes:", @customer.name], 
+     data = [["Clientes:", @customer.lastname + ",  " + @customer.name], 
              ["Domicilio:", @customer.address],
              ["Entre:", @customer.reference_direction],
-             ["Telefono:", @customer.phone_cus]
+             ["Telefono:", ".."]
    ]
      table(data, :column_widths => [100, 400])
   end
   def technical_data
-      table_data = [["Ip PC", "....", "IP Antena:","..."],
+      if @ip.empty?
+        text "No hay Datos Tecnicos"  
+    else
+
+    @ip.each do |ip| 
+      table_data = [["Ip PC", ip.ip_device, "IP Antena:",ip.ip_ap],
                    ["ABono", ".....", "Velocidad", "..."] 
                   ]
-
       table(table_data, :column_widths => [100, 150,100,150])
+
+end 
   end 
+    end
 
   def equipment
 

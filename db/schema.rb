@@ -74,9 +74,10 @@ ActiveRecord::Schema.define(:version => 20130726165134) do
   create_table "ips", :force => true do |t|
     t.string   "ip_ap"
     t.string   "ip_device"
-    t.integer  "plan_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "customer_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "loans", :force => true do |t|

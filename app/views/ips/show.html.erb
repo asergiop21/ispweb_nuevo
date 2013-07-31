@@ -10,11 +10,5 @@
   <%= @ip.ip_device %>
 </p>
 
-<p>
-  <b>Plan:</b>
-  <%= @ip.plan_id %>
-</p>
 
-
-<%= link_to 'Edit', edit_ip_path(@ip) %> |
-<%= link_to 'Back', ips_path %>
+<%= link_to 'Back', customer_ips_path(@customer.id) %>

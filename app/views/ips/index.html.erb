@@ -1,6 +1,15 @@
 <h1>Listing ips</h1>
 
-<table>
+<h3>customer: <%= @customer.lastname + ", "+ @customer.name %></h3>
+<div class="tabbable">
+        
+  <ul class="nav nav-tabs">
+    <li ><%= link_to "Comodatos", "#", "data-toggle" => "tab1" %></li>
+          
+
+
+
+<table class= "table">
   <tr>
     <th>Ip ap</th>
     <th>Ip device</th>
@@ -14,14 +23,12 @@
   <tr>
     <td><%= ip.ip_ap %></td>
     <td><%= ip.ip_device %></td>
-    <td><%= ip.plan_id %></td>
-    <td><%= link_to 'Show', ip %></td>
-    <td><%= link_to 'Edit', edit_ip_path(ip) %></td>
-    <td><%= link_to 'Destroy', ip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', customer_ip_path(ip.customer.id, ip), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
-
 <br />
+  </ul>
+</div>
 
-<%= link_to 'New Ip', new_ip_path %>
+<%= link_to 'New Ip', new_customer_ip_path %>

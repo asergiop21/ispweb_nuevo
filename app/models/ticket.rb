@@ -23,9 +23,9 @@ PRIORITY = Hash['Baja' => 'label', 'Normal' => 'label label-warning', 'Urgente' 
   
           self.priority = PRIORITY.key(self.prioritycss)
 end
-
         def to_s
           "#{role}"    
         end
+
 end
 

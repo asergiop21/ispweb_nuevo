@@ -10,6 +10,7 @@ after_create :add_plan_accounts_receivable
   #Relaciones
   has_many :phones, :dependent => :destroy
   has_many :loans
+  has_many :ips
   has_many :tickets, :dependent => :destroy
   belongs_to :user
   belongs_to :plan
@@ -17,7 +18,9 @@ after_create :add_plan_accounts_receivable
   has_many :accounts_receivable
 
   #Validaciones
-  validates :name, :lastname, :address, :date_of_birth, :dni, :category,  :location_id, :plan_id, presence: true
+  validates :name, :lastname, :address, :date_of_birth, :dni, :category,  :location_id, :plan_id,   presence: true
+
+ 
   validates :name, uniqueness: {scope: :lastname}, allow_nil: true, allow_blank: true
   validates :name, :lastname, :address, :neighborhood, :reference_direction, :email, length: {maximum: 255}, allow_nil: true, allow_blank: true 
   validates :dni, length: {is: 8}, numericality: true
@@ -26,16 +29,13 @@ after_create :add_plan_accounts_receivable
             :uniqueness => true,   
             :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
 validates_date :date_of_birth, :before => lambda { 18.years.ago }
+
+ 
  
 #accepts_nested_attributes_for :phones, :reject_if => lambda {|a| a[:phone_number].blank? }, allow_destroy: true
 
- accepts_nested_attributes_for :phones, allow_destroy: true, reject_if: :reject_phones
+ accepts_nested_attributes_for :phones, reject_if: :reject_phones, :allow_destroy => true
 
- def reject_phones(attribute)
-       if phones.count > PHONES_COUNT_MIN
-          attribute[:phone_number].blank?
-      end
- end
 
  def self.search (q=nil)
      self.connection.execute(sanitize_sql(["SELECT * FROM customers"]))
@@ -47,7 +47,17 @@ validates_date :date_of_birth, :before => lambda { 18.years.ago }
  
 end
 
-  def phone_cus
-     # self.phones = Phone.find(id) { |a| [a.phone_number]}
-  end
+  #def self.phone_cus
+     # phones = Phone.find(:id) { |a| [a.phone_number]}
+  #end
+
+private
+ def reject_phones(attribute)
+
+       if phones.count > PHONES_COUNT_MIN 
+            puts "hola" 
+          attribute[:phone_number].blank?
+      end
+ end
+
 end

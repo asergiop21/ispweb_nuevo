@@ -105,6 +105,10 @@
               invalid: 'No es un mail valido'
             date_of_birth:
               before: 'Debe ser mayor de 18 años'
+        phone:
+          attributes:
+            base:
+              phone_number: "en blanco"
     models:
       customer: 'Clientes'
       location: 'Localidades'

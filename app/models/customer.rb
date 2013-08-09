@@ -3,6 +3,12 @@ class Customer < ActiveRecord::Base
   INVOICE = %w[A B C]
   PHONES_COUNT_MIN = 0
 
+
+scope :con_nombre, ->(nombre){
+  where("LOWER(lastname) LIKE ?", "#{nombre}%".downcase)
+}
+
+
   #Atributos
   attr_accessible :address, :bar_code, :date_of_birth, :category, :cuit, :description, :dni, :email, :lastname, :name, :neighborhood, :reference_direction, :removed, :phones_attributes, :location_id, :plan_id, :user_id, :invoice
 
@@ -28,8 +34,8 @@ after_create :add_plan_accounts_receivable
   validates :email,   
             :uniqueness => true,   
             :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
-validates_date :date_of_birth, :before => lambda { 18.years.ago }
-
+  validates_date :date_of_birth, :before => lambda { 18.years.ago }
+  validates_presence_of  :phones
  
  
 #accepts_nested_attributes_for :phones, :reject_if => lambda {|a| a[:phone_number].blank? }, allow_destroy: true

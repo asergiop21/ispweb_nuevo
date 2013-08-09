@@ -6,7 +6,7 @@
   <div class="form-inputs">
     <% if params[:action] == 'new' %>
     <%= f.input :equipment  do%>
-       <%=f.select :equipment_id, Equipment.where(status:'STOCK').map {|e|[e.mac, e.id]}, prompt: "Seleccione una mac"  %>
+       <%=f.select :equipment_id, Equipment.where(status:'1').map {|e|[e.mac, e.id]}, prompt: "Seleccione una mac"  %>
     <% end %>
    <% elsif params[:action] == 'edit' %>
       <%= f.input :equipment  do%>

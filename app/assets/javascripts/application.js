@@ -16,3 +16,4 @@
 //= require twitter/bootstrap
 //= require customers
 //= require tickets
+//= require equipment

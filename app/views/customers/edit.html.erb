@@ -4,7 +4,18 @@
 <% if notice %>
   <li class="alert alert-success"><%= notice  %></li>
   <% end %>
-<h1><%= t('customers.editing.title') %></h1>
-<%= render 'form' %>
+
+<div class="section_complete">
+  <h1><%= t('customers.editing.title') %></h1>
+  <div class="data">
+      <%= render 'form' %>
+  </div>
+
+
+
+
 <%= link_to t('labels.show') , @customer %> |
 <%= link_to t('labels.back'), customers_path %>
+</div>
+
+

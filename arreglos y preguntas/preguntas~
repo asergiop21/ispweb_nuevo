@@ -2,6 +2,9 @@
 	* Cuando hago click en guardar y no hay telefonos me borra el campo del telefono. como se soluciona?.
 	* Al editar un customers y al no haber telefonos no lo valida.!
 	* cuando agrego un telefono y quiero borrarlo en el momento no lo borra.
+	* Cambiar nombre de invoice por type_invoice en customer
+	* Eliminar category_id en equipment - ya esta en el models
+	* jquery complete - en customers
 
 
 

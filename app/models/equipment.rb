@@ -1,16 +1,23 @@
 class Equipment < ActiveRecord::Base
-  attr_accessible :comment, :mac, :model_id, :status, :supplier_id
+ 
+ attr_accessible :comment, :mac, :model_id, :status, :supplier_id
+ STATUS = %w[STOCK BAJA REPARACION]
+ #before_update :update_if_change_status, only: [:edit, :update] 
 
-    STATUS = %w[STOCK BAJA REPARACION]
-  #before_update :update_if_change_status, only: [:edit, :update] 
-
-  #validations
-    validates :mac, :uniqueness => true
+  scope :with_parameters, ->(mac, status){
+        where("LOWER(mac) LIKE ? and status = ? ", "#{mac}%".downcase, status)
+}
 
   #Relaciones
       has_many :loan
       belongs_to :model
       belongs_to :supplier  
+  
+  #validations
+    validates :mac, :uniqueness => true
+    validates_presence_of :model, :supplier
+
+
 
  # def update_if_change_status
   #  if  self.status_changed?

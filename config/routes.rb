@@ -97,7 +97,7 @@ end
   # just remember to delete public/index.html.
 
   authenticated :user do
-  root :to => 'customers#index'
+  root :to => 'tickets#all'
 end
 unauthenticated :user do
   devise_scope :user do

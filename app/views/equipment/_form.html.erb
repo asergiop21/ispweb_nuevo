@@ -5,7 +5,7 @@
     
     <%= f.input :mac %>
      <%if @equipment.status != 'INSTALADO' %>
-        <% if params[:action] != 'new' %>
+        <% if params[:action] != 'new' && params[:action] != 'create'  %>
           <%=f.select :status , Equipment::STATUS %>
         <% end %>
     <% end %>

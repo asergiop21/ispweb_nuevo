@@ -3,7 +3,7 @@
         <div class="row-fluid">
           <div class="span3 s_left"> 
             <div>
-                   Datos Cliente
+                   Datos Clientsssssss
             </div>
             <div>
               Cliente: <%= @customer.lastname + ",  "+ @customer.name %>
@@ -16,7 +16,7 @@
                    <pre><%= @ticket.message%><p class="pull-right"><%= l @ticket.created_at, :format => :long %></p></pre>
                 <p>Respuesta:</p>
                    <%= f.simple_fields_for :ticket_answer do |builder| %>
-                   <%=builder.text_area :message, :rows => 2, :cols  => 70  %>
+                   <%=builder.text_area :message, :rows => 2, :cols  => 100  %>
                     <% end %>
                 <%= f.hidden_field :status %>
   

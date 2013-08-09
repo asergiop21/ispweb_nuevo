@@ -15,7 +15,6 @@
     <%= f.simple_fields_for :phones do |ph| %>
        <%=render 'phones', f: ph  %>
      <% end %>
-      <%= @customer.phones.count %>  
   <%= link_to_add_fields t('view.customers.add_phones'), f , :phones %>
   </div>
   </div>

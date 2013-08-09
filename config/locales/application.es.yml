@@ -88,7 +88,7 @@
     editing:
       title: 'Editar Usuario'
   devise:
-        sign_in: 'Inicial Session'
+        sign_in: 'Iniciar Sesion'
 
   attributes:
     created_at: 'Creado'
@@ -132,7 +132,7 @@
         lastname: 'Apellido'
         username: 'Nombre de Usuario'
         password: 'Password'
-        remember_me: 'Recuerdame"'
+        remember_me: 'Recuerdame'
         sign_in: 'Registrarse'
         language: 'Idioma'
         address: 'Dirección'

@@ -10,6 +10,8 @@ attr_accessible :customer_id, :role_id, :issue, :message, :path_id, :priority, :
 
   accepts_nested_attributes_for :ticket_answer, :reject_if => lambda{|a| a[:message].blank?}, :allow_destroy => true
 
+  validates_presence_of :issue, :message, :priority, :role_id
+  validates :issue, length: { maximum: 100 } 
 
  # belongs_to :role
 #  accepts_nested_attributes_for :ticket_and_role

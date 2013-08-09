@@ -14,4 +14,35 @@ $(document).ready(function(){
     event.preventDefault();
     
   });
-})
+
+
+   $('form').on('focus', '[data-autocomplete-field]', function(){
+
+var input = $(this); 
+
+input.autocomplete({
+  source: function(request, response) {
+    $.ajax({
+      url: input.data('autocomplete-url'),
+      dataType: 'json', data: { q: request.term },
+      success: function(data) {
+        response(
+          $.map(data, function(item) {
+            return { label: item.mac , item: item};
+          })
+        );
+      },
+    });
+  },
+  select: function(event, ui) {
+input.val(ui.item.label);
+
+
+console.log( $(input.data('autocomplete-for')).val(ui.item.id));
+
+  }
+}).removeAttr('data-autocomplete-field'); });
+
+
+
+});

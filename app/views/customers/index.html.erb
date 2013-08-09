@@ -1,30 +1,36 @@
-<%= simple_form_for '', :method =>'get' do |f| %>
-  <div class="span12">
-    <% if flash[:error] %>
-      <li class="alert alert-error"><%= flash[:error]  %></li>
-    <% end %>
-    <% if notice %>
-      <li class="alert alert-success"><%= notice  %></li>
-    <% end %>
+<div class="row" >
+     <div class="span12">
+         <% if flash[:error] %>
+             <li class="alert alert-error"><%= flash[:error]  %></li>
+         <% end %>
+         <% if notice %>
+             <li class="alert alert-success"><%= notice  %></li>
+         <% end %>
+      </div>
+    <div class="span3 side">
+         <%= simple_form_for '', method: 'get' do |f| %>
+            <div class="search">
+              <%= f.input( :q, label: 'customers', input_html: { 
+                          data: { 'autocomplete-field' => true,
+                                  'autocomplete-for' => '#customer_customer_id'
+                                } 
+                              }) %>
+              <%= f.input :customer_id, as: :hidden%>
+            </div>
+          <% end %> 
+
   </div>
 
-  <div class="span12">
-  <div class="side">
-      <%= f.input :lastname, :label=> "Buscar", input_html: {data: {'autocomplete-field' => true, 'autocomplete-for' => '#customer_id'},:class=> 'input-medium'}  %>
-      <%= submit_tag "search" %>
-  </div>
+  <div class="span8 section">
 
-
-  <div class="span9">
-    <ul>
-      <%= link_to t('view.customers.new_customer'), new_customer_path %>
-    </ul>
-    <h1><%= t "customers.listing.title" %></h1>
-    <% if @customers %>
+    <div class="title">
+        <h2><%= t "customers.listing.title" %></h2>
+    </div>
+<div  class="data">
+<% if @customers %>
     <table class="table">
       <tr>
         <th><%= Customer.human_attribute_name(:name)   %></th>
-        <th><%= Customer.human_attribute_name(:lastname) %></th>
         <th><%= Customer.human_attribute_name(:address) %></th>
         <th><%= Customer.human_attribute_name(:neighborhood) %></th>
         <th><%= Customer.human_attribute_name(:description) %></th>
@@ -53,12 +59,8 @@
     <% end %>
   </table>
   <% end %>
-<div>
-<div>
-<% end %>
-<div class="span12">
+</div>
 <% ##if can? :new, @customers %>
   <%= link_to t('view.customers.new_customer'), new_customer_path %>
   <% #end %>
-</div>
 </div>

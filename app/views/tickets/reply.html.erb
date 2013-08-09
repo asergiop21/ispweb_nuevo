@@ -3,7 +3,7 @@
         <div class="row-fluid">
           <div class="span3 s_left"> 
             <div>
-                   Datos Cliente
+                   Datos Clientesssss_actual
             </div>
             <div>
               Cliente: <%= @customer.lastname + ",  "+ @customer.name %>
@@ -16,7 +16,7 @@
                    <pre><%= @ticket.message%><p class="pull-right"><%= l @ticket.created_at, :format => :long %></p></pre>
                 <p>Respuesta:</p>
                    <%= f.simple_fields_for :ticket_answer do |builder| %>
-                   <%=builder.text_area :message, :rows => 2, :cols  => 70, :disable => {} %>
+                   <%=builder.text_area :message, :rows => 1, :cols  => 100, :disable => {}, class: "area" %>
                     <% end %>
                 <%= f.hidden_field :status %>
                 <%= f.hidden_field :role_id %>
@@ -25,6 +25,7 @@
         </div>
         </div>
 <% if @ticket.status != 'cerrado' %>
+
 <div class="span12 footer">
               <div class="btn-group dropup pull-right" >
                  <%= f.button :submit, :class =>'btn btn-primary' %>
@@ -32,15 +33,11 @@
                      <span class="caret"></span>
                    </button>
                       <ul class="dropdown-menu">
-                        <li><%=link_to "Solved", "#", data:{cambiar_estado: 'cerrado'}   %></li>
-                        <li><%=link_to "Open", "#", data:{cambiar_estado: 'open'}   %></li>
-                        <li><%=link_to "Pendiente", "#", data:{cambiar_estado: 'Pendiente'}   %></li>
-
+                        <li><%=link_to "Solved", "#", data:{cambiar_estado: 'cerrado'} %></li>
+                        <li><%=link_to "Visitas Tecnicas", "#", data:{pasar: 3} %></li>
                       </ul>    
-
               </div>
               </div>
-
 
 <% end %>
 <% end %>

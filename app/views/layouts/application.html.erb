@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
-    <title>IspWeb</title>
+    <meta charset="utf-8" />
+    <title>IspWeb 1.0</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -10,7 +11,9 @@
   <body>
         <%if user_signed_in?%>
           <%= render "layouts/menu" %>
-          <%= yield %>
+          <div>
+            <%= yield %>
+          </div>
           <%= render "layouts/footer" %>
         <% else %>
           <div class="container">

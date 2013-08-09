@@ -3,5 +3,8 @@
 	* Al editar un customers y al no haber telefonos no lo valida.!
 	* cuando agrego un telefono y quiero borrarlo en el momento no lo borra.
 	* Cambiar nombre de invoice por type_invoice en customer
+	* cambiar category_id en equipment - por user_id
+	* jquery complete - en customers
+
 
 

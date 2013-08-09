@@ -2,7 +2,9 @@ class EquipmentController < ApplicationController
   # GET /equipment
   # GET /equipment.json
   def index
-    @equipments = Equipment.all
+    
+    
+      @equipments = Equipment.with_parameters(params[:q], params[:status])
 
     respond_to do |format|
       format.html # index.html.erb

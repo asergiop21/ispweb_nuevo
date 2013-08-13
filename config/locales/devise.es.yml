@@ -12,11 +12,13 @@ es:
 
   devise:
     failure:
+      user:
+        not_found_in_database: 'Usuario Invalido'
       already_authenticated: 'You are already signed in.'
-      unauthenticated: 'You need to sign in or sign up before continuing.'
+      unauthenticated: 'Es necesario identificarse o registrarse para continuar.'
       unconfirmed: 'You have to confirm your account before continuing.'
       locked: 'Your account is locked.'
-      invalid: 'Invalid email or password.'
+      invalid: 'Usuario o password invalido.'
       invalid_token: 'Invalid authentication token.'
       timeout: 'Your session expired, please sign in again to continue.'
       inactive: 'Your account was not activated yet.'

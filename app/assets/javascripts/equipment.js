@@ -4,7 +4,7 @@
 */
 $(document).ready(function(){
 
- $('form').on('focus', '[data-autocomplete-field]', function(){
+ $('form').on('focus', '[data-autocomplete-field-mac]', function(){
 
 var input = $(this); 
 input.autocomplete({
@@ -15,7 +15,7 @@ input.autocomplete({
       success: function(data) {
         response(
           $.map(data, function(item) {
-            return { label: item.lastname , item: item};
+            return { label: item.lastname + " " +item.name , item: item};
           })
         );
       },

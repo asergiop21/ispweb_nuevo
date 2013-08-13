@@ -4,8 +4,11 @@
 <% if notice %>
   <li class="alert alert-success"><%= notice  %></li>
   <% end %>
-  <div class="span12"><h3><%= t ('customers.new.title') %></h3></div>
 
-<%= render 'form' %>
-
+<div class="section_complete">
+  <h3><%= t ('customers.new.title') %></h3>
+    <div class="data">
+      <%= render 'form' %>
+    </div>
+</div>
 

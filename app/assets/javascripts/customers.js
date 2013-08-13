@@ -15,11 +15,8 @@ $(document).ready(function(){
     
   });
 
-
    $('form').on('focus', '[data-autocomplete-field]', function(){
-
 var input = $(this); 
-
 input.autocomplete({
   source: function(request, response) {
     $.ajax({
@@ -28,21 +25,17 @@ input.autocomplete({
       success: function(data) {
         response(
           $.map(data, function(item) {
-            return { label: item.mac , item: item};
+            return { label: item.lastname + " "+ item.name , item: item};
           })
         );
       },
     });
   },
   select: function(event, ui) {
-input.val(ui.item.label);
-
-
-console.log( $(input.data('autocomplete-for')).val(ui.item.id));
-
+ 
+  input.val(ui.item.label);
+$(input.data('autocomplete-for')).val(ui.item.item.id);
   }
 }).removeAttr('data-autocomplete-field'); });
-
-
 
 });

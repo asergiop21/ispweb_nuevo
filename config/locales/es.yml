@@ -7,7 +7,7 @@
 
     month_names:
       - ~
-      - Enero
+      - Ene
       - Febrero
       - Marzo
       - Abril
@@ -19,7 +19,20 @@
       - Octubre
       - Noviembre
       - Diciembre
-
+    abbr_month_names:
+      - ~
+      - Ene
+      - Feb
+      - Mar
+      - Abr
+      - May
+      - Jun
+      - Jul
+      - Ago
+      - Sep
+      - Oct
+      - Nov
+      - Dic
   time:
     formats:
       default: '%A, %d de %B de %Y %H:%M:%S %z'

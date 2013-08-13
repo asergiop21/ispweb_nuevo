@@ -6,14 +6,10 @@
   <% end %>
 
 <div class="section_complete">
-  <h1><%= t('customers.editing.title') %></h1>
+  <h3><%= t('customers.editing.title') %></h3>
   <div class="data">
       <%= render 'form' %>
   </div>
-
-
-
-
 <%= link_to t('labels.show') , @customer %> |
 <%= link_to t('labels.back'), customers_path %>
 </div>

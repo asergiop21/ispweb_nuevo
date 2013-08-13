@@ -4,11 +4,9 @@ class Customer < ActiveRecord::Base
   PHONES_COUNT_MIN = 0
 
 
-scope :con_nombre, ->(nombre){
-  where("LOWER(lastname) LIKE ?", "#{nombre}%".downcase)
-}
-
-
+scope :con_nombre, ->(nombre){where("LOWER(lastname) LIKE ?", "%#{nombre}%".downcase)}
+scope :con_id, ->(id){ where('id = ?', "#{id}")}
+scope :removed, ->(removed){ where('removed = ?', "#{removed}")}
   #Atributos
   attr_accessible :address, :bar_code, :date_of_birth, :category, :cuit, :description, :dni, :email, :lastname, :name, :neighborhood, :reference_direction, :removed, :phones_attributes, :location_id, :plan_id, :user_id, :invoice
 

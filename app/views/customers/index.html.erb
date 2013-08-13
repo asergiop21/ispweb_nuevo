@@ -11,16 +11,17 @@
          <%= simple_form_for '', method: 'get' do |f| %>
             <div class="search">
               <%= f.input( :q, label: 'customers', input_html: { 
-                          data: { 'autocomplete-field' => true,
-                                  'autocomplete-for' => '#customer_customer_id'
+                          data: {'autocomplete-field' => true,
+                                  'autocomplete-for' => '#_customer_id',
+                                  'autocomplete-url' => customers_path(format: :json)
                                 } 
                               }) %>
               <%= f.input :customer_id, as: :hidden%>
+       <%= f.select :removed, ["",['Baja', true],['Alta', false]] %>
+
             </div>
           <% end %> 
-
   </div>
-
   <div class="span8 section">
 
     <div class="title">
@@ -30,11 +31,12 @@
 <% if @customers %>
     <table class="table">
       <tr>
+        <th><%= Customer.human_attribute_name(:lastname)   %></th>
         <th><%= Customer.human_attribute_name(:name)   %></th>
         <th><%= Customer.human_attribute_name(:address) %></th>
         <th><%= Customer.human_attribute_name(:neighborhood) %></th>
         <th><%= Customer.human_attribute_name(:description) %></th>
-        <th><%= Customer.human_attribute_name(:category) %></th>
+        <th><%= Customer.human_attribute_name(:removed) %></th>
         <th></th>
         <th></th>
         <th></th>
@@ -43,15 +45,15 @@
       </tr>
     <% @customers.each do |customer| %>
       <tr>
-        <td><%= customer.name %></td>
         <td><%= customer.lastname %></td>
+        <td><%= customer.name %></td>
         <td><%= customer.address %></td>
         <td><%= customer.neighborhood %></td>
         <td><%= customer.description %></td>
-        <td><%= customer.category %></td>
+        <td><%= customer.removed? ? 'Baja' : 'Alta' %></td>
         <td><%= link_to t('labels.show'), customer %></td>
         <td><%= link_to t('labels.edit'), edit_customer_path(customer) %></td>
-        <td><%= link_to t('labels.destroy'), customer, method: :delete, data: { confirm: t('labels.are_you_sure') } %></td>
+        <td><% link_to t('labels.destroy'), customer, method: :delete, data: { confirm: t('labels.are_you_sure') } %></td>
         <td><%= link_to t('view.customers.loans'), customer_loans_path(customer.id) %></td>
         <td><%= link_to "Tickets", customer_tickets_path(customer.id) %></td>
         <td><%= link_to "Pagos", customer_accounts_receivables_path(customer.id) %></td>

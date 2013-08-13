@@ -127,6 +127,7 @@
         cuit: 'cuit '
         date_of_birth: 'Fecha de nacimiento'
         category: 'Categoria'
+        removed: 'Eliminado?'
       user:
         name: 'Nombre'
         lastname: 'Apellido'

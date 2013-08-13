@@ -4,8 +4,9 @@
 
 
 <div class="segundo">
-<% if flash[:error] %>
-  <li class="alert alert-error"><%= flash[:error] %></li>
+
+<% if flash[:alert] %>
+  <li class="alert alert-error"><%= flash[:alert] %></li>
   <% end %>
 <h3><%= t"devise.sign_in" %></h3>
   <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>

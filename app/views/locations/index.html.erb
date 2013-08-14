@@ -1,5 +1,5 @@
+<div class="section_complete"> 
 <h1><%= t"locations.listing.title"%></h1>
-
 <table class="table">
   <tr>
     <th><%= Location.human_attribute_name(:name) %></th>
@@ -26,5 +26,6 @@
 <% end %>
 </table>
 <br />
-
 <%= link_to t('view.locations.new_location'), new_location_path %>
+
+</div>

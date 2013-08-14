@@ -3,9 +3,8 @@ class EquipmentController < ApplicationController
   # GET /equipment.json
   def index
     
-    
-      @equipments = Equipment.with_parameters(params[:q], params[:status])
-
+      @equipments = Equipment.with_parameters(params[:q])
+      @equipments = Equipment.with_params_id(params[:equipment_id]) if params[:equipment_id].present?
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @equipments }

@@ -15,7 +15,7 @@ input.autocomplete({
       success: function(data) {
         response(
           $.map(data, function(item) {
-            return { label: item.lastname + " " +item.name , item: item};
+            return { label: item.mac , item: item};
           })
         );
       },
@@ -23,14 +23,11 @@ input.autocomplete({
   },
   select: function(event, ui) {
 input.val(ui.item.label);
-$(input.data('autocomplete-for')).val(ui.item.id);
-
+$(input.data('autocomplete-for')).val(ui.item.item.id);
   }
 }).removeAttr('data-autocomplete-field'); });
 
-$('select').on('click', 'option', function(){
+$('div.side').on('click', 'option', function(){
     $('form').submit();
 });
-
-
 });

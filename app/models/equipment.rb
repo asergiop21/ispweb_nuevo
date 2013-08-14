@@ -4,10 +4,9 @@ class Equipment < ActiveRecord::Base
  STATUS = %w[STOCK BAJA REPARACION]
  #before_update :update_if_change_status, only: [:edit, :update] 
 
-  scope :with_parameters, ->(mac, status){
-        where("LOWER(mac) LIKE ? and status = ? ", "#{mac}%".downcase, status)
-}
-
+  scope :with_parameters, ->(mac){
+        where("mac LIKE ?", "#{mac}%".downcase)}
+  scope :with_params_id, ->(id) {where("id = ?", "#{id}")}
   #Relaciones
       has_many :loan
       belongs_to :model

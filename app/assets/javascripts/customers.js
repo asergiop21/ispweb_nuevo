@@ -15,7 +15,7 @@ $(document).ready(function(){
     
   });
 
-   $('form').on('focus', '[data-autocomplete-field]', function(){
+   $('div.side').on('focus', '[data-autocomplete-field]', function(){
 var input = $(this); 
 input.autocomplete({
   source: function(request, response) {
@@ -31,8 +31,8 @@ input.autocomplete({
       },
     });
   },
+  
   select: function(event, ui) {
- 
   input.val(ui.item.label);
 $(input.data('autocomplete-for')).val(ui.item.item.id);
   }

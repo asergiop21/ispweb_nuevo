@@ -22,7 +22,7 @@ namespace :deploy do
     task :restart, :roles => :app, :except => {:no_release => true } do
       run "#{try_sudo} touch #{File.join(current_path, 'tmp','restart.txt')}" 
 end
-    #desc "reload the database with seed data"
+    desc "reload the database with seed data"
     task :seed do
       run "cd #{current_path}; rake db:seed RAILS_ENV=#{rails_env}"
       #run "cd #{deploy_to}/current && bundle install vendor/gems"

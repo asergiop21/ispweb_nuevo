@@ -27,7 +27,7 @@ test:
 
 production:
   adapter: postgresql
-  database: ispweb_prodction
+  database: ispweb_production
   username: postgres
   password: postgres
   host: localhost

@@ -13,18 +13,19 @@ scope :removed, ->(removed){ where('removed = ?', "#{removed}")}
 after_create :add_plan_accounts_receivable
   #Relaciones
   has_many :phones, :dependent => :destroy
+  has_many :tickets, :dependent => :destroy
   has_many :loans
   has_many :ips
-  has_many :tickets, :dependent => :destroy
+  has_many :customer_payment_accounts
+  has_many :account_receivables
+  has_many :invoices
   belongs_to :user
   belongs_to :plan
   belongs_to :location
-  has_many :accounts_receivable
+
 
   #Validaciones
   validates :name, :lastname, :address, :date_of_birth, :dni, :category,  :location_id, :plan_id,   presence: true
-
- 
   validates :name, uniqueness: {scope: :lastname}, allow_nil: true, allow_blank: true
   validates :name, :lastname, :address, :neighborhood, :reference_direction, :email, length: {maximum: 255}, allow_nil: true, allow_blank: true 
   validates :dni, length: {is: 8}, numericality: true

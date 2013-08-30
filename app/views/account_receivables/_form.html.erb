@@ -1,0 +1,16 @@
+<%= simple_form_for [@customer, @account_receivable] do |f| %>
+cliente: <%= @customer.name + ", " + @customer.lastname  %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  <div class ="span6">
+    <%= f.input :description %>
+  </div>
+  <div class = "span3">
+    <%= f.input :amount %>
+  </div>
+  <div class="form-actions span12">
+    <%= f.button :submit %>
+  </div>
+ </div>
+<% end %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Customer:</b>
+  <%= @customer_payment_account.customer_id %>
+</p>
+
+<p>
+  <b>Amount depostied:</b>
+  <%= @customer_payment_account.amount_depostied %>
+</p>
+
+<p>
+  <b>Current balance:</b>
+  <%= @customer_payment_account.current_balance %>
+</p>
+
+<p>
+  <b>Debt:</b>
+  <%= @customer_payment_account.debt %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_customer_payment_account_path(@customer.id, @customer_payment_account) %> |
+<%= link_to 'Back', customer_customer_payment_accounts_path(@customer.id) %>

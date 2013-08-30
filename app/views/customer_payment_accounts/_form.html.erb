@@ -1,0 +1,12 @@
+<%= simple_form_for [@customer, @customer_payment_account] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :customer_id %>
+    <%= f.input :amount_depostied %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

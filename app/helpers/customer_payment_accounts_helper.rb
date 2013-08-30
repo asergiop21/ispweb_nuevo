@@ -1,0 +1,2 @@
+module CustomerPaymentAccountsHelper
+end

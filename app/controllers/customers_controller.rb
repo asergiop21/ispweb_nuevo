@@ -5,7 +5,6 @@ before_filter :authenticate_user!, :except => [:some_action_without_auth]
 load_and_authorize_resource :only =>[:show]
 
 def index
-   
    @customers = Customer.con_nombre(params[:q]) if params[:q].present?
    @customers = Customer.con_id(params[:customer_id]) if params[:customer_id].present?
    @customers = Customer.removed(params[:removed]) if params[:removed].present?

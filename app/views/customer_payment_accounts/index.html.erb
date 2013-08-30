@@ -1,0 +1,36 @@
+  <ul class="nav nav-tabs">
+    <li ><%= link_to "Servicios Acreditados", customer_account_receivables_path(@customer.id), "data-toggle" => "tab1" %></li>
+    <li class="active"><%= link_to "Pagos Realizados", "#", "data-toggle" => "tab1" %></li>
+    <li ><%= link_to "Facturas", customer_invoices_path(@customer.id), "data-toggle" => "tab1" %></li>
+
+</ul>
+
+<h3>Listing customers_accounts</h3>
+
+<table>
+  <tr>
+    <th>Customer</th>
+    <th>Amount depostied</th>
+    <th>Current balance</th>
+    <th>Debt</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customer_payment_accounts.each do |customer_payment_account| %>
+  <tr>
+    <td><%= customer_payment_account.customer_id %></td>
+    <td><%= customer_payment_account.amount_depostied %></td>
+    <td><%= customer_payment_account.current_balance %></td>
+    <td><%= customer_payment_account.debt %></td>
+    <td><%= link_to 'Show', customer_customer_payment_account_path(@customer.id, customer_payment_account.id) %></td>
+    <td><%= link_to 'Edit', edit_customer_customer_payment_account_path(@customer.id, customer_payment_account) %></td>
+    <td><%= link_to 'Destroy', customer_customer_payment_account_path(@customer.id, customer_payment_account), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Customers account', new_customer_customer_payment_account_path(@customer.id) %>

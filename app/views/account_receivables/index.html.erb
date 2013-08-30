@@ -1,0 +1,32 @@
+<div class="tabbable">
+        
+  <ul class="nav nav-tabs">
+    <li class="active"><%= link_to "Servicios Acreditados", "#", "data-toggle" => "tab1" %></li>
+    <li ><%= link_to "Pagos Realizados", customer_customer_payment_accounts_path(@customer.id), "data-toggle" => "tab1" %></li>
+    <li ><%= link_to "Facturas", customer_invoices_path(@customer.id), "data-toggle" => "tab1" %></li>
+
+</ul>
+<h3>Listing accounts_receivables</h3>
+<h3>customer: <%= @customer.lastname + ", "+ @customer.name %></h3>
+<table class="table">
+  <tr>
+    <th>Description</th>
+    <th>Amount</th>
+    <th>Customer</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @account_receivables.each do |accounts_receivable| %>
+  <tr>
+    <td><%= accounts_receivable.description %></td>
+    <td><%= accounts_receivable.amount %></td>
+    <td><%= accounts_receivable.customer_id %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Account receivables', new_customer_account_receivable_path %>

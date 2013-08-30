@@ -11,16 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130805160515) do
+ActiveRecord::Schema.define(:version => 20130830124052) do
 
-  create_table "accounts_receivables", :force => true do |t|
+  create_table "account_receivables", :force => true do |t|
     t.string   "description"
     t.decimal  "amount",         :precision => 8, :scale => 2
     t.integer  "number_invoice"
     t.integer  "customer_id"
     t.integer  "user_id"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.datetime "created_at",                                                      :null => false
+    t.datetime "updated_at",                                                      :null => false
+    t.boolean  "enabled",                                      :default => false
   end
 
   create_table "categories", :force => true do |t|
@@ -28,6 +29,15 @@ ActiveRecord::Schema.define(:version => 20130805160515) do
     t.string   "comment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "customer_payment_accounts", :force => true do |t|
+    t.integer  "customer_id"
+    t.decimal  "amount_depostied", :precision => 8, :scale => 2
+    t.decimal  "current_balance",  :precision => 8, :scale => 2
+    t.decimal  "debt",             :precision => 8, :scale => 2
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
   end
 
   create_table "customers", :force => true do |t|
@@ -66,9 +76,13 @@ ActiveRecord::Schema.define(:version => 20130805160515) do
   end
 
   create_table "invoices", :force => true do |t|
-    t.integer  "number_invoice", :default => 1000
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.integer  "number_invoice",                               :default => 1000
+    t.datetime "created_at",                                                     :null => false
+    t.datetime "updated_at",                                                     :null => false
+    t.integer  "customer_id"
+    t.decimal  "debit",          :precision => 8, :scale => 2
+    t.decimal  "credit",         :precision => 8, :scale => 2
+    t.boolean  "status"
   end
 
   create_table "ips", :force => true do |t|

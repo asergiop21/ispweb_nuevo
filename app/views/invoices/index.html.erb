@@ -1,0 +1,22 @@
+
+  <ul class="nav nav-tabs">
+    <li ><%= link_to "Servicios Acreditados", customer_account_receivables_path(@customer.id), "data-toggle" => "tab1" %></li>
+    <li ><%= link_to "Pagos Realizados", customer_customer_payment_accounts_path(@customer.id), "data-toggle" => "tab1" %></li>
+    <li class="active"><%= link_to "Facturas", "#", "data-toggle" => "tab1" %></li>
+
+
+
+<table class="table">
+    <tr>
+            <th>Factura</th>
+            <th>Total</th>
+    </tr>
+ <% @invoices.each do |i| %>
+    <tr>
+      <td><%= i.number_invoice %></td>
+      <td><%= i.debit %></td>
+   </tr>
+ <% end %>
+</table>
+
+</ul>

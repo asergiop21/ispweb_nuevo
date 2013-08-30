@@ -26,6 +26,8 @@ group :assets do
  gem 'execjs'
  gem 'uglifier', '>= 1.0.3'
 end
+gem 'pry', group: [:development]
+
 # Deploy with Capistrano
  gem 'capistrano'
  gem 'passenger'

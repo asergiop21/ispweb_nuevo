@@ -16,7 +16,7 @@ role :db, 'proyect_ispweb.com', :primary => true # This is where Rails migration
 #role :db,  "your slave db-server here"
 
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-after ":deploy:update_crontab"
+after "deploy:symlink", "deploy:update_crontab"
 
 namespace :deploy do
     task :start do ; end

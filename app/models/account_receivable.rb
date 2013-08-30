@@ -13,7 +13,7 @@ class AccountReceivable < ActiveRecord::Base
     customer = Customer.find(990)
     plan = Plan.find(customer.plan_id)
     abonos = AccountReceivable.new
-    abono.amount = plan.price
+    abonos.amount = 1
     abonos.save
   end
 

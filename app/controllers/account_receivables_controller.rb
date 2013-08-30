@@ -6,6 +6,7 @@ class AccountReceivablesController < ApplicationController
  def index
     @account_receivables = @customer.account_receivables.where('enabled = ?', 'false')
 
+     # @a = AccountReceivable.abonos
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @account_receivables }

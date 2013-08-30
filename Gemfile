@@ -11,7 +11,7 @@ gem 'cancan'
 #Formularios
 gem 'simple_form'
 #otros
-gem 'whenever'
+gem 'whenever', :require => false
 gem 'ancestry'
 gem 'country_select'
 gem 'prawn'

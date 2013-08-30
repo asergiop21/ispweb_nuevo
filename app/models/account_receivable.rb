@@ -6,4 +6,17 @@ class AccountReceivable < ActiveRecord::Base
     belongs_to :customer
     belongs_to :user
 
+
+
+  def self.abonos
+
+    customer = Customer.find(990)
+    plan = Plan.find(customer.plan_id)
+    abonos = AccountReceivable.new
+    abono.amount = plan.price
+    abonos.save
+  end
+
+
+
 end

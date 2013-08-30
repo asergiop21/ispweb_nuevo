@@ -27,6 +27,12 @@ end
       run "cd #{current_path}; rake db:seed RAILS_ENV=#{rails_env}"
       #run "cd #{deploy_to}/current && bundle install vendor/gems"
 end
+   desc "Update the crontab file"
+   task :update_crontab, :roles=> :db do
+  run "cd #{release_path} && whenever --update-crontab #{application}"
+end
+
+
 end
 
 

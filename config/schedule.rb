@@ -19,7 +19,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, at: '12:14 pm' do
+every 1.day, at: '13:20 pm' do
 
   runner 'AccountReceivable.abonos'
 end

@@ -19,10 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, at: '15:36 pm' do
-  runner 'AccountReceivable.abonos'
-end
-
-every 1.day, at: '3:36' do
-  runner 'AccountReceivable.abonos'
+every 1.day, at: '16:16 pm' do
+  runner "AccountReceivable.abonos"
 end

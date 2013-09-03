@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830124052) do
+ActiveRecord::Schema.define(:version => 20130903151957) do
 
   create_table "account_receivables", :force => true do |t|
     t.string   "description"
@@ -35,9 +35,13 @@ ActiveRecord::Schema.define(:version => 20130830124052) do
     t.integer  "customer_id"
     t.decimal  "amount_depostied", :precision => 8, :scale => 2
     t.decimal  "current_balance",  :precision => 8, :scale => 2
-    t.decimal  "debt",             :precision => 8, :scale => 2
     t.datetime "created_at",                                     :null => false
     t.datetime "updated_at",                                     :null => false
+    t.decimal  "pay_type",         :precision => 8, :scale => 2
+    t.text     "description"
+    t.integer  "means_of_payment"
+    t.integer  "card_number"
+    t.integer  "check_number"
   end
 
   create_table "customers", :force => true do |t|
@@ -77,12 +81,14 @@ ActiveRecord::Schema.define(:version => 20130830124052) do
 
   create_table "invoices", :force => true do |t|
     t.integer  "number_invoice",                               :default => 1000
-    t.datetime "created_at",                                                     :null => false
-    t.datetime "updated_at",                                                     :null => false
+    t.datetime "created_at",                                                      :null => false
+    t.datetime "updated_at",                                                      :null => false
     t.integer  "customer_id"
     t.decimal  "debit",          :precision => 8, :scale => 2
     t.decimal  "credit",         :precision => 8, :scale => 2
-    t.boolean  "status"
+    t.boolean  "status",                                       :default => false
+    t.decimal  "total_to_pay",   :precision => 8, :scale => 2
+    t.decimal  "debt",           :precision => 8, :scale => 2
   end
 
   create_table "ips", :force => true do |t|

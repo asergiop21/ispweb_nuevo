@@ -1,5 +1,5 @@
 class InvoicesController < ApplicationController
-before_filter :load_customer 
+before_filter :load_customer,  :except => [:close_invoice] 
 
   def close_invoice
       @close = Invoice.close

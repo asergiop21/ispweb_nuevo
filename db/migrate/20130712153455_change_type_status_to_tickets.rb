@@ -4,6 +4,6 @@ class ChangeTypeStatusToTickets < ActiveRecord::Migration
   end
 
   def down
-    change_column :tickets, :status, :boolena, :default => 'false'
+    change_column :tickets, :status, :boolen, :default => 'false'
   end
 end

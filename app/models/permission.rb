@@ -4,4 +4,12 @@ class Permission < ActiveRecord::Base
   has_many :roles_and_permission
   has_many :role, :through => :roles_and_permission
 
+
+
+  def to_s
+    self.name
+  end
+
+
+
 end

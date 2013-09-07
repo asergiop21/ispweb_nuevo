@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130903151957) do
+ActiveRecord::Schema.define(:version => 20130904142332) do
 
   create_table "account_receivables", :force => true do |t|
     t.string   "description"
@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(:version => 20130903151957) do
   end
 
   create_table "invoices", :force => true do |t|
-    t.integer  "number_invoice",                               :default => 1000
     t.datetime "created_at",                                                      :null => false
     t.datetime "updated_at",                                                      :null => false
     t.integer  "customer_id"
@@ -89,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20130903151957) do
     t.boolean  "status",                                       :default => false
     t.decimal  "total_to_pay",   :precision => 8, :scale => 2
     t.decimal  "debt",           :precision => 8, :scale => 2
+    t.integer  "number_invoice",                               :default => "nextval('invoices_number_invoice_seg')",     :null => false
   end
 
   create_table "ips", :force => true do |t|

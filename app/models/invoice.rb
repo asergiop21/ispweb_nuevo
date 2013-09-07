@@ -1,5 +1,6 @@
 class Invoice < ActiveRecord::Base
-   attr_accessible :number_invoice
+   attr_accessible  :debit, :credit, :total_to_pay, :debt, :status, :customer_id
+
   belongs_to :customer
   scope :close
 
@@ -8,7 +9,6 @@ class Invoice < ActiveRecord::Base
   end
 
   def self.close
-     
        @customer = Customer.where(removed: false)
         @customer.each do |p|
           @invoice = Invoice.new
@@ -32,13 +32,14 @@ class Invoice < ActiveRecord::Base
                     credit = current_balance 
                 end      
             end
-          @invoice.debit = debit 
-          @invoice.credit = credit 
-          @invoice.total_to_pay = total_to_pay
-          @invoice.debt = debt
-          @invoice.status = status
-          @invoice.customer_id = p.id
-          @invoice.save
+
+      Invoice.create!(
+                      debit: debit, 
+                      credit:  credit, 
+                      total_to_pay: total_to_pay,
+                      debt: debt,
+                      status: status,
+                      customer_id: p.id )
       end
   end
   end

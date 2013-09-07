@@ -4,11 +4,11 @@ class RolesAndPermissionsController < ApplicationController
 before_filter :cargar_role
 
   def index
-    @roles_and_permission = @roles.roles_and_permission.find(params[:role_id])
+    @roles_and_permissions = @roles.roles_and_permission.find(params[:role_id])
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @roles_and_permission }
+      format.json { render json: @roles_and_permissions }
     end
   end
 

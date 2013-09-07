@@ -37,9 +37,9 @@ after_create :add_plan_accounts_receivable
   validates_presence_of  :phones
  
  
-#accepts_nested_attributes_for :phones, :reject_if => lambda {|a| a[:phone_number].blank? }, allow_destroy: true
+accepts_nested_attributes_for :phones, :reject_if => lambda {|a| a[:phone_number].blank? }, allow_destroy: true
 
- accepts_nested_attributes_for :phones, reject_if: :reject_phones, :allow_destroy => true
+# accepts_nested_attributes_for :phones, reject_if: :reject_phones, :allow_destroy => true
 
 
  def self.search (q=nil)
@@ -48,7 +48,7 @@ after_create :add_plan_accounts_receivable
 
   def add_plan_accounts_receivable
     plan =  Plan.find(self.plan_id)
-    AccountsReceivable.create(:description => "Abono Mensual - "+ plan.name, :amount => plan.price, :customer_id => self.id, :user_id => self.user_id)
+    AccountReceivable.create(:description => "Abono Mensual - "+ plan.name, :amount => plan.price, :customer_id => self.id, :user_id => self.user_id)
  
 end
 

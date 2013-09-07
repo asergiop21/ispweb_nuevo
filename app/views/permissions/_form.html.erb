@@ -1,4 +1,4 @@
-<%= form_for(@permission) do |f| %>
+<%= simple_form_for @permission do |f| %>
   <% if @permission.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@permission.errors.count, "error") %> prohibited this permission from being saved:</h2>
@@ -11,10 +11,8 @@
     </div>
   <% end %>
 
-<%= Permission.map do |p| %>
-    <%= p.input :name %><br />
+    <%= f.input :name %><br />
     
-  <% end %>
     
     <div class="actions">
     <%= f.submit %>

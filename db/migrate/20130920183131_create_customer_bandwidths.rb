@@ -4,10 +4,10 @@ class CreateCustomerBandwidths < ActiveRecord::Migration
       t.string :customer
       t.string :ip_device
       t.integer :mdr
-      t.integer :mup
+      t.integer :mur
       t.integer :gdr
       t.integer :gur
-
+      t.string :ip_route
       t.timestamps
     end
   end

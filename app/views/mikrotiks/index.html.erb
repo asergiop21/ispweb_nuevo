@@ -1,0 +1,31 @@
+<h1>Listing mikrotiks</h1>
+
+<table>
+  <tr>
+    <th>Ip</th>
+    <th>User</th>
+    <th>Pass</th>
+    <th>Port</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mikrotiks.each do |mikrotik| %>
+  <tr>
+    <td><%= mikrotik.ip %></td>
+    <td><%= mikrotik.user %></td>
+    <td><%= mikrotik.pass %></td>
+    <td><%= mikrotik.port %></td>
+    <td><%= mikrotik.user_id %></td>
+    <td><%= link_to 'Show', mikrotik %></td>
+    <td><%= link_to 'Edit', edit_mikrotik_path(mikrotik) %></td>
+    <td><%= link_to 'Destroy', mikrotik, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mikrotik', new_mikrotik_path %>

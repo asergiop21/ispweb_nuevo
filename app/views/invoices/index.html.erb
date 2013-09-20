@@ -10,11 +10,13 @@
     <tr>
             <th>Factura</th>
             <th>Total</th>
+            <th>Estado</th>
     </tr>
  <% @invoices.each do |i| %>
     <tr>
       <td><%= i.number_invoice %></td>
-      <td><%= i.debit %></td>
+      <td><%= i.debt %></td>
+      <td><%= i.status %></td>
    </tr>
  <% end %>
 </table>

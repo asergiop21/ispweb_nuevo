@@ -3,7 +3,11 @@ cliente: <%= @customer.name + ", " + @customer.lastname  %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  <div class ="span6">
+    <div class="span12">
+           Numero de Factura: <%=@number_invoice %>
+    </div>
+  </div>
+ <div class ="span6">
     <%= f.input :description %>
   </div>
   <div class = "span3">

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ip:</b>
+  <%= @mikrotik.ip %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @mikrotik.user %>
+</p>
+
+<p>
+  <b>Pass:</b>
+  <%= @mikrotik.pass %>
+</p>
+
+<p>
+  <b>Port:</b>
+  <%= @mikrotik.port %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @mikrotik.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_mikrotik_path(@mikrotik) %> |
+<%= link_to 'Back', mikrotiks_path %>

@@ -1,0 +1,15 @@
+<%= simple_form_for(@mikrotik) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :ip %>
+    <%= f.input :user %>
+    <%= f.input :pass %>
+    <%= f.input :port %>
+    <%= f.input :user_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

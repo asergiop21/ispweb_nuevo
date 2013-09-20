@@ -12,7 +12,6 @@
   <tr>
     <th>Description</th>
     <th>Amount</th>
-    <th>Customer</th>
     <th></th>
     <th></th>
     <th></th>
@@ -22,11 +21,12 @@
   <tr>
     <td><%= accounts_receivable.description %></td>
     <td><%= accounts_receivable.amount %></td>
-    <td><%= accounts_receivable.customer_id %></td>
   </tr>
 <% end %>
 </table>
-
+  <div class=" span4 pull-right">
+          <b>Total : $ <%= @total %></b>
+</div>
 <br />
 
 <%= link_to 'New Account receivables', new_customer_account_receivable_path %>

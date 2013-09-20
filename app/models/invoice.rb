@@ -32,7 +32,6 @@ class Invoice < ActiveRecord::Base
                     credit = current_balance 
                 end      
             end
-
       Invoice.create!(
                       debit: debit, 
                       credit:  credit, 

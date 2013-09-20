@@ -2,11 +2,11 @@ class InvoicesController < ApplicationController
 before_filter :load_customer,  :except => [:close_invoice] 
 
   def close_invoice
-      @close = Invoice.close
+      @close = Invoice.close_invoice
   end
 
   def index
-    @invoices = @customer.invoices.all
+    @invoices = @customer.invoices.order('created_at')
   end
 
 private

@@ -5,8 +5,7 @@ class AccountReceivablesController < ApplicationController
  
  def index
     @account_receivables = @customer.account_receivables.where('enabled = ?', 'false')
-
-     # @a = AccountReceivable.abonos
+    @total =@account_receivables.sum('amount')
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @account_receivables }
@@ -28,7 +27,6 @@ class AccountReceivablesController < ApplicationController
   # GET /accounts_receivables/new.json
   def new
     @account_receivable = @customer.account_receivables.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @account_receivable }

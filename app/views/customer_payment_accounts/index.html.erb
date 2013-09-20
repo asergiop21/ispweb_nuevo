@@ -12,7 +12,7 @@
     <th>Customer</th>
     <th>Amount depostied</th>
     <th>Current balance</th>
-    <th>Debt</th>
+    <th>Invoice number</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,9 +21,9 @@
 <% @customer_payment_accounts.each do |customer_payment_account| %>
   <tr>
     <td><%= customer_payment_account.customer_id %></td>
-    <td><%= customer_payment_account.amount_depostied %></td>
+    <td><%= customer_payment_account.amount_deposited %></td>
     <td><%= customer_payment_account.current_balance %></td>
-    <td><%= customer_payment_account.debt %></td>
+    <td><%= customer_payment_account.invoice_id %></td>
     <td><%= link_to 'Show', customer_customer_payment_account_path(@customer.id, customer_payment_account.id) %></td>
     <td><%= link_to 'Edit', edit_customer_customer_payment_account_path(@customer.id, customer_payment_account) %></td>
     <td><%= link_to 'Destroy', customer_customer_payment_account_path(@customer.id, customer_payment_account), method: :delete, data: { confirm: 'Are you sure?' } %></td>

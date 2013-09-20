@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904142332) do
+ActiveRecord::Schema.define(:version => 20130920124547) do
 
   create_table "account_receivables", :force => true do |t|
     t.string   "description"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20130904142332) do
 
   create_table "customer_payment_accounts", :force => true do |t|
     t.integer  "customer_id"
-    t.decimal  "amount_depostied", :precision => 8, :scale => 2
+    t.decimal  "amount_deposited", :precision => 8, :scale => 2
     t.decimal  "current_balance",  :precision => 8, :scale => 2
     t.datetime "created_at",                                     :null => false
     t.datetime "updated_at",                                     :null => false
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20130904142332) do
     t.integer  "means_of_payment"
     t.integer  "card_number"
     t.integer  "check_number"
+    t.integer  "invoice_id"
+    t.string   "ancestry"
   end
 
   create_table "customers", :force => true do |t|
@@ -88,7 +90,7 @@ ActiveRecord::Schema.define(:version => 20130904142332) do
     t.boolean  "status",                                       :default => false
     t.decimal  "total_to_pay",   :precision => 8, :scale => 2
     t.decimal  "debt",           :precision => 8, :scale => 2
-    t.integer  "number_invoice",                               :default => "nextval('invoices_number_invoice_seg')",     :null => false
+    t.integer  "number_invoice",                                                  :null => false
   end
 
   create_table "ips", :force => true do |t|
@@ -125,6 +127,16 @@ ActiveRecord::Schema.define(:version => 20130904142332) do
   create_table "makes", :force => true do |t|
     t.string   "name"
     t.string   "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "mikrotiks", :force => true do |t|
+    t.string   "ip"
+    t.string   "user"
+    t.string   "pass"
+    t.string   "port"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -189,12 +201,12 @@ ActiveRecord::Schema.define(:version => 20130904142332) do
   create_table "roles_and_permissions", :force => true do |t|
     t.string   "scope"
     t.integer  "role_id"
-    t.integer  "permmision_id"
+    t.integer  "permission_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
-  add_index "roles_and_permissions", ["permmision_id"], :name => "index_roles_and_permissions_on_permmision_id"
+  add_index "roles_and_permissions", ["permission_id"], :name => "index_roles_and_permissions_on_permmision_id"
   add_index "roles_and_permissions", ["role_id"], :name => "index_roles_and_permissions_on_role_id"
 
   create_table "roles_users", :id => false, :force => true do |t|

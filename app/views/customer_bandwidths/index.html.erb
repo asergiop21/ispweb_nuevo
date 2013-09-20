@@ -1,0 +1,33 @@
+<h1>Listing customer_bandwidths</h1>
+
+<table>
+  <tr>
+    <th>Customer</th>
+    <th>Ip device</th>
+    <th>Mdr</th>
+    <th>Mup</th>
+    <th>Gdr</th>
+    <th>Gur</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customer_bandwidths.each do |customer_bandwidth| %>
+  <tr>
+    <td><%= customer_bandwidth.customer %></td>
+    <td><%= customer_bandwidth.ip_device %></td>
+    <td><%= customer_bandwidth.mdr %></td>
+    <td><%= customer_bandwidth.mup %></td>
+    <td><%= customer_bandwidth.gdr %></td>
+    <td><%= customer_bandwidth.gur %></td>
+    <td><%= link_to 'Show', customer_bandwidth %></td>
+    <td><%= link_to 'Edit', edit_customer_bandwidth_path(customer_bandwidth) %></td>
+    <td><%= link_to 'Destroy', customer_bandwidth, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Customer bandwidth', new_customer_bandwidth_path %>

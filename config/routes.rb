@@ -1,4 +1,7 @@
 Ispweb::Application.routes.draw do
+  resources :customer_bandwidths
+
+
   resources :mikrotiks
 
 

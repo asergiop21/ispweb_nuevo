@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer: MyString
+  ip_device: MyString
+  mdr: 1
+  mup: 1
+  gdr: 1
+  gur: 1
+
+two:
+  customer: MyString
+  ip_device: MyString
+  mdr: 1
+  mup: 1
+  gdr: 1
+  gur: 1

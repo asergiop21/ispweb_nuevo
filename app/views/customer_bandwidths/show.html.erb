@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Customer:</b>
+  <%= @customer_bandwidth.customer %>
+</p>
+
+<p>
+  <b>Ip device:</b>
+  <%= @customer_bandwidth.ip_device %>
+</p>
+
+<p>
+  <b>Mdr:</b>
+  <%= @customer_bandwidth.mdr %>
+</p>
+
+<p>
+  <b>Mup:</b>
+  <%= @customer_bandwidth.mup %>
+</p>
+
+<p>
+  <b>Gdr:</b>
+  <%= @customer_bandwidth.gdr %>
+</p>
+
+<p>
+  <b>Gur:</b>
+  <%= @customer_bandwidth.gur %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_bandwidth_path(@customer_bandwidth) %> |
+<%= link_to 'Back', customer_bandwidths_path %>

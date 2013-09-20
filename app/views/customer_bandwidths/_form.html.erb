@@ -1,0 +1,16 @@
+<%= simple_form_for(@customer_bandwidth) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :customer %>
+    <%= f.input :ip_device %>
+    <%= f.input :mdr %>
+    <%= f.input :mup %>
+    <%= f.input :gdr %>
+    <%= f.input :gur %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

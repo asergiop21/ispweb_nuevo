@@ -80,4 +80,11 @@ class CustomerBandwidthsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def load_customers
+          @load = CustomerBandwidth.create_mikrotik
+  end
+
+
+
 end

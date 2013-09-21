@@ -44,7 +44,9 @@ end
     match "models" => "models#index"
     match "loans" => "loans#loan_pending"
     match "tickets"=>"tickets#all"
-# match "users" => "users#index"
+    match "customer_bandwidths" => "customer_bandwidths#load_customers"
+    
+    # match "users" => "users#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

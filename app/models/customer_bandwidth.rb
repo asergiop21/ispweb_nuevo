@@ -34,7 +34,7 @@ class CustomerBandwidth < ActiveRecord::Base
                 #
                 #            #++++++++++++++++++Agregar Array de clientes++++++++++++++++++++++++++++++++++++++
                 #
-                @customers_mkt = CustomerBandwidths.all 
+                @customers_mkt = CustomerBandwidth.all 
 
                 @customers_mkt.each do |s|
                         mt.get_reply_each(

@@ -2,6 +2,8 @@ class CustomerBandwidthsController < ApplicationController
   # GET /customer_bandwidths
   # GET /customer_bandwidths.json
   def index
+    
+    @customer_band = CustomerBandwidth.create_mikrotik
     @customer_bandwidths = CustomerBandwidth.all
 
     respond_to do |format|

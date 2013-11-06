@@ -1,10 +1,6 @@
 Ispweb::Application.routes.draw do
   resources :customer_bandwidths
-
-
   resources :mikrotiks
-
-
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
   resources :categories
   resources :equipment

@@ -2,24 +2,24 @@ class CustomerBandwidth < ActiveRecord::Base
   attr_accessible :customer, :gdr, :gur, :ip_device, :mdr, :mup
 
         def self.create_mikrotik
-                #mkt = Mktcx.all
+                mkt = Mikrotik.all
                 #++++++Centralizado
-                @IP = '10.255.0.13'
-                @USER = 'sergio'
-                @PASS ='123456'
+                #@ip = '10.255.0.13'
+                #@user = 'sergio'
+                #@pass ='123456'
 
                 #+++Distribuido+++++
-                #mkt.each do |s|
-                #        @ip = s.mkcip
-                #        @user = s.mkcusuario
-                #        @pass = s.password
-                #end
+                mkt.each do |a|
+                        @ip = a.ip
+                        @user = a.user
+                        @pass = a.pass
+
                 #++++++++++++++++++++++++++++
                 #        @ip_customer = targetaddr
-                #            # Connect to the device:
-                #            mt = MTik::Connection.new :host => @ip, :user=> @user, :pass => @pass
-                #            # Be verbose in output
-                #            MTik::verbose = true
+                            # Connect to the device:
+                           @mt = MTik::Connection.new :host =>@ip , :user=> @user, :pass => @pass
+                            # Be verbose in output
+                           # MTik::verbose = true
                 #            mt.get_reply("/ip/firewall/address-list/add",
                 #            "=address=#{@ip_customer}",
                 #            "=list=cortados")
@@ -34,16 +34,19 @@ class CustomerBandwidth < ActiveRecord::Base
                 #
                 #            #++++++++++++++++++Agregar Array de clientes++++++++++++++++++++++++++++++++++++++
                 #
-                @customers_mkt = CustomerBandwidth.all 
+                        @mt.get_reply_each("/system/backup/save", "=name=email.backup")
+                    
 
-                @customers_mkt.each do |s|
-                        mt.get_reply_each(
-                                "/queue/simple/add",
-                                "=name=#{s.customer}",
-                                "=target-addresses=#{s.ip_device}",
-                                "=max-limit=#{s.mdr.to_s + "/" + s.mur.to_s}",
-                        )
-                end
+                   ##        @customers_mkt = CustomerBandwidth.where("ip_route = ? ", @ip) 
+                   ##        @customers_mkt.each do |s|
+                   ##     @mt.get_reply_each(
+                   ##             "/queue/simple/add",
+                   ##             "=name=#{s.customer}",
+                   ##             "=target-addresses=#{s.ip_device}",
+                   ##             "=max-limit=#{s.mdr.to_s + "/" + s.mur.to_s}",
+                   ##     )
+               ## end
         end
 
+                end
 end

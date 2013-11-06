@@ -32,4 +32,5 @@ gem 'pry', group: [:development]
  gem 'capistrano'
  gem 'passenger'
  gem 'i18n', "~>0.6.4"
-gem 'thin'
+  gem 'mtik', "4.0.0"
+ gem 'thin'

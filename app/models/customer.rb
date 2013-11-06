@@ -36,7 +36,6 @@ class Customer < ActiveRecord::Base
 
 
         accepts_nested_attributes_for :phones, :reject_if => lambda {|a| a[:phone_number].blank? }, allow_destroy: true
-
         # accepts_nested_attributes_for :phones, reject_if: :reject_phones, :allow_destroy => true
 
 
@@ -47,7 +46,6 @@ class Customer < ActiveRecord::Base
         def add_plan_accounts_receivable
                 plan =  Plan.find(self.plan_id)
                 AccountReceivable.create(:description => "Abono Mensual - "+ plan.name, :amount => plan.price, :customer_id => self.id, :user_id => self.user_id)
-
         end
 
         #def self.phone_cus
@@ -62,5 +60,4 @@ class Customer < ActiveRecord::Base
                         attribute[:phone_number].blank?
                 end
         end
-
 end

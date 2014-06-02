@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(:version => 20130920183131) do
     t.string   "invoice"
   end
 
-  create_table "equipment", :force => true do |t|
+  create_table "equipments", :force => true do |t|
     t.string   "mac"
     t.text     "comment"
     t.integer  "user_id"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20130920183131) do
   end
 
   create_table "invoices", :force => true do |t|
+    t.integer  "number_invoice",                               :default => 1000
     t.datetime "created_at",                                                      :null => false
     t.datetime "updated_at",                                                      :null => false
     t.integer  "customer_id"
@@ -102,7 +103,6 @@ ActiveRecord::Schema.define(:version => 20130920183131) do
     t.boolean  "status",                                       :default => false
     t.decimal  "total_to_pay",   :precision => 8, :scale => 2
     t.decimal  "debt",           :precision => 8, :scale => 2
-    t.integer  "number_invoice",                                                  :null => false
   end
 
   create_table "ips", :force => true do |t|
@@ -213,12 +213,12 @@ ActiveRecord::Schema.define(:version => 20130920183131) do
   create_table "roles_and_permissions", :force => true do |t|
     t.string   "scope"
     t.integer  "role_id"
-    t.integer  "permission_id"
+    t.integer  "permmision_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
-  add_index "roles_and_permissions", ["permission_id"], :name => "index_roles_and_permissions_on_permmision_id"
+  add_index "roles_and_permissions", ["permmision_id"], :name => "index_roles_and_permissions_on_permmision_id"
   add_index "roles_and_permissions", ["role_id"], :name => "index_roles_and_permissions_on_role_id"
 
   create_table "roles_users", :id => false, :force => true do |t|

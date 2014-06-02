@@ -1,11 +1,11 @@
 class ChangeColumnStatusToEquipment < ActiveRecord::Migration
   def self.up
-      change_column :equipment, :status, :string, :default => 'STOCK'
-      add_column :equipment, :enabled, :boolean, :default => true
+      change_column :equipments, :status, :string, :default => 'STOCK'
+      add_column :equipments, :enabled, :boolean, :default => true
   end
 
   def self.down
-      change_column :equipment, :status, :string
-      remove_column :equipment, :enabled, :boolean
+      change_column :equipments, :status, :string
+      remove_column :equipments, :enabled, :boolean
   end
 end

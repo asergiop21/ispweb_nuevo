@@ -1,17 +1,17 @@
      <div>
-       <h4> View</h4>
+       <h4>View</h4>
      </div>
       <table class="table">
       <tr>
-          <td><%= link_to "tickets pendientes", tickets_path %></td>
+          <td><%= link_to "tickets pendientes", tickets_path(value: 1) %></td>
           <td><span class="badge"><%= @tickets_all.count %></span></td>
       </tr>  
       <tr>  
-        <td><%= link_to "tickets Urgentes", "#" %></td>
+        <td><%= link_to "tickets Urgentes", tickets_path(value: 2) %></td>
         <td><span class="badge"><%= @tickets_urgent.count %></span></td>
       </tr>
       <tr>  
-        <td><%= link_to "tickets Visitas Técnicas", technical_visit_path %></td>
+        <td><%= link_to "tickets Visitas Técnicas", technical_visit_path(value: 3) %></td>
         <td><span class="badge"><%= @tickets_technical_visit.count %></span></td>
       </tr>
   </table>

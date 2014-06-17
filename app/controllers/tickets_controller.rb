@@ -1,8 +1,8 @@
 class TicketsController < ApplicationController
   # GET /tickets
   # GET /tickets.json
- before_filter :load_customer, :except=>[:all, :technical_visit]
- before_filter :all, :only =>[:technical_visit ] 
+ before_filter :load_customer, :except=>[:all, :urgent,  :technical_visit]
+ before_filter :all, :only =>[:technical_visit, :urgent ] 
   def index
 #    @tickets = @customer.tickets.arrange
     @tickets = @customer.tickets
@@ -96,21 +96,35 @@ respond_to do |format|
   end
 
   def all
-    
     #Ticket Pendientes
-      @tickets_all = Ticket.where(role_id: current_user.role_id , status: "pendiente"   )
-    #Ticket Urgentes
-    @tickets_urgent= Ticket.where(role_id: current_user.role_id , priority: 'Urgente', status: false  )
-    
+    @tickets_all = Ticket.pending(current_user.role_id)  
     #Ticket Visistas Tecnicas
-    @tickets_technical_visit = Ticket.where(role_id: '3', status:"pendiente")
+    @tickets_technical_visit = Ticket.technical_visit  
+    #Ticket Urgentes
+    @tickets_urgent= Ticket.urgent(current_user.role_id)
 
-    
+  @tickets_all = @ticket_urgent if params[:value] == 2 
+  @tickets_all = @ticket_visit_technical_visit if params[:value] ==3 
+
+
 respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tickets_all }
     end
   end
+
+   def urgent
+
+      #Ticket Urgentes
+    @tickets_all= Ticket.urgent(current_user.role_id) 
+  
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @tickets_all }
+    end
+
+   end
+
 
   def reply
     @ticket = @customer.tickets.find(params[:id])

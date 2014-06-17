@@ -1,7 +1,14 @@
 class Ticket < ActiveRecord::Base
 has_ancestry
+
+
+
+scope :pending,->(user_id){where(role_id: user_id, status: 'pendiente')}
+scope :urgent,->(user_id){where(role_id: user_id, status: 'Urgente')}
+scope :technical_visit,->{where(role_id: '3', status:'pendiente')} 
+
 attr_accessible :customer_id, :role_id, :issue, :message, :path_id, :priority, :reply, :status, :user_id, :parent_id, :prioritycss, :ticket_answer_attributes
- 
+
   has_many :ticket_and_role
   has_many :role, :through => :ticket_and_role
   has_many :ticket_answer

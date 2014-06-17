@@ -17,6 +17,7 @@ Ispweb::Application.routes.draw do
     end
     resources :customers do
       resources :loans
+      member do get  :installation end 
       resources :tickets do
      #   resources :tickets_answers
       end
@@ -40,6 +41,7 @@ end
     match "models" => "models#index"
     match "loans" => "loans#loan_pending"
     match "tickets"=>"tickets#all"
+    match "tickets_urgent"=>"tickets#urgent"
     match "customer_band" => "customer_bandwidths#load_customers"
     
     # match "users" => "users#index"

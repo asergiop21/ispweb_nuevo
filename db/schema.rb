@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140423195821) do
+ActiveRecord::Schema.define(:version => 20130920183131) do
 
   create_table "account_receivables", :force => true do |t|
     t.string   "description"
@@ -84,12 +84,13 @@ ActiveRecord::Schema.define(:version => 20140423195821) do
   create_table "equipments", :force => true do |t|
     t.string   "mac"
     t.text     "comment"
-    t.integer  "category_id"
+    t.integer  "user_id"
     t.integer  "model_id"
     t.integer  "supplier_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "status"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "status",      :default => "STOCK"
+    t.boolean  "enabled",     :default => true
   end
 
   create_table "invoices", :force => true do |t|

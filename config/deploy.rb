@@ -10,12 +10,12 @@ set :deploy_to, '/opt/isp/'
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 server "192.168.100.2", :web, :app, :db, primary: true
 set :user, 'server'
-set :deploy_via, :remote_cache
+#set :deploy_via, :remote_cache
 set :use_sudo, false
 set :branch, 'master'
 
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-after "deploy:symlink", "deploy:update_crontab"
+#after "deploy:symlink", "deploy:update_crontab"
 
 namespace :deploy do
     task :start do ; end

@@ -1,4 +1,10 @@
+require 'rvm/capistrano'
 require 'bundler/capistrano'
+
+role :web
+role :app
+role :db
+#role :db,  "your slave db-server here"
 set :application, "ispweb.com.ar"
 set :repository,  "https://github.com/asergiop21/ispweb.git"
 set :deploy_to, '/opt/isp/'
@@ -8,11 +14,6 @@ set :user, 'server'
 set :deploy_via, :remote_cache
 set :use_sudo, false
 set :branch, 'master'
-
-role :web, 'ispweb.com.ar'                          # Your HTTP server, Apache/etc
-role :app, 'ispweb.com.ar'                          # This may be the same as your `Web` server
-role :db, 'ispweb.com.ar', :primary => true # This is where Rails migrations will run
-#role :db,  "your slave db-server here"
 
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 after "deploy:symlink", "deploy:update_crontab"

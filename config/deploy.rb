@@ -1,18 +1,16 @@
 require 'bundler/capistrano'
-set :application, "proyect_ispweb"
-set :repository,  "git://github.com/asergiop21/ispweb.git" #https://github.com/asergiop21/ispweb.git"
+set :application, "ispweb.com.ar"
 set :repository,  "https://github.com/asergiop21/ispweb.git"
-set :repository,  "https://github.com/asergiop21/ispweb.git"
-set :deploy_to, '/home/sergio/proyect_ispweb'
+set :deploy_to, '/opt/isp/'
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-set :user, 'sergio'
+set :user, 'server'
 set :deploy_via, :remote_cache
 set :use_sudo, false
 set :branch, 'master'
 
-role :web, 'proyect_ispweb.com'                          # Your HTTP server, Apache/etc
-role :app, 'proyect_ispweb.com'                          # This may be the same as your `Web` server
-role :db, 'proyect_ispweb.com', :primary => true # This is where Rails migrations will run
+role :web, 'ispweb.com.ar'                          # Your HTTP server, Apache/etc
+role :app, 'ispweb.com.ar'                          # This may be the same as your `Web` server
+role :db, 'ispweb.com.ar', :primary => true # This is where Rails migrations will run
 #role :db,  "your slave db-server here"
 
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`

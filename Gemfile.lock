@@ -135,6 +135,8 @@ GEM
       json (~> 1.4)
     ref (1.0.5)
     ruby-rc4 (0.1.5)
+    rvm-capistrano (1.2.7)
+      capistrano (>= 2.0.0)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -194,6 +196,7 @@ DEPENDENCIES
   prawn
   pry
   rails (= 3.2.12)
+  rvm-capistrano
   sass-rails (~> 3.2.3)
   simple_form
   therubyracer

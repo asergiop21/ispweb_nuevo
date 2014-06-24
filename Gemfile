@@ -30,6 +30,7 @@ gem 'pry', group: [:development]
 
 # Deploy with Capistrano
  gem 'capistrano'
+ gem 'rvm-capistrano'
  gem 'passenger'
  gem 'i18n', "~>0.6.4"
   gem 'mtik', "4.0.0"

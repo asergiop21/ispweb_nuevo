@@ -6,7 +6,7 @@ role :app
 role :db
 #role :db,  "your slave db-server here"
 set :application, "ispweb.com.ar"
-set :repository,  "https://github.com/asergiop21/ispweb.git"
+set :repository,  "https://github.com/asergiop21/ispweb_nuevo.git"
 set :deploy_to, '/var/www/isp/'
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 server "192.168.200.2", :web, :app, :db, primary: true
